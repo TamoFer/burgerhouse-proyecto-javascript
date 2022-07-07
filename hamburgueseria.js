@@ -102,8 +102,7 @@ function mostrarCarrito(){
     const tktBoton = document.createElement('button');
     tktBoton.classList.add('btn-style--tkt');
     tktBoton.textContent='Eliminar';
-    tktBoton.setAttribute('serialDelete', pedido.serial);
-    tktBoton.addEventListener('click', eliminarPedido);
+    
     // Insertamos
     miTkt.appendChild(miTktDescripcion);
     miTkt.appendChild(tktBoton);
