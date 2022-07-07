@@ -56,27 +56,66 @@ const hamburguesas = [ //defino array de objetos a utilizar en el codigo
 ];
 
 const listaPedidos=[];
+const menus=document.querySelector('#menus');
+const facturacion=document.querySelector('#facturacion');
+const montoTotal=document.querySelector('#montoTotal');
 
-crearCards();
+renderizarCards();
 
-function crearCards(){
-  let menus=document.getElementById("menus");
-    hamburguesas.forEach(pedido=>{
-      let menu=`<div class="pedido">
-                  <h2> ${pedido.nombre}</h2>
-                  <img src="" alt="">
-                  <p> Deliciosa Hamburguesa de ${pedido.carne}
-                  ${pedido.medallones} que trae ${pedido.ingredientes}
-                  acompañado de ${pedido.guarnicion}</p>
-                  <h3> Precio $${pedido.precio}</h3>
-                  <button class="btn-style--card" onclick="agregarPedido(${pedido.serial})">Agregar</button>
-      `
-    menus.innerHTML+=menu;})
+function renderizarCards(){
+  hamburguesas.forEach(burger=>{
+    // Estructura
+    const miCard = document.createElement('div');
+    miCard.classList.add("pedido");
+    // Titulo
+    const miCardTitle = document.createElement('h2');
+    miCardTitle.textContent = burger.nombre;
+    //Descripcion
+    const miCardDescripcion=document.createElement('p');
+    miCardDescripcion.textContent = `Deliciosa Hamburguesa de ${burger.carne} ${burger.medallones} que trae ${burger.ingredientes} acompañado de ${burger.guarnicion}`;
+    // Precio
+    const miCardPrecio = document.createElement('h3');
+    miCardPrecio.textContent=`Precio $ ${burger.precio}`;
+    // Boton 
+    const tktBoton = document.createElement('button');
+    tktBoton.classList.add('btn-style--card');
+    tktBoton.textContent='Agregar';
+    tktBoton.setAttribute('serial', burger.serial);
+    tktBoton.addEventListener('click', agregarPedido);
+    // Insertamos
+    miCard.appendChild(miCardTitle);
+    miCard.appendChild(miCardDescripcion);
+    miCard.appendChild(miCardPrecio);
+    miCard.appendChild(tktBoton);
+    menus.appendChild(miCard);
+});
 };
 
-function agregarPedido(serial){
-  let burger= hamburguesas.find(pedido=>pedido.serial===serial);
-  let burgerAgregada= listaPedidos.find(pedido=>pedido.serial===serial);
+function mostrarCarrito(){
+  listaPedidos.forEach(pedido=>{
+    const miTkt = document.createElement('div');
+    miTkt.classList.add("descripcionTkt");
+    //Descripcion
+    const miTktDescripcion=document.createElement('p');
+    miTktDescripcion.textContent = `${pedido.cantidad} x Hamburguesa ${pedido.nombre} $${pedido.precio}`;
+    // Boton 
+    const tktBoton = document.createElement('button');
+    tktBoton.classList.add('btn-style--tkt');
+    tktBoton.textContent='Eliminar';
+    tktBoton.setAttribute('serialDelete', pedido.serial);
+    tktBoton.addEventListener('click', eliminarPedido);
+    // Insertamos
+    miTkt.appendChild(miTktDescripcion);
+    miTkt.appendChild(tktBoton);
+    facturacion.appendChild(miTkt);
+  });
+};
+
+function agregarPedido(event){
+  let serial=event.target.getAttribute('serial');
+  let burger= hamburguesas.find(burger=>burger.serial==serial);
+  let burgerAgregada= listaPedidos.find(burger=>burger.serial==serial);
+
   if(burgerAgregada){
     burgerAgregada.cantidad++;
   }else{
@@ -87,34 +126,23 @@ function agregarPedido(serial){
   mostrarCarrito();
 };
 
-function mostrarCarrito(){
-  let factura= document.getElementById("facturacion");
-  let ticket=``;
-  listaPedidos.forEach((pedido, serial)=>{
-    ticket+= `<div id="descripcionTkt"><p>${pedido.cantidad} x Hamburguesa ${pedido.nombre} $${(pedido.precio)}</p><button class="btn-style--tkt" onclick="eliminarCarrito(${serial})">Eliminar</button></div> `
-    factura.innerHTML=ticket;
-  });
-};
-
-function eliminarCarrito(serial){
+function eliminarPedido(event){
+  let serial = event.target.getAttribute('serialDelete');
   listaPedidos[serial].cantidad--;
 
-  if(listaPedidos[serial].cantidad===0){  
+  if(listaPedidos[serial].cantidad==0){
     listaPedidos.splice(serial,1);
   }
   sumaTotal();
   mostrarCarrito();
 };
 
-
 function sumaTotal(){
   let total=0;
 
   listaPedidos.forEach(pedido=>{
-    total+=pedido.precio*pedido.cantidad;
+    total += pedido.precio*pedido.cantidad;
   });
 
-  const precioTotal= document.getElementById("montoTotal");
-  precioTotal.innerHTML=`<h3>TOTAL $ ${total}</3>`;
-
-};
+  montoTotal.innerHTML = `<h3>TOTAL $ ${total}</h3>`;
+}
