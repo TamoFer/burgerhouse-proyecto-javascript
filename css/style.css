@@ -1,0 +1,68 @@
+/* estilos de etiquetas ID  */
+#opciones{ 
+    display: flex;
+    flex-direction: column;
+}
+
+#facturacion{
+    font-size: 20px;
+    width: 100%;
+}
+
+#menus{
+    display: flex;
+    flex-direction: row;
+}
+
+#ticket{
+    width: 500px;
+}
+
+#descripcionTkt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+/*  estilo de cards creadas por DOM */
+.pedido{
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+    font-size: 13px;
+    text-align: center;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* estilo del header */
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* estilo del section */
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+/* estilo de botones html */
+.btn-style--card{
+    margin-top: 20px;
+    height: 30px;
+    width: 70px;
+    margin-left: 35%;
+}
+
+.btn-style--tkt{
+    margin-top: 20px;
+    height: 30px;
+}
