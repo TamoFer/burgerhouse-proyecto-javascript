@@ -132,7 +132,7 @@ function eliminarPedido(event){
   let serial=event.target.getAttribute('serialDelete');
   let burgerAgregada= listaPedidos.find(burger=>burger.serial==serial);
   let indice=listaPedidos.findIndex(pedido=>pedido.serial==serial);
-  burgerAgregada.cantidad--
+  burgerAgregada.cantidad--;
   
   if(burgerAgregada.cantidad===0){
     listaPedidos.splice(indice,1);
