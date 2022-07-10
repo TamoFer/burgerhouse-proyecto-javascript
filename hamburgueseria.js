@@ -1,6 +1,6 @@
 const hamburguesas = [ //defino array de objetos a utilizar en el codigo
   {
-    serial:0,
+    serial:1,
     nombre: "Americana",
     carne: "Carne",
     medallones: "Doble",
@@ -10,7 +10,7 @@ const hamburguesas = [ //defino array de objetos a utilizar en el codigo
     cantidad: 1,
   },
   {
-    serial:1,
+    serial:2,
     nombre: "Clásica",
     carne: "Carne",
     medallones: "Doble",
@@ -21,7 +21,7 @@ const hamburguesas = [ //defino array de objetos a utilizar en el codigo
 
   },
   {
-    serial:2,
+    serial:3,
     nombre: "Crispy",
     carne: "Pollo",
     medallones: "Simple",
@@ -32,7 +32,7 @@ const hamburguesas = [ //defino array de objetos a utilizar en el codigo
 
   },
   {
-    serial:3,
+    serial:4,
     nombre: "Power Onion",
     carne: "Pollo",
     medallones: "Doble",
@@ -43,7 +43,7 @@ const hamburguesas = [ //defino array de objetos a utilizar en el codigo
 
   },
   {
-    serial:4,
+    serial:5,
     nombre: "NotBurger",
     carne: "Garbanzos con lentejas",
     medallones: "Simple",
@@ -92,6 +92,7 @@ function renderizarCards(){
 };
 
 function mostrarCarrito(){
+  facturacion.textContent= '';
   listaPedidos.forEach(pedido=>{
     const miTkt = document.createElement('div');
     miTkt.classList.add("descripcionTkt");
@@ -102,6 +103,8 @@ function mostrarCarrito(){
     const tktBoton = document.createElement('button');
     tktBoton.classList.add('btn-style--tkt');
     tktBoton.textContent='Eliminar';
+    tktBoton.setAttribute('serialDelete', pedido.serial);
+    tktBoton.addEventListener('click', eliminarPedido);
     
     // Insertamos
     miTkt.appendChild(miTktDescripcion);
@@ -127,11 +130,7 @@ function agregarPedido(event){
 
 function eliminarPedido(event){
   let serial = event.target.getAttribute('serialDelete');
-  listaPedidos[serial].cantidad--;
-
-  if(listaPedidos[serial].cantidad==0){
-    listaPedidos.splice(serial,1);
-  }
+  console.log(listaPedidos.indexOf(serial));
   sumaTotal();
   mostrarCarrito();
 };
