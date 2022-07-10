@@ -129,8 +129,14 @@ function agregarPedido(event){
 };
 
 function eliminarPedido(event){
-  let serial = event.target.getAttribute('serialDelete');
-  console.log(listaPedidos.indexOf(serial));
+  let serial=event.target.getAttribute('serialDelete');
+  let burgerAgregada= listaPedidos.find(burger=>burger.serial==serial);
+  let indice=listaPedidos.findIndex(pedido=>pedido.serial==serial);
+  burgerAgregada.cantidad--
+  
+  if(burgerAgregada.cantidad===0){
+    listaPedidos.splice(indice,1);
+  }
   sumaTotal();
   mostrarCarrito();
 };
