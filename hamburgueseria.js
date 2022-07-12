@@ -10,6 +10,7 @@ export const hamburguesas = [ //defino array de objetos a utilizar en el codigo
     ingredientes: "Chedar, Bacon crujiente y salsa Barbacoa",
     precio: 1200,
     cantidad: 1,
+    pago: false
   },
   {
     serial:2,
@@ -20,7 +21,7 @@ export const hamburguesas = [ //defino array de objetos a utilizar en el codigo
     ingredientes: "Tomate, Lechuga y Mayonesa",
     precio: 950,
     cantidad: 1,
-
+    pago: false
   },
   {
     serial:3,
@@ -31,7 +32,7 @@ export const hamburguesas = [ //defino array de objetos a utilizar en el codigo
     ingredientes: "Cebolla crispy, Lechuga y Mayo Alioli",
     precio: 1000,
     cantidad: 1,
-
+    pago: false
   },
   {
     serial:4,
@@ -42,7 +43,7 @@ export const hamburguesas = [ //defino array de objetos a utilizar en el codigo
     ingredientes: "Aros de cebolla, Cebolla, Lechuga y Ketchup",
     precio: 1050,
     cantidad: 1,
-
+    pago: false
   },
   {
     serial:5,
@@ -53,14 +54,14 @@ export const hamburguesas = [ //defino array de objetos a utilizar en el codigo
     ingredientes: "Tomate, Lechuga, Cebolla y Mayo Alioli",
     precio: 1100,
     cantidad: 1,
-
+    pago: false
   }
 ];
 
 export const listaPedidos=[];
 export const menus=document.querySelector('#menus');
 export const facturacion=document.querySelector('#facturacion');
-export const montoTotal=document.querySelector('#montoTotal');
+const montoTotal=document.querySelector('#montoTotal');
 
 renderizarCards();
 

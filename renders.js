@@ -1,5 +1,6 @@
 import { agregarPedido,eliminarPedido} from "./accionesBtns.js";
 import { hamburguesas,menus,listaPedidos,facturacion} from "./hamburgueseria.js";
+
 export function renderizarCards() {
   hamburguesas.forEach((burger) => {
     // Estructura
