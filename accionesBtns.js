@@ -1,3 +1,5 @@
+import { hamburguesas,listaPedidos,sumaTotal } from "./hamburgueseria.js";
+import { mostrarCarrito } from "./renders.js";
 export function agregarPedido(event) {
   let serial = event.target.getAttribute("serial");
   let burger = hamburguesas.find((burger) => burger.serial == serial);
@@ -11,7 +13,7 @@ export function agregarPedido(event) {
   }
   sumaTotal();
   mostrarCarrito();
-}
+};
 
 export function eliminarPedido(event) {
   let serial = event.target.getAttribute("serialDelete");
@@ -24,4 +26,4 @@ export function eliminarPedido(event) {
   }
   sumaTotal();
   mostrarCarrito();
-}
+};
