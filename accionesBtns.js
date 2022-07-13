@@ -27,3 +27,4 @@ export function eliminarPedido(event) {
   sumaTotal();
   mostrarCarrito();
 };
+

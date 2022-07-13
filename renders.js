@@ -1,5 +1,5 @@
 import { agregarPedido,eliminarPedido} from "./accionesBtns.js";
-import { hamburguesas,menus,listaPedidos,facturacion} from "./hamburgueseria.js";
+import { hamburguesas,menus,listaPedidos,facturacion,guardandoLocalmente} from "./hamburgueseria.js";
 
 export function renderizarCards() {
   hamburguesas.forEach((burger) => {
@@ -49,5 +49,8 @@ export function mostrarCarrito() {
     miTkt.appendChild(miTktDescripcion);
     miTkt.appendChild(tktBoton);
     facturacion.appendChild(miTkt);
+    guardandoLocalmente(listaPedidos);
   });
+
+  
 }

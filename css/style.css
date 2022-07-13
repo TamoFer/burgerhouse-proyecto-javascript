@@ -18,11 +18,11 @@
     width: 500px;
 }
 
-#descripcionTkt{
+
+#montoTotal{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 }
 
 /*  estilo de cards creadas por DOM */
@@ -65,4 +65,16 @@ section{
 .btn-style--tkt{
     margin-top: 20px;
     height: 30px;
+}
+
+.btn-pago{
+    margin-top: 20px;
+    height: 30px;
+}
+
+.descripcionTkt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
 }

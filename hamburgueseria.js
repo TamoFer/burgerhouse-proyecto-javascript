@@ -1,5 +1,7 @@
-import { agregarPedido,eliminarPedido } from "./accionesBtns.js";
+import { agregarPedido,eliminarPedido} from "./accionesBtns.js";
+
 import { renderizarCards,mostrarCarrito } from "./renders.js";
+
 export const hamburguesas = [ //defino array de objetos a utilizar en el codigo
   {
     serial:1,
@@ -66,12 +68,41 @@ const montoTotal=document.querySelector('#montoTotal');
 renderizarCards();
 
 export function sumaTotal(){
-  let total=0;
+  const total = listaPedidos.reduce((acc, pedido) => acc + (pedido.precio*pedido.cantidad), 0);
+  
+  montoTotal.innerHTML= `<h3>TOTAL $ ${total}</h3>`};
 
-  listaPedidos.forEach(pedido=>{
-    total += pedido.precio*pedido.cantidad;
-  });
-
-  montoTotal.innerHTML = `<h3>TOTAL $ ${total}</h3>`;
+export function guardandoLocalmente(listaPedidos){
+  localStorage.setItem("pedido", JSON.stringify(listaPedidos));
 };
 
+const obtenerPedido = () => {
+  const pedidos = JSON.parse(localStorage.getItem("pedido"));
+  pedidos.forEach((p) => {
+    const pedido = document.createElement("div");
+    pedido.classList.add("descripcionTkt");
+    //Descripcion
+    const miPedidoDescripcion = document.createElement("p");
+    miPedidoDescripcion.textContent = `${p.cantidad} x Hamburguesa ${p.nombre} $${p.precio}`;
+    // Boton
+    const pedidoBoton = document.createElement("button");
+    pedidoBoton.classList.add("btn-style--tkt");
+    pedidoBoton.textContent = "Eliminar";
+    pedidoBoton.setAttribute("serialDelete", p.serial);
+    pedidoBoton.addEventListener("click", eliminarPedido);
+
+    // Insertamos
+    pedido.appendChild(miPedidoDescripcion);
+    pedido.appendChild(pedidoBoton);
+    facturacion.appendChild(pedido);
+
+  const total = pedidos.reduce((acc, p) => acc + (p.precio*p.cantidad), 0);
+  montoTotal.innerHTML= `<h3>TOTAL $ ${total}</h3>`;
+})
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("pedido")) {
+    obtenerPedido();
+  }
+})
