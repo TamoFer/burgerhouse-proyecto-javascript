@@ -1,5 +1,8 @@
+// importacion de funciones de otros modulos
 import { hamburguesas,listaPedidos,sumaTotal } from "./hamburgueseria.js";
 import { mostrarCarrito } from "./renders.js";
+
+//agrego desde button de card la burger
 export function agregarPedido(event) {
   let serial = event.target.getAttribute("serial");
   let burger = hamburguesas.find((burger) => burger.serial == serial);
@@ -14,7 +17,7 @@ export function agregarPedido(event) {
   sumaTotal();
   mostrarCarrito();
 };
-
+//elimino del carrito burgers atraves de button
 export function eliminarPedido(event) {
   let serial = event.target.getAttribute("serialDelete");
   let burgerAgregada = listaPedidos.find((burger) => burger.serial == serial);

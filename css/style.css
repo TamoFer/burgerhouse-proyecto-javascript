@@ -72,6 +72,7 @@ section{
     height: 30px;
 }
 
+/* estilos de div */
 .descripcionTkt{
     display: flex;
     flex-direction: row;

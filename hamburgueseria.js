@@ -1,5 +1,5 @@
+// importacion de funciones de otros modulos
 import { agregarPedido,eliminarPedido} from "./accionesBtns.js";
-
 import { renderizarCards,mostrarCarrito } from "./renders.js";
 
 export const hamburguesas = [ //defino array de objetos a utilizar en el codigo
@@ -60,22 +60,28 @@ export const hamburguesas = [ //defino array de objetos a utilizar en el codigo
   }
 ];
 
+// definicion de constantes que utilizare en todo el codigo, agrego funcion export para modularizar el codigo
 export const listaPedidos=[];
 export const menus=document.querySelector('#menus');
 export const facturacion=document.querySelector('#facturacion');
 const montoTotal=document.querySelector('#montoTotal');
 
+//instancio funcion para ver cards por pantalla
 renderizarCards();
 
+//devuelve la suma total de todos los pedidos de mi lista de pedidos utilizando reduce
 export function sumaTotal(){
   const total = listaPedidos.reduce((acc, pedido) => acc + (pedido.precio*pedido.cantidad), 0);
   
-  montoTotal.innerHTML= `<h3>TOTAL $ ${total}</h3>`};
+  montoTotal.innerHTML= `<h3>TOTAL $ ${total}</h3>`
+};
 
+// funcion de guardado en LocalStorage de mi lista de pedidos
 export function guardandoLocalmente(listaPedidos){
   localStorage.setItem("pedido", JSON.stringify(listaPedidos));
 };
 
+//renderizado de mi LocalStorage
 const obtenerPedido = () => {
   const pedidos = JSON.parse(localStorage.getItem("pedido"));
   pedidos.forEach((p) => {
@@ -101,6 +107,7 @@ const obtenerPedido = () => {
 })
 };
 
+//evento DOMContentLoaded para que al recargar me muestre mi ultimo carrito creado
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("pedido")) {
     obtenerPedido();
