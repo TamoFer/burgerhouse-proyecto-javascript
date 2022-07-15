@@ -1,6 +1,6 @@
 // importacion de funciones de otros modulos
 import { agregarPedido,eliminarPedido} from "./accionesBtns.js";
-import { menus,facturacion,guardandoLocalmente} from "./hamburgueseria.js";
+import { menus,facturacion,guardandoLocalmente, sumaTotal} from "./hamburgueseria.js";
 
 //render de cards
 export function renderizarCards(objeto) {
@@ -55,4 +55,5 @@ export function mostrarCarrito(listaPedidos) {
     facturacion.appendChild(miTkt);
   });
   guardandoLocalmente(listaPedidos);
+  sumaTotal(listaPedidos);
 }

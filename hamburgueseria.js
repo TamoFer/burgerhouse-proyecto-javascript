@@ -70,8 +70,8 @@ const montoTotal=document.querySelector('#montoTotal');
 renderizarCards(hamburguesas);
 
 //devuelve la suma total de todos los pedidos de mi lista de pedidos utilizando reduce
-export function sumaTotal(){
-  const total = listaPedidos.reduce((acc, pedido) => acc + (pedido.precio*pedido.cantidad), 0);
+export function sumaTotal(array){
+  const total = array.reduce((acc, pedido) => acc + (pedido.precio*pedido.cantidad), 0);
   
   montoTotal.innerHTML= `<h3>TOTAL $ ${total}</h3>`
 };
@@ -110,6 +110,9 @@ export function guardandoLocalmente(listaPedidos){
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("pedido")) {
     const pedidos = JSON.parse(localStorage.getItem("pedido"));
-    mostrarCarrito(pedidos);
+    pedidos.forEach(pedido => {
+      listaPedidos.push(pedido);
+    }); //
+    mostrarCarrito(listaPedidos);
   }
 });
