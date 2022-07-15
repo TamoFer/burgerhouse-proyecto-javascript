@@ -1,27 +1,28 @@
 // importacion de funciones de otros modulos
 import { agregarPedido,eliminarPedido} from "./accionesBtns.js";
-import { hamburguesas,menus,listaPedidos,facturacion,guardandoLocalmente} from "./hamburgueseria.js";
+import { menus,facturacion,guardandoLocalmente} from "./hamburgueseria.js";
 
 //render de cards
-export function renderizarCards() {
-  hamburguesas.forEach((burger) => {
+export function renderizarCards(objeto) {
+  objeto.forEach((menu) => {
+    let {serial,nombre,carne,medallones,guarnicion,ingredientes,precio}=menu;
 
     const miCard = document.createElement("div");
     miCard.classList.add("pedido");
 
     const miCardTitle = document.createElement("h2");
-    miCardTitle.textContent = burger.nombre;
+    miCardTitle.textContent = nombre;
 
     const miCardDescripcion = document.createElement("p");
-    miCardDescripcion.textContent = `Deliciosa Hamburguesa de ${burger.carne} ${burger.medallones} que trae ${burger.ingredientes} acompañado de ${burger.guarnicion}`;
+    miCardDescripcion.textContent = `Deliciosa Hamburguesa de ${carne} ${medallones} que trae ${ingredientes} acompañado de ${guarnicion}`;
 
     const miCardPrecio = document.createElement("h3");
-    miCardPrecio.textContent = `Precio $ ${burger.precio}`;
+    miCardPrecio.textContent = `Precio $ ${precio}`;
 
     const tktBoton = document.createElement("button");
     tktBoton.classList.add("btn-style--card");
     tktBoton.textContent = "Agregar";
-    tktBoton.setAttribute("serial", burger.serial);
+    tktBoton.setAttribute("serial", serial);
     tktBoton.addEventListener("click", agregarPedido);
 
     miCard.appendChild(miCardTitle);
@@ -30,29 +31,28 @@ export function renderizarCards() {
     miCard.appendChild(tktBoton);
     menus.appendChild(miCard);
   });
-}
+};
 
 //render de carrito
-export function mostrarCarrito() {
+export function mostrarCarrito(listaPedidos) {
   facturacion.textContent = "";
   listaPedidos.forEach((pedido) => {
+    let {serial,nombre,precio,cantidad}= pedido;
     const miTkt = document.createElement("div");
     miTkt.classList.add("descripcionTkt");
     
     const miTktDescripcion = document.createElement("p");
-    miTktDescripcion.textContent = `${pedido.cantidad} x Hamburguesa ${pedido.nombre} $${pedido.precio}`;
+    miTktDescripcion.textContent = `${cantidad} x Hamburguesa ${nombre} $${precio}`;
 
     const tktBoton = document.createElement("button");
     tktBoton.classList.add("btn-style--tkt");
     tktBoton.textContent = "Eliminar";
-    tktBoton.setAttribute("serialDelete", pedido.serial);
+    tktBoton.setAttribute("serialDelete",serial);
     tktBoton.addEventListener("click", eliminarPedido);
 
     miTkt.appendChild(miTktDescripcion);
     miTkt.appendChild(tktBoton);
     facturacion.appendChild(miTkt);
-    guardandoLocalmente(listaPedidos);
   });
-
-  
+  guardandoLocalmente(listaPedidos);
 }

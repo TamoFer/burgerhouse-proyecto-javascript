@@ -67,7 +67,7 @@ export const facturacion=document.querySelector('#facturacion');
 const montoTotal=document.querySelector('#montoTotal');
 
 //instancio funcion para ver cards por pantalla
-renderizarCards();
+renderizarCards(hamburguesas);
 
 //devuelve la suma total de todos los pedidos de mi lista de pedidos utilizando reduce
 export function sumaTotal(){
@@ -81,35 +81,35 @@ export function guardandoLocalmente(listaPedidos){
   localStorage.setItem("pedido", JSON.stringify(listaPedidos));
 };
 
-//renderizado de mi LocalStorage
-const obtenerPedido = () => {
-  const pedidos = JSON.parse(localStorage.getItem("pedido"));
-  pedidos.forEach((p) => {
-    const pedido = document.createElement("div");
-    pedido.classList.add("descripcionTkt");
-    //Descripcion
-    const miPedidoDescripcion = document.createElement("p");
-    miPedidoDescripcion.textContent = `${p.cantidad} x Hamburguesa ${p.nombre} $${p.precio}`;
-    // Boton
-    const pedidoBoton = document.createElement("button");
-    pedidoBoton.classList.add("btn-style--tkt");
-    pedidoBoton.textContent = "Eliminar";
-    pedidoBoton.setAttribute("serialDelete", p.serial);
-    pedidoBoton.addEventListener("click", eliminarPedido);
+// //renderizado de mi LocalStorage
+// const obtenerPedido = () => {
+//   pedidos.forEach((p) => {
+//     const pedido = document.createElement("div");
+//     pedido.classList.add("descripcionTkt");
+//     //Descripcion
+//     const miPedidoDescripcion = document.createElement("p");
+//     miPedidoDescripcion.textContent = `${p.cantidad} x Hamburguesa ${p.nombre} $${p.precio}`;
+//     // Boton
+//     const pedidoBoton = document.createElement("button");
+//     pedidoBoton.classList.add("btn-style--tkt");
+//     pedidoBoton.textContent = "Eliminar";
+//     pedidoBoton.setAttribute("serialDelete", p.serial);
+//     pedidoBoton.addEventListener("click", eliminarPedido);
 
-    // Insertamos
-    pedido.appendChild(miPedidoDescripcion);
-    pedido.appendChild(pedidoBoton);
-    facturacion.appendChild(pedido);
+//     // Insertamos
+//     pedido.appendChild(miPedidoDescripcion);
+//     pedido.appendChild(pedidoBoton);
+//     facturacion.appendChild(pedido);
 
-  const total = pedidos.reduce((acc, p) => acc + (p.precio*p.cantidad), 0);
-  montoTotal.innerHTML= `<h3>TOTAL $ ${total}</h3>`;
-})
-};
+//   const total = pedidos.reduce((acc, p) => acc + (p.precio*p.cantidad), 0);
+//   montoTotal.innerHTML= `<h3>TOTAL $ ${total}</h3>`;
+// })
+// };
 
 //evento DOMContentLoaded para que al recargar me muestre mi ultimo carrito creado
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("pedido")) {
-    obtenerPedido();
+    const pedidos = JSON.parse(localStorage.getItem("pedido"));
+    mostrarCarrito(pedidos);
   }
-})
+});
