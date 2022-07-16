@@ -1,5 +1,5 @@
 // importacion de funciones de otros modulos
-import { agregarPedido,eliminarPedido} from "./accionesBtns.js";
+import { agregarPedido,eliminarPedido,pagarPedido} from "./accionesBtns.js";
 import { renderizarCards,mostrarCarrito } from "./renders.js";
 
 export const hamburguesas = [ //defino array de objetos a utilizar en el codigo
@@ -73,7 +73,14 @@ renderizarCards(hamburguesas);
 export function sumaTotal(array){
   const total = array.reduce((acc, pedido) => acc + (pedido.precio*pedido.cantidad), 0);
   
-  montoTotal.innerHTML= `<h3>TOTAL $ ${total}</h3>`
+  montoTotal.innerHTML= `<h3>TOTAL $ ${total}</h3>`;
+  const btnPagar= document.createElement('button');
+  btnPagar.classList.add('btnPagar');
+  btnPagar.textContent = 'PAGAR TODO';
+  btnPagar.setAttribute('pagar',total);
+  btnPagar.addEventListener('click', pagarPedido);
+  montoTotal.appendChild(btnPagar);
+
 };
 
 // funcion de guardado en LocalStorage de mi lista de pedidos
@@ -81,38 +88,15 @@ export function guardandoLocalmente(listaPedidos){
   localStorage.setItem("pedido", JSON.stringify(listaPedidos));
 };
 
-// //renderizado de mi LocalStorage
-// const obtenerPedido = () => {
-//   pedidos.forEach((p) => {
-//     const pedido = document.createElement("div");
-//     pedido.classList.add("descripcionTkt");
-//     //Descripcion
-//     const miPedidoDescripcion = document.createElement("p");
-//     miPedidoDescripcion.textContent = `${p.cantidad} x Hamburguesa ${p.nombre} $${p.precio}`;
-//     // Boton
-//     const pedidoBoton = document.createElement("button");
-//     pedidoBoton.classList.add("btn-style--tkt");
-//     pedidoBoton.textContent = "Eliminar";
-//     pedidoBoton.setAttribute("serialDelete", p.serial);
-//     pedidoBoton.addEventListener("click", eliminarPedido);
-
-//     // Insertamos
-//     pedido.appendChild(miPedidoDescripcion);
-//     pedido.appendChild(pedidoBoton);
-//     facturacion.appendChild(pedido);
-
-//   const total = pedidos.reduce((acc, p) => acc + (p.precio*p.cantidad), 0);
-//   montoTotal.innerHTML= `<h3>TOTAL $ ${total}</h3>`;
-// })
-// };
-
 //evento DOMContentLoaded para que al recargar me muestre mi ultimo carrito creado
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("pedido")) {
     const pedidos = JSON.parse(localStorage.getItem("pedido"));
+
     pedidos.forEach(pedido => {
       listaPedidos.push(pedido);
-    }); //
+    }); 
+
     mostrarCarrito(listaPedidos);
   }
 });

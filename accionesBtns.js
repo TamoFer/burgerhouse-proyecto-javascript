@@ -28,3 +28,4 @@ export function eliminarPedido(event) {
   mostrarCarrito(listaPedidos);
 };
 
+export function pagarPedido(event) {};
