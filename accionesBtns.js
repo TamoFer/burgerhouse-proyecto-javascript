@@ -10,7 +10,6 @@ export function agregarPedido(event) {
 
   burgerAgregada?burgerAgregada.cantidad++:(burger.cantidad=1,listaPedidos.push(burger));
 
-  sumaTotal(listaPedidos);
   mostrarCarrito(listaPedidos);
 };
 
@@ -24,8 +23,6 @@ export function eliminarPedido(event) {
   burgerAgregada.cantidad--;
   burgerAgregada.cantidad===0 &&listaPedidos.splice(indice,1);
   
-  sumaTotal(listaPedidos);
   mostrarCarrito(listaPedidos);
 };
 
-export function pagarPedido(event) {};
