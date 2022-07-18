@@ -1,5 +1,5 @@
 // importacion de funciones de otros modulos
-import { hamburguesas,listaPedidos,sumaTotal } from "./hamburgueseria.js";
+import { hamburguesas,listaPedidos} from "./hamburgueseria.js";
 import { mostrarCarrito } from "./renders.js";
 
 //agrego desde button de card la burger
@@ -35,7 +35,7 @@ export function abonarTodo(){
     event.preventDefault();
     const msj= document.querySelector('.toast-body');
     msj.textContent = `Hola ${nombre.value} ya estamos preparando tu pedido!
-                      Lo enviaremos cuando este hecho a ${adress.value}                        
+                      Lo enviaremos cuando este hecho, a ${adress.value}                        
                       ¡Gracias por comprar en BURGERHOUSE!`;
                 
     const toastTrigger = document.getElementById('liveToastBtn')

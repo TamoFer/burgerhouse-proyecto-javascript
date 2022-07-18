@@ -1,5 +1,5 @@
 // importacion de funciones de otros modulos
-import { abonarTodo, agregarPedido, eliminarPedido} from "./accionesBtns.js";
+import { abonarTodo} from "./accionesBtns.js";
 import { renderizarCards, mostrarCarrito } from "./renders.js";
 
 export const hamburguesas = [
