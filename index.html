@@ -39,7 +39,21 @@
         <div id="facturacion"></div>
         <!--- div que mostrara suma total del carrito---->
         <div id="montoTotal"></div>
-        <div id="msjPedidoPago"></div>
+        <div id="msjPedidoPago">
+          <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="toast-header">
+                <img src="" class="rounded me-2" alt="">
+                <strong class="me-auto">BURGERHOUSE</strong>
+                <small>45min aprox.</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                Tu pedido ya esta en proceso de elaboracion! 
+              </div>
+            </div>
+          </div>
+        </div>
       </article>
       
     </section>

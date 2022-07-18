@@ -79,7 +79,7 @@ export function sumaTotal(array) {
 
   montoTotal.innerHTML = `<h3>TOTAL $ ${total}</h3>`;
   montoTotal.innerHTML += `
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">PAGAR TODO</button>
+              <button type="button" id="modal-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">PAGAR TODO</button>
   
               <!-- Modal -->
               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -149,25 +149,24 @@ export function sumaTotal(array) {
 
   submit.addEventListener('submit', (event) => {
     event.preventDefault();
-    const msjPago=document.querySelector('#msjPedidoPago');
-    msjPago.innerHTML= `
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <img src="..." class="rounded me-2" alt="...">
-          <strong class="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-          Hello, world! This is a toast message.
-        </div>
-      </div>
-    </div>`;
+    const toastTrigger = document.getElementById('liveToastBtn')
+    const toastLiveExample = document.getElementById('liveToast')
+    if (toastTrigger) {
+        toastTrigger.addEventListener('click', () => {
+        const toast = new bootstrap.Toast(toastLiveExample)
+        toast.show()
+      });
+};
+    // const msjPago=document.querySelector('#msjPedidoPago');
+    // msjPago.innerHTML= `
+    // `;
     
-    console.log(msjPago);
   });
 }
+
+
+
+
 
 // funcion de guardado en LocalStorage de mi lista de pedidos
 export function guardandoLocalmente(listaPedidos) {
