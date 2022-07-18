@@ -46,7 +46,5 @@ export function abonarTodo(){
           toast.show();
         });
       };
-    // const modal= document.querySelector('.modal fade');
-    // modal.setAttribute('data-bs-dismiss', 'modal');
   });
 };
