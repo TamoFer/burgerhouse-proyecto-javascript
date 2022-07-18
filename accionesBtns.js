@@ -26,3 +26,27 @@ export function eliminarPedido(event) {
   mostrarCarrito(listaPedidos);
 };
 
+export function abonarTodo(){
+  const submit = document.querySelector('#form');
+  const nombre = document.querySelector('#nombre');
+  const adress = document.querySelector('#direccion');
+  
+  submit.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const msj= document.querySelector('.toast-body');
+    msj.textContent = `Hola ${nombre.value} ya estamos preparando tu pedido!
+                      Lo enviaremos cuando este hecho a ${adress.value}                        
+                      ¡Gracias por comprar en BURGERHOUSE!`;
+                
+    const toastTrigger = document.getElementById('liveToastBtn')
+    const toastLiveExample = document.getElementById('liveToast')
+    if (toastTrigger) {
+        toastTrigger.addEventListener('click', () => {
+          const toast = new bootstrap.Toast(toastLiveExample);
+          toast.show();
+        });
+      };
+    // const modal= document.querySelector('.modal fade');
+    // modal.setAttribute('data-bs-dismiss', 'modal');
+  });
+};

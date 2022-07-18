@@ -1,5 +1,5 @@
 // importacion de funciones de otros modulos
-import { agregarPedido, eliminarPedido} from "./accionesBtns.js";
+import { abonarTodo, agregarPedido, eliminarPedido} from "./accionesBtns.js";
 import { renderizarCards, mostrarCarrito } from "./renders.js";
 
 export const hamburguesas = [
@@ -66,6 +66,7 @@ export const listaPedidos = [];
 export const menus = document.querySelector("#menus");
 export const facturacion = document.querySelector("#facturacion");
 const montoTotal = document.querySelector("#montoTotal");
+const msjPago = document.querySelector("#msjPedidoPago");
 
 //instancio funcion para ver cards por pantalla
 renderizarCards(hamburguesas);
@@ -82,7 +83,7 @@ export function sumaTotal(array) {
               <button type="button" id="modal-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">PAGAR TODO</button>
   
               <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -132,7 +133,7 @@ export function sumaTotal(array) {
                       </div>
 
                       <div class="col-12 d-md-flex p-1 justify-content-md-center">
-                        <button class="btn btn-primary"  id="liveToastBtn" type="submit">Abonar el pedido</button>
+                        <button  class="btn btn-primary"  id="liveToastBtn" type="submit" >Abonar el pedido</button>
                       </div>
                       
                     </form>
@@ -140,33 +141,8 @@ export function sumaTotal(array) {
                   </div>
                 </div>
               </div>`;
-  const submit = document.querySelector('#form');
-  const nombre = document.querySelector('#nombre');
-  const apellido = document.querySelector('#apellido');
-  const telefono = document.querySelector('#telefono');
-  const adress = document.querySelector('#direccion');
-  const fPago = document.querySelector('#fpago');
-
-  submit.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const toastTrigger = document.getElementById('liveToastBtn')
-    const toastLiveExample = document.getElementById('liveToast')
-    if (toastTrigger) {
-        toastTrigger.addEventListener('click', () => {
-        const toast = new bootstrap.Toast(toastLiveExample)
-        toast.show()
-      });
+  abonarTodo();
 };
-    // const msjPago=document.querySelector('#msjPedidoPago');
-    // msjPago.innerHTML= `
-    // `;
-    
-  });
-}
-
-
-
-
 
 // funcion de guardado en LocalStorage de mi lista de pedidos
 export function guardandoLocalmente(listaPedidos) {
