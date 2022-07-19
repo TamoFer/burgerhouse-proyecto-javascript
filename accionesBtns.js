@@ -50,8 +50,3 @@ export function abonarTodo(){
                       ¡Gracias por comprar en BURGERHOUSE!`;
   });
 };
-
-
-// listaPedidos=[];
-// localStorage.clear(); 
-// mostrarCarrito(listaPedidos);
