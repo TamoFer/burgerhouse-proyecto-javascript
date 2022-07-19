@@ -26,6 +26,8 @@ export function eliminarPedido(event) {
   mostrarCarrito(listaPedidos);
 };
 
+
+//msj que indica que el pedido ya fue abonado, en un toast
 export function abonarTodo(){
   const submit = document.querySelector('#form');
   const nombre = document.querySelector('#nombre');
@@ -38,11 +40,11 @@ export function abonarTodo(){
                       Lo enviaremos cuando este hecho, a ${adress.value}                        
                       ¡Gracias por comprar en BURGERHOUSE!`;
                 
-    const toastTrigger = document.getElementById('liveToastBtn')
-    const toastLiveExample = document.getElementById('liveToast')
+    const toastTrigger = document.getElementById('liveToastBtn');
+    const toastMsj = document.getElementById('liveToast');
     if (toastTrigger) {
         toastTrigger.addEventListener('click', () => {
-          const toast = new bootstrap.Toast(toastLiveExample);
+          const toast = new bootstrap.Toast(toastMsj);
           toast.show();
         });
       };
