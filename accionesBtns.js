@@ -37,12 +37,11 @@ export function abonarTodo(){
     event.preventDefault();
     const toastTrigger = document.getElementById('liveToastBtn');
     const toastMsj = document.getElementById('liveToast');
-    if (toastTrigger) {
-        toastTrigger.addEventListener('click', () => {
-          const toast = new bootstrap.Toast(toastMsj);
-          toast.show();
-        });
-      };
+
+    toastTrigger!=null && toastTrigger.addEventListener('click', () => {
+      const toast = new bootstrap.Toast(toastMsj);
+      toast.show();
+    });
 
     const msj= document.querySelector('.toast-body');
     msj.textContent = `Hola ${nombre.value} ya estamos preparando tu pedido!
