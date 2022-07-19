@@ -35,11 +35,6 @@ export function abonarTodo(){
   
   submit.addEventListener('submit', (event) => {
     event.preventDefault();
-    const msj= document.querySelector('.toast-body');
-    msj.textContent = `Hola ${nombre.value} ya estamos preparando tu pedido!
-                      Lo enviaremos cuando este hecho, a ${adress.value}                        
-                      ¡Gracias por comprar en BURGERHOUSE!`;
-                
     const toastTrigger = document.getElementById('liveToastBtn');
     const toastMsj = document.getElementById('liveToast');
     if (toastTrigger) {
@@ -48,5 +43,15 @@ export function abonarTodo(){
           toast.show();
         });
       };
+
+    const msj= document.querySelector('.toast-body');
+    msj.textContent = `Hola ${nombre.value} ya estamos preparando tu pedido!
+                      Lo enviaremos cuando este hecho, a ${adress.value}                        
+                      ¡Gracias por comprar en BURGERHOUSE!`;
   });
 };
+
+
+// listaPedidos=[];
+// localStorage.clear(); 
+// mostrarCarrito(listaPedidos);

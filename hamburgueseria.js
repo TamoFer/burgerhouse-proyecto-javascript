@@ -80,9 +80,9 @@ export function sumaTotal(array) {
 
   montoTotal.innerHTML = `<h3>TOTAL $ ${total}</h3>`;
   montoTotal.innerHTML += `
-              <button type="button" id="modal-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">PAGAR TODO</button>
+              <button type="button" id="modal-btn" class="btn btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">PAGAR TODO</button>
   
-              <!-- Modal -->
+              
               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
                 <div class="modal-dialog">
                   <div class="modal-content">

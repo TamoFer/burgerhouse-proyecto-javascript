@@ -7,6 +7,9 @@
 #facturacion{
     font-size: 20px;
     width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #menus{
@@ -55,27 +58,24 @@ section{
 }
 
 /* estilo de botones html */
-.btn-style--card{
-    margin-top: 20px;
-    height: 30px;
-    width: 70px;
-    margin-left: 35%;
+.btn-info{
+    width: 50%;
+    height: 35px;
+    margin:10px 0px 5px 25%;
+    padding: 0px;
+    
 }
 
-.btn-style--tkt{
-    margin-top: 20px;
-    height: 30px;
+.btn-danger{
+    width:auto ;
+    height:35px ;
 }
 
-.btn-pago{
-    margin-top: 20px;
-    height: 30px;
-}
 
 /* estilos de div */
 .descripcionTkt{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    margin: 10px 10px 10px 10px;
 }

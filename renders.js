@@ -16,11 +16,12 @@ export function renderizarCards(objeto) {
     const miCardDescripcion = document.createElement("p");
     miCardDescripcion.textContent = `Deliciosa Hamburguesa de ${carne} ${medallones} que trae ${ingredientes} acompañado de ${guarnicion}`;
 
-    const miCardPrecio = document.createElement("h3");
+    const miCardPrecio = document.createElement("h4");
     miCardPrecio.textContent = `Precio $ ${precio}`;
 
     const tktBoton = document.createElement("button");
-    tktBoton.classList.add("btn-style--card");
+    tktBoton.classList.add("btn");
+    tktBoton.classList.add("btn-info");
     tktBoton.textContent = "Agregar";
     tktBoton.setAttribute("serial", serial);
     tktBoton.addEventListener("click", agregarPedido);
@@ -42,10 +43,11 @@ export function mostrarCarrito(listaPedidos) {
     miTkt.classList.add("descripcionTkt");
     
     const miTktDescripcion = document.createElement("p");
-    miTktDescripcion.textContent = `${cantidad} x Hamburguesa ${nombre} $${precio}`;
+    miTktDescripcion.textContent = `${cantidad} x Hamburguesa ${nombre} `;
 
     const tktBoton = document.createElement("button");
-    tktBoton.classList.add("btn-style--tkt");
+    tktBoton.classList.add("btn");
+    tktBoton.classList.add("btn-danger");
     tktBoton.textContent = "Eliminar";
     tktBoton.setAttribute("serialDelete",serial);
     tktBoton.addEventListener("click", eliminarPedido);
