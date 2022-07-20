@@ -16,6 +16,14 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.cardPedido{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
 
 #menus{
     display: flex;
@@ -96,4 +104,5 @@ section{
 .descripcionPedido{
     display: flex;
     flex-direction: column;
+    font-size: 10px;
 }

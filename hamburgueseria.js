@@ -141,8 +141,8 @@ export function sumaTotal(array) {
             </div>`;
   // abonarTodo();
   datosCliente();
+  
 };
-
 // funcion de guardado en LocalStorage de mi lista de pedidos
 export function guardandoLocalmente(listaPedidos) {
   localStorage.setItem("pedido", JSON.stringify(listaPedidos));
