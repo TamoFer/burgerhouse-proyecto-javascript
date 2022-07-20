@@ -28,24 +28,57 @@ export function eliminarPedido(event) {
 
 
 //msj que indica que el pedido ya fue abonado, en un toast
-export function abonarTodo(){
-  const submit = document.querySelector('#form');
-  const nombre = document.querySelector('#nombre');
-  const adress = document.querySelector('#direccion');
+// export function abonarTodo(){
+//   const submit = document.querySelector('#form');
+//   const nombre = document.querySelector('#nombre');
+//   const adress = document.querySelector('#direccion');
   
-  submit.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const toastTrigger = document.getElementById('liveToastBtn');
-    const toastMsj = document.getElementById('liveToast');
+//   // submit.addEventListener('submit', (event) => {
+//   //   event.preventDefault();
+//   //   // localStorage.clear();
+//   //   // const toastTrigger = document.getElementById('liveToastBtn');
+//   //   // const toastMsj = document.getElementById('liveToast');
 
-    toastTrigger!=null && toastTrigger.addEventListener('click', () => {
-      const toast = new bootstrap.Toast(toastMsj);
-      toast.show();
-    });
+//   //   // toastTrigger!=null && toastTrigger.addEventListener('click', () => {
+//   //   //   const toast = new bootstrap.Toast(toastMsj);
+//   //   //   toast.show();
+//   //   // });
 
-    const msj= document.querySelector('.toast-body');
-    msj.textContent = `Hola ${nombre.value} ya estamos preparando tu pedido!
-                      Lo enviaremos cuando este hecho, a ${adress.value}                        
-                      ¡Gracias por comprar en BURGERHOUSE!`;
-  });
+//   //   // const msj= document.querySelector('.toast-body');
+//   //   // msj.textContent = `Hola ${nombre.value} ya estamos preparando tu pedido!
+//   //   //                   Lo enviaremos cuando este hecho, a ${adress.value}                        
+//   //   //                   ¡Gracias por comprar en BURGERHOUSE!`;
+//   // });
+// };
+
+
+export function datosCliente(){
+  const btn = document.getElementById('form');
+  btn.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const yaPago= document.getElementById('pedidosPagos');
+      const pedidos= JSON.parse(localStorage.getItem("pedido"));
+      yaPago.innerHTML= `<div>
+                        <h6>Pedido de ${nombre.value}</h6>
+                        <p id="descripcionPedido"></p>  
+                        <h6>TOTAL ${total.value}</h6>
+                        <button id="btn-pp" type="button">Seguimiento</button>
+                        </div>`
+      pedidos.forEach(p => {
+        const descripcionPedido= document.getElementById('descripcionPedido');
+        descripcionPedido.innerHTML+= `<p>${p.nombre} x ${p.cantidad}</p>`
+      });
+
+      swal({
+        icon: "success",
+        text: `¡Genial ${nombre.value}! Ya tenemos tu orden en proceso de elaboracion`,
+        button: false,
+        timer: 3000
+      });
+      const cerrarW= setTimeout(() => {
+        // localStorage.clear();
+        // window.location.reload();
+      },3200);
+
+    })
 };

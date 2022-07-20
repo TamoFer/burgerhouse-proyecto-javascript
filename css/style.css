@@ -4,6 +4,11 @@
     flex-direction: column;
 }
 
+#pedidosPagos{
+    display: flex;
+    flex-direction: row;
+}
+
 #facturacion{
     font-size: 20px;
     width: 100%;
@@ -78,4 +83,17 @@ section{
     flex-direction: row;
     justify-content: space-between;
     margin: 10px 10px 10px 10px;
+}
+
+.swal-text {
+    padding: 17px;
+    display: block;
+    margin: 22px;
+    text-align: center;
+    color: #61534e;
+}
+
+.descripcionPedido{
+    display: flex;
+    flex-direction: column;
 }
