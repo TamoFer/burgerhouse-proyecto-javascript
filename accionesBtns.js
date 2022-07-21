@@ -26,7 +26,7 @@ export function eliminarPedido(event) {
   mostrarCarrito(listaPedidos);
 };
 
-
+//funcion que muestra alertas y noficaciones luego del submit 
 export function datosCliente(){
   const btn = document.getElementById('form');
   btn.addEventListener('submit', (e) => {
@@ -35,7 +35,7 @@ export function datosCliente(){
       yaPago.innerHTML+= `<div class="cardPedido">
                         <h6>Pedido de ${nombre.value}</h6>
                         <h6>TOTAL ${total.value}</h6>
-                        <button class="btn-pp" type="button">Seguimiento</button>
+                        <button class="btn btn-dark btn-pp" type="button">Seguimiento</button>
                         </div>`
 
       swal({
@@ -44,7 +44,7 @@ export function datosCliente(){
         button: false,
         timer: 3000
       });
-
+      
       const btn1= document.querySelector('.btn-pp');
       btn1.addEventListener('click', () => {
         Toastify({

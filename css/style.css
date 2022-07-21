@@ -16,14 +16,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.cardPedido{
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-}
+
 
 #menus{
     display: flex;
@@ -84,6 +77,9 @@ section{
     height:35px ;
 }
 
+.btn-pp{
+    margin: 10px;
+}
 
 /* estilos de div */
 .descripcionTkt{
@@ -93,16 +89,27 @@ section{
     margin: 10px 10px 10px 10px;
 }
 
-.swal-text {
-    padding: 17px;
-    display: block;
-    margin: 22px;
-    text-align: center;
-    color: #61534e;
-}
-
 .descripcionPedido{
     display: flex;
     flex-direction: column;
     font-size: 10px;
 }
+
+.cardPedido{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding: 10px;
+}
+
+/* estilo de texto sweetalert */
+.swal-text {
+    padding: 17px;
+    display: block;
+    margin: 22px;
+    text-align: center;
+}
+
