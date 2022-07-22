@@ -5,7 +5,7 @@ import { renderizarCards, mostrarCarrito } from "./renders.js";
 //traigo mi BD local y retorno una lista de objetos
 const objeto = ()=>{
   const datos=[];
-  fetch("/bd.json")
+  fetch("bd_local/bd.json")
   .then(res=>res.json())
   .then(data=>{
     data.forEach(burgers=>{
@@ -17,7 +17,7 @@ const objeto = ()=>{
 
 //traigo mi BD local y renderizo las cards
 const objetoRender = ()=>{
-  fetch("/bd.json")
+  fetch("bd_local/bd.json")
   .then(res=>res.json())
   .then(data=>{
     renderizarCards(data);
