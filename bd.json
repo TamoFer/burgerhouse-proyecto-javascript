@@ -1,0 +1,56 @@
+[
+    {
+    "serial": 1,
+    "nombre": "Americana",
+    "carne": "Carne",
+    "medallones": "Doble",
+    "guarnicion": "Papas fritas",
+    "ingredientes": "Chedar, Bacon crujiente y salsa Barbacoa",
+    "precio": 1200,
+    "cantidad": 1
+},
+{
+    "serial": 2,
+    "nombre": "Clásica",
+    "carne": "Carne",
+    "medallones": "Doble",
+    "guarnicion": "Papas fritas",
+    "ingredientes": "Tomate, Lechuga y Mayonesa",
+    "precio": 950,
+    "cantidad": 1
+    
+},
+{
+    "serial": 3,
+    "nombre": "Crispy",
+    "carne": "Pollo",
+    "medallones": "Simple",
+    "guarnicion": "Aros de cebolla",
+    "ingredientes": "Cebolla crispy, Lechuga y Mayo Alioli",
+    "precio": 1000,
+    "cantidad": 1
+    
+},
+{
+    "serial": 4,
+    "nombre": "Power Onion",
+    "carne": "Pollo",
+    "medallones": "Doble",
+    "guarnicion": "Bastones de Muzarella",
+    "ingredientes": "Aros de cebolla, Cebolla, Lechuga y Ketchup",
+    "precio": 1050,
+    "cantidad": 1
+    
+},
+{
+    "serial": 5,
+    "nombre": "NotBurger",
+    "carne": "Garbanzos con lentejas",
+    "medallones": "Simple",
+    "guarnicion": "Falafels",
+    "ingredientes": "Tomate, Lechuga, Cebolla y Mayo Alioli",
+    "precio": 1100,
+    "cantidad": 1
+    
+}
+]
