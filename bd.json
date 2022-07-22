@@ -8,8 +8,8 @@
     "ingredientes": "Chedar, Bacon crujiente y salsa Barbacoa",
     "precio": 1200,
     "cantidad": 1
-},
-{
+    },
+    {
     "serial": 2,
     "nombre": "Clásica",
     "carne": "Carne",
@@ -19,8 +19,8 @@
     "precio": 950,
     "cantidad": 1
     
-},
-{
+    },
+    {
     "serial": 3,
     "nombre": "Crispy",
     "carne": "Pollo",
@@ -30,8 +30,8 @@
     "precio": 1000,
     "cantidad": 1
     
-},
-{
+    },
+    {
     "serial": 4,
     "nombre": "Power Onion",
     "carne": "Pollo",
@@ -41,8 +41,8 @@
     "precio": 1050,
     "cantidad": 1
     
-},
-{
+    },
+    {
     "serial": 5,
     "nombre": "NotBurger",
     "carne": "Garbanzos con lentejas",
@@ -52,5 +52,5 @@
     "precio": 1100,
     "cantidad": 1
     
-}
+    }
 ]
