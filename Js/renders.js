@@ -7,30 +7,21 @@ export function renderizarCards(objeto) {
   objeto.forEach((menu) => {
     let {serial,nombre,carne,medallones,guarnicion,ingredientes,precio}=menu;
 
-    const miCard = document.createElement("div");
-    miCard.classList.add("pedido");
-
-    const miCardTitle = document.createElement("h2");
-    miCardTitle.textContent = nombre;
-
-    const miCardDescripcion = document.createElement("p");
-    miCardDescripcion.textContent = `Deliciosa Hamburguesa de ${carne} ${medallones} que trae ${ingredientes} acompañado de ${guarnicion}`;
-
-    const miCardPrecio = document.createElement("h4");
-    miCardPrecio.textContent = `Precio $ ${precio}`;
-
-    const tktBoton = document.createElement("button");
-    tktBoton.classList.add("btn");
-    tktBoton.classList.add("btn-info");
-    tktBoton.textContent = "Agregar";
-    tktBoton.setAttribute("serial", serial);
-    tktBoton.addEventListener("click", agregarPedido);
-
-    miCard.appendChild(miCardTitle);
-    miCard.appendChild(miCardDescripcion);
-    miCard.appendChild(miCardPrecio);
-    miCard.appendChild(tktBoton);
-    menus.appendChild(miCard);
+    menus.innerHTML+=`
+    <div class="card">
+      <div class="card-info">
+        <p class="text-title">${nombre}</p>
+        <img src="" ></img>
+        <p class="text-body">Burger ${medallones} de ${carne}  que tiene ${ingredientes} y viene con una guarnicion de ${guarnicion} </p>
+        <div class="card-img"></div>
+      </div>
+      <div class="card-footer">
+        <span class="text-title">$${precio}</span>
+        <img class="btn-card" src="../iconos/agregar.png" type=button ></img>
+        <img class="btn-card" src="../iconos/eliminar.png" type=button ></img>
+      </div>
+    </div>`
+      
   });
 };
 
