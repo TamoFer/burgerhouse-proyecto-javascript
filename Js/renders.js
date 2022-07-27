@@ -6,25 +6,60 @@ import { menus,facturacion,guardandoLocalmente, sumaTotal} from "./hamburgueseri
 export function renderizarCards(objeto) {
   objeto.forEach((menu) => {
     let {serial,nombre,carne,medallones,guarnicion,ingredientes,precio,imagen}=menu;
+    
+    const miCard = document.createElement("div");
+    miCard.classList.add("card");
 
-    menus.innerHTML+=`
-    <div class="card">
-      <div class="card-info">
-        <p class="text-title">${nombre}</p>
-        <img class="card-img" src="${imagen}" ></img>
-        <p class="text-body">Burger ${medallones} de ${carne}  que tiene ${ingredientes} y viene con una guarnicion de ${guarnicion} </p>
-      </div>
-      <div class="card-footer">
-        <span class="text-title">PRECIO $${precio}</span>
-        <div>
-          <img class="btn-card--agregar" src="../iconos/agregar.png" type=button ></img>
-          <img class="btn-card--eliminar" src="../iconos/eliminar.png" type=button ></img>
-        </div>
-        
-      </div>
-    </div>`
-      
+    const miCardInfo = document.createElement("div");
+    miCardInfo.classList.add("card-info")
+    
+    const miCardTextTitle = document.createElement("p");
+    miCardTextTitle.classList.add("text-title");
+    miCardTextTitle.innerText = nombre;
+
+    const miCardImg= document.createElement("img");
+    miCardImg.classList.add("card-img");
+    miCardImg.setAttribute("src", imagen);
+
+    const miCardDescripcion= document.createElement("p");
+    miCardDescripcion.classList.add("text-body");
+    miCardDescripcion.innerText =`Burger ${medallones} de ${carne}  que tiene ${ingredientes} y viene con una guarnicion de ${guarnicion}` ;
+
+    const miCardFooter= document.createElement("div");
+    miCardFooter.classList.add("card-footer");
+
+    const miCardPrecio= document.createElement("span");
+    miCardPrecio.classList.add("text-title");
+    miCardPrecio.innerText =`PRECIO $${precio}`;
+
+    const miCardIcons= document.createElement("div");
+
+    const miCardIconAgregar = document.createElement("img");
+    miCardIconAgregar.setAttribute("src","../iconos/agregar.png");
+    miCardIconAgregar.setAttribute("serial",serial);
+    miCardIconAgregar.setAttribute("type","button");
+    miCardIconAgregar.addEventListener("click",agregarPedido);
+
+    const miCardIconEliminar = document.createElement("img");
+    miCardIconEliminar.setAttribute("src","../iconos/eliminar.png");
+    miCardIconEliminar.setAttribute("serialDelete",serial);
+    miCardIconEliminar.setAttribute("type","button");
+    miCardIconEliminar.addEventListener("click",eliminarPedido);
+
+    
+    miCardInfo.appendChild(miCardTextTitle);
+    miCardInfo.appendChild(miCardImg);
+    miCardInfo.appendChild(miCardDescripcion);
+    miCardIcons.appendChild(miCardIconAgregar);
+    miCardIcons.appendChild(miCardIconEliminar);
+    miCardFooter.appendChild(miCardPrecio);
+    miCardFooter.appendChild(miCardIcons);
+    miCard.appendChild(miCardInfo);
+    miCard.appendChild(miCardFooter);
+    menus.appendChild(miCard);
+
   });
+
 };
 
 //render de carrito

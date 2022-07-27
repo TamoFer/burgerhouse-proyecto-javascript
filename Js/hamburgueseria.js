@@ -38,6 +38,8 @@ export const facturacion = document.querySelector("#facturacion");
 const montoTotal = document.querySelector("#montoTotal");
 
 
+
+
 //devuelve la suma total de todos los pedidos de mi lista de pedidos utilizando reduce
 export function sumaTotal(array) {
   const total = array.reduce(
