@@ -5,20 +5,22 @@ import { menus,facturacion,guardandoLocalmente, sumaTotal} from "./hamburgueseri
 //render de cards
 export function renderizarCards(objeto) {
   objeto.forEach((menu) => {
-    let {serial,nombre,carne,medallones,guarnicion,ingredientes,precio}=menu;
+    let {serial,nombre,carne,medallones,guarnicion,ingredientes,precio,imagen}=menu;
 
     menus.innerHTML+=`
     <div class="card">
       <div class="card-info">
         <p class="text-title">${nombre}</p>
-        <img src="" ></img>
+        <img class="card-img" src="${imagen}" ></img>
         <p class="text-body">Burger ${medallones} de ${carne}  que tiene ${ingredientes} y viene con una guarnicion de ${guarnicion} </p>
-        <div class="card-img"></div>
       </div>
       <div class="card-footer">
-        <span class="text-title">$${precio}</span>
-        <img class="btn-card" src="../iconos/agregar.png" type=button ></img>
-        <img class="btn-card" src="../iconos/eliminar.png" type=button ></img>
+        <span class="text-title">PRECIO $${precio}</span>
+        <div>
+          <img class="btn-card--agregar" src="../iconos/agregar.png" type=button ></img>
+          <img class="btn-card--eliminar" src="../iconos/eliminar.png" type=button ></img>
+        </div>
+        
       </div>
     </div>`
       

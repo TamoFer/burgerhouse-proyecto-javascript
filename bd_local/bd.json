@@ -7,8 +7,10 @@
     "guarnicion": "Papas fritas",
     "ingredientes": "Chedar, Bacon crujiente y salsa Barbacoa",
     "precio": 1200,
-    "cantidad": 1
+    "cantidad": 1,
+    "imagen": "../imagenes/burger-americana.png"
     },
+
     {
     "serial": 2,
     "nombre": "Clásica",
@@ -17,40 +19,43 @@
     "guarnicion": "Papas fritas",
     "ingredientes": "Tomate, Lechuga y Mayonesa",
     "precio": 950,
-    "cantidad": 1
-    
+    "cantidad": 1,
+    "imagen": "../imagenes/burger-clasica.png"
     },
+
     {
     "serial": 3,
     "nombre": "Crispy",
     "carne": "Pollo",
     "medallones": "Simple",
     "guarnicion": "Aros de cebolla",
-    "ingredientes": "Cebolla crispy, Lechuga y Mayo Alioli",
+    "ingredientes": "Tomate, Lechuga y Mayo Alioli",
     "precio": 1000,
-    "cantidad": 1
-    
+    "cantidad": 1,
+    "imagen": "../imagenes/burger-crispy.png"
     },
+
     {
     "serial": 4,
     "nombre": "Power Onion",
     "carne": "Pollo",
-    "medallones": "Doble",
+    "medallones": "Simple",
     "guarnicion": "Bastones de Muzarella",
-    "ingredientes": "Aros de cebolla, Cebolla, Lechuga y Ketchup",
+    "ingredientes": "Aros de cebolla, Bacon, Cheddar, Mayonesa y Ketchup",
     "precio": 1050,
-    "cantidad": 1
-    
+    "cantidad": 1,
+    "imagen": "../imagenes/burger-powerOnion.png"
     },
+
     {
     "serial": 5,
     "nombre": "NotBurger",
-    "carne": "Garbanzos con lentejas",
+    "carne": "medallon de soja empanado",
     "medallones": "Simple",
     "guarnicion": "Falafels",
-    "ingredientes": "Tomate, Lechuga, Cebolla y Mayo Alioli",
+    "ingredientes": "Tomate, Lechuga, Cebolla, Pepinillos y Ketchup",
     "precio": 1100,
-    "cantidad": 1
-    
+    "cantidad": 1,
+    "imagen": "../imagenes/burger-veggie.png"
     }
 ]
