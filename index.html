@@ -12,16 +12,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Desafio complementario</title>
   </head>
-  <body>
+  <body >
     <header class="header">
       <div><h1>BURGERHOUSE</h1></div>
       <div>
         <nav>
-          <!-- <ul>
-                    <li>Menus</li>
-                    <li>Hacer Pedido</li>
-                    <li>Ver Carrito</li>
-                </ul> -->
+          <ul>
+              <li>Menus</li>
+              <li>
+                <div class="carro">
+                  <img id="carrito" src="iconos/carrito.png" type="button">
+                  <div class="contador"></div>
+                </div>
+              </li>
+          </ul>
+          
         </nav>
       </div>
     </header>
@@ -29,9 +34,11 @@
     <section>
       <!--- article con opciones menu---->
       <article id="opciones">
-        <div>
+        <div class="banner">
           <p>Bienvenido a BURGERHOUSE , aca tenes los menus que ofrecemos:</p>
+          <p>carrito de compras</p>
         </div>
+        
         <!--- div que alojara cards creadas por DOM---->
         <div id="menus"></div>
         <!--- div que alojara pedidos abonados creados por DOM---->

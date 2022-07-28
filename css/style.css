@@ -7,6 +7,19 @@ html{
     font-size: 62.5%;
 }
 
+body{
+    background-image: url(../imagenes/fondo-body.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
 /* estilos de etiquetas ID  */
 #opciones{ 
     display: flex;
@@ -78,12 +91,23 @@ html{
 /*Text*/
 .text-title {
     font-weight: 900;
-    font-size: 1.2em;
+    font-size: 2rem;
     line-height: 1.5;
+    text-decoration: underline;
+    text-transform: uppercase;
+
 }
 
+.text-title--precio {
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+
 .text-body {
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding-bottom: 10px;
     
 }
@@ -94,15 +118,34 @@ html{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0px 2rem 0px 2rem;
+    
+}
+
+.header div nav ul li{
+    list-style: none;
+}
+
+.header div nav ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.carro{
+    display: flex;
+    flex-direction: row;
+}
+
+.contador{
+    background-color:coral;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    margin: .5rem 0rem 0rem -1.7rem;
 }
 
 /* estilo del section */
-section{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 100vh;
-}
+
 
 /* estilo de botones html */
 .btn-info{

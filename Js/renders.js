@@ -5,7 +5,7 @@ import { menus,facturacion,guardandoLocalmente, sumaTotal} from "./hamburgueseri
 //render de cards
 export function renderizarCards(objeto) {
   objeto.forEach((menu) => {
-    let {serial,nombre,carne,medallones,guarnicion,ingredientes,precio,imagen}=menu;
+    let {serial,nombre,descripcion,precio,imagen}=menu;
     
     const miCard = document.createElement("div");
     miCard.classList.add("card");
@@ -22,14 +22,14 @@ export function renderizarCards(objeto) {
 
     const miCardDescripcion= document.createElement("p");
     miCardDescripcion.classList.add("text-body");
-    miCardDescripcion.innerText =`Burger ${medallones} de ${carne}  que tiene ${ingredientes} y viene con una guarnicion de ${guarnicion}` ;
+    miCardDescripcion.innerText =descripcion ;
 
     const miCardFooter= document.createElement("div");
     miCardFooter.classList.add("card-footer");
 
     const miCardPrecio= document.createElement("span");
-    miCardPrecio.classList.add("text-title");
-    miCardPrecio.innerText =`PRECIO $${precio}`;
+    miCardPrecio.classList.add("text-title--precio");
+    miCardPrecio.innerText =`precio $${precio}`;
 
     const miCardIcons= document.createElement("div");
 
