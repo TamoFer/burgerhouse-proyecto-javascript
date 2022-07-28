@@ -1,6 +1,6 @@
 //importacion de funciones de otros modulos
 import {  datosCliente} from "./accionesBtns.js";
-import { renderizarCards, mostrarCarrito } from "./renders.js";
+import { renderizarCards} from "./renders.js";
 
 //traigo mi BD local y retorno una lista de objetos
 const objeto = ()=>{
@@ -124,6 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pedidos.forEach((pedido) => {
       listaPedidos.push(pedido);
     });
-    mostrarCarrito(listaPedidos);
+    // mostrarCarrito(listaPedidos);
   }
 });

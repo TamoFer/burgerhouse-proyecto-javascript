@@ -18,7 +18,6 @@ export function renderizarCards(objeto) {
     miCardTextTitle.innerText = nombre;
 
     const miCardImg= document.createElement("img");
-    miCardImg.classList.add("card-img");
     miCardImg.setAttribute("src", imagen);
 
     const miCardDescripcion= document.createElement("p");
@@ -63,27 +62,27 @@ export function renderizarCards(objeto) {
 };
 
 //render de carrito
-export function mostrarCarrito(listaPedidos) {
-  facturacion.textContent = "";
-  listaPedidos.forEach((pedido) => {
-    let {serial,nombre,precio,cantidad}= pedido;
-    const miTkt = document.createElement("div");
-    miTkt.classList.add("descripcionTkt");
+// export function mostrarCarrito(listaPedidos) {
+//   facturacion.textContent = "";
+//   listaPedidos.forEach((pedido) => {
+//     let {serial,nombre,precio,cantidad}= pedido;
+//     const miTkt = document.createElement("div");
+//     miTkt.classList.add("descripcionTkt");
     
-    const miTktDescripcion = document.createElement("p");
-    miTktDescripcion.textContent = `${cantidad} x Hamburguesa ${nombre} `;
+//     const miTktDescripcion = document.createElement("p");
+//     miTktDescripcion.textContent = `${cantidad} x Hamburguesa ${nombre} `;
 
-    const tktBoton = document.createElement("button");
-    tktBoton.classList.add("btn");
-    tktBoton.classList.add("btn-danger");
-    tktBoton.textContent = "Eliminar";
-    tktBoton.setAttribute("serialDelete",serial);
-    tktBoton.addEventListener("click", eliminarPedido);
+//     const tktBoton = document.createElement("button");
+//     tktBoton.classList.add("btn");
+//     tktBoton.classList.add("btn-danger");
+//     tktBoton.textContent = "Eliminar";
+//     tktBoton.setAttribute("serialDelete",serial);
+//     tktBoton.addEventListener("click", eliminarPedido);
 
-    miTkt.appendChild(miTktDescripcion);
-    miTkt.appendChild(tktBoton);
-    facturacion.appendChild(miTkt);
-  });
-  guardandoLocalmente(listaPedidos);
-  sumaTotal(listaPedidos);
-}
+//     miTkt.appendChild(miTktDescripcion);
+//     miTkt.appendChild(tktBoton);
+//     facturacion.appendChild(miTkt);
+//   });
+//   guardandoLocalmente(listaPedidos);
+//   sumaTotal(listaPedidos);
+// }
