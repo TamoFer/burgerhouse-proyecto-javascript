@@ -118,7 +118,7 @@ section{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0px 2rem 0px 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
     
 }
 
@@ -142,6 +142,8 @@ section{
     height: 2.2rem;
     border-radius: 50%;
     margin: .5rem 0rem 0rem -1.7rem;
+    text-align: center;
+    font-size: 1.4rem;
 }
 
 /* estilo del section */
@@ -197,4 +199,7 @@ section{
     text-align: center;
 }
 
-
+.carritoImg{
+    width: 45px;
+    height: 45px;
+}

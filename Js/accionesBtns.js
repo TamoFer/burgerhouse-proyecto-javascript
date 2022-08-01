@@ -1,6 +1,6 @@
 //importacion de funciones de otros modulos
-import { BD,listaPedidos} from "./hamburgueseria.js";
-// import { mostrarCarrito } from "./renders.js";
+import { BD,listaPedidos,contador} from "./hamburgueseria.js";
+import { mostrarCarrito } from "./renders.js";
 
 //agrego desde button de card la burger
 export function agregarPedido(event) {
@@ -9,8 +9,9 @@ export function agregarPedido(event) {
   let burgerAgregada = listaPedidos.find((burger) => burger.serial == serial);
 
   burgerAgregada?burgerAgregada.cantidad++:(burger.cantidad=1,listaPedidos.push(burger));
-
-  // mostrarCarrito(listaPedidos);
+  contador();
+  
+  mostrarCarrito(listaPedidos);
 };
 
 
@@ -22,8 +23,8 @@ export function eliminarPedido(event) {
   
   burgerAgregada.cantidad--;
   burgerAgregada.cantidad===0 &&listaPedidos.splice(indice,1);
-  
-  // mostrarCarrito(listaPedidos);
+  contador();
+  mostrarCarrito(listaPedidos);
 };
 
 //funcion que muestra alertas y noficaciones luego del submit 

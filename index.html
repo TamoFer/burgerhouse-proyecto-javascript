@@ -21,7 +21,7 @@
               <li>Menus</li>
               <li>
                 <div class="carro">
-                  <img id="carrito" src="iconos/carrito.png" type="button">
+                  <img id="carritoImg" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" src="iconos/carrito.png" type="button">
                   <div class="contador"></div>
                 </div>
               </li>
@@ -36,7 +36,6 @@
       <article id="opciones">
         <div class="banner">
           <p>Bienvenido a BURGERHOUSE , aca tenes los menus que ofrecemos:</p>
-          <p>carrito de compras</p>
         </div>
         
         <!--- div que alojara cards creadas por DOM---->
@@ -46,9 +45,14 @@
       </article>
       <!--- article con ticket simulador de carrito---->
       <article id="ticket">
-        <h3>TICKET</h3>
         <!--- div que alojara los pedidos creados por DOM---->
-        <div id="facturacion"></div>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Carrito de compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div id="carrito-body" class="offcanvas-body"></div>
+        </div>
         <!--- div que mostrara suma total del carrito---->
         <div id="montoTotal"></div>
       </article>
