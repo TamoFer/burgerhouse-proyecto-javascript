@@ -59,6 +59,16 @@ section{
     justify-content: space-between;
 }
 
+#carritoImg{
+    margin-right: 2rem;
+}
+
+#carrito-total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 /*  estilo de cards creadas por DOM */
 .card{
     width: 300px;
@@ -141,7 +151,7 @@ section{
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 50%;
-    margin: .5rem 0rem 0rem -1.7rem;
+    margin: .5rem 3rem 0rem -3.5rem;
     text-align: center;
     font-size: 1.4rem;
 }
@@ -161,6 +171,7 @@ section{
 .btn-danger{
     width:auto ;
     height:35px ;
+    margin-top: 1rem;
 }
 
 .btn-pp{
@@ -174,6 +185,15 @@ section{
     justify-content: space-between;
     margin: 10px 10px 10px 10px;
 }
+
+.carrito-detalle{
+    width: 20rem;
+    height: auto;
+    font-size: 1.5rem;
+    margin-top: 1.7rem;
+    text-align:start;
+}
+
 
 .descripcionPedido{
     display: flex;
@@ -200,6 +220,6 @@ section{
 }
 
 .carritoImg{
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
 }

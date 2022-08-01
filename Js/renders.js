@@ -72,14 +72,12 @@ export function mostrarCarrito(listaPedidos) {
     miTkt.classList.add("descripcionTkt");
     
     const miTktDescripcion = document.createElement("p");
-    // miTktDescripcion.classList.add("carrito-detalle");
-    miTktDescripcion.textContent = `${cantidad}x Hamburguesa ${nombre}`;
+    miTktDescripcion.classList.add("carrito-detalle");
+    miTktDescripcion.textContent = `${cantidad}u. ${nombre}`;
 
     const miTktImg= document.createElement("img");
     miTktImg.classList.add("carritoImg");
     miTktImg.setAttribute("src", imagen);
-
-
 
     const tktBoton = document.createElement("button");
     tktBoton.classList.add("btn");
@@ -88,11 +86,11 @@ export function mostrarCarrito(listaPedidos) {
     tktBoton.setAttribute("serialDelete",serial);
     tktBoton.addEventListener("click", eliminarPedido);
 
+    
     miTkt.appendChild(miTktImg);
     miTkt.appendChild(miTktDescripcion);
     miTkt.appendChild(tktBoton);
     carritoBody.appendChild(miTkt);
   });
   guardandoLocalmente(listaPedidos);
-  // sumaTotal(listaPedidos);
 }
