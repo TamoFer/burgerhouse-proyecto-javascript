@@ -85,3 +85,55 @@ export function contador(){
   notificacion.textContent = total.toString();
 }
 
+class Cliente{
+  constructor (nombre, telefono, direccion, fpago) {
+    this.nombre = nombre;
+    this.telefono = telefono;
+    this.direccion = direccion;
+    this.fpago = fpago;
+  }
+};
+
+
+
+
+const btnModal= document.querySelector('#modal-btn');
+btnModal.addEventListener('click', () =>{
+  Swal.fire({
+    title: 'Datos de envio',
+    html: `<input type="text" id="nombre" class="swal2-input" placeholder="Nombre ...">
+    <input type="text" id="telefono" class="swal2-input" placeholder="Telefono...">
+    <input type="text" id="direccion" class="swal2-input" placeholder="Direccion...">
+    <div class="menu-fpago">
+      <p>¿Como pagás?</p>
+          <select id="fpago" >
+            <option value="efectivo" selected>Efectivo</option>
+            <option value="MercadoPago" >MercadoPago</option>
+          </select>
+    </div>
+    `,
+    showConfirmButton: true,
+    confirmButtonText: 'Finalizar pedido',
+    focusConfirm: false,
+    preConfirm: () => {
+      const nombre = Swal.getPopup().querySelector('#nombre').value;
+      const telefono = Swal.getPopup().querySelector('#telefono').value;
+      const direccion= Swal.getPopup().querySelector('#direccion').value;
+      const fpago= Swal.getPopup().querySelector('#fpago').value;
+      const cliente= new Cliente(nombre,telefono,direccion,fpago);
+      if (!nombre || !telefono || !direccion || !fpago ) {
+        Swal.showValidationMessage(`¡Completa todos los campos del formulario para el envio!`);
+      }
+      return cliente ;
+    }
+  }).then((result) => {
+      Swal.fire(
+        {
+          icon: 'success',
+          text: `Excelente ${result.value.nombre} tu pedido ya esta pago con ${result.value.fpago} llegara aprox. en 45min a ${result.value.direccion}. ¡Gracias por comprar en BurgerHouse!`,
+        }
+      )}
+    )
+});
+
+
