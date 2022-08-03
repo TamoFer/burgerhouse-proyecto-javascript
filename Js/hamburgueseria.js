@@ -46,10 +46,9 @@ export function sumaTotal(array) {
     (acc, pedido) => acc + pedido.precio * pedido.cantidad,
     0
   );
-  
-  const totalLetra= document.querySelector("#letras-carrito-total");
   const totalMonto = document.querySelector("#monto-carrito-total");
   totalMonto.textContent = `$${total}`;
+  return total;
 };
 
 // funcion de guardado en LocalStorage de mi lista de pedidos
@@ -94,7 +93,7 @@ class Cliente{
   }
 };
 
-
+const listaClientes=[];
 
 
 const btnModal= document.querySelector('#modal-btn');
@@ -105,6 +104,7 @@ btnModal.addEventListener('click', () =>{
     <input type="text" id="telefono" class="swal2-input" placeholder="Telefono...">
     <input type="text" id="direccion" class="swal2-input" placeholder="Direccion...">
     <div class="menu-fpago">
+      <p>TOTAL $${sumaTotal(listaPedidos)}</p>
       <p>¿Como pagás?</p>
           <select id="fpago" >
             <option value="efectivo" selected>Efectivo</option>
@@ -127,13 +127,21 @@ btnModal.addEventListener('click', () =>{
       return cliente ;
     }
   }).then((result) => {
+      const cliente= result.value;
+      listaClientes.push(cliente);
       Swal.fire(
         {
           icon: 'success',
-          text: `Excelente ${result.value.nombre} tu pedido ya esta pago con ${result.value.fpago} llegara aprox. en 45min a ${result.value.direccion}. ¡Gracias por comprar en BurgerHouse!`,
+          text: `Excelente ${result.value.nombre} tu pedido ya esta pago llegara aprox. en 45min a ${result.value.direccion}. ¡Gracias por comprar en BurgerHouse!`,
+          
         }
-      )}
-    )
+      )
+  })
 });
 
-
+const verPedido= document.querySelector('#ultimo-pedido');
+verPedido.addEventListener('click', () => {
+  listaClientes.forEach((c) => {
+    console.log(c);
+  })
+});
