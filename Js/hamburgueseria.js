@@ -93,6 +93,14 @@ class Cliente{
   }
 };
 
+function resetInterface() {
+  localStorage.removeItem("pedido");
+  const listaPedidos= [];
+  mostrarCarrito(listaPedidos);
+  contador();
+  window.location.reload();
+};
+
 const listaClientes=[];
 
 
@@ -133,10 +141,15 @@ btnModal.addEventListener('click', () =>{
         {
           icon: 'success',
           text: `Excelente ${result.value.nombre} tu pedido ya esta pago llegara aprox. en 45min a ${result.value.direccion}. ¡Gracias por comprar en BurgerHouse!`,
+          timer: 3000
           
         }
+        
       )
+      setTimeout(resetInterface, 4000);
+      
   })
+  
 });
 
 const verPedido= document.querySelector('#ultimo-pedido');
