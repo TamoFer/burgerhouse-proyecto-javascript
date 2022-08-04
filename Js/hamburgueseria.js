@@ -1,6 +1,6 @@
 //importacion de funciones de otros modulos
-import {  datosCliente} from "./accionesBtns.js";
 import { mostrarCarrito, renderizarCards} from "./renders.js";
+import { DateTime } from "./luxon.js";
 
 //traigo mi BD local y retorno una lista de objetos
 const objeto = ()=>{
@@ -48,24 +48,26 @@ export function sumaTotal(array) {
   );
   const totalMonto = document.querySelector("#monto-carrito-total");
   totalMonto.textContent = `$${total}`;
+  tiempoDemora(array)
   return total;
 };
 
 // funcion de guardado en LocalStorage de mi lista de pedidos
-export function guardandoLocalmente(listaPedidos) {
-  localStorage.setItem("pedido", JSON.stringify(listaPedidos));
+export function pedidoTemporal(listaPedidos) {
+  localStorage.setItem("pedidoTemporal", JSON.stringify(listaPedidos));
 }
+
 
 //evento DOMContentLoaded para que al recargar me muestre mi ultimo carrito creado
 document.addEventListener("DOMContentLoaded", () => {
-  if (localStorage.getItem("pedido")) {
-    const pedidos = JSON.parse(localStorage.getItem("pedido"));
+  if (localStorage.getItem("pedidoTemporal")) {
+    const pedidos = JSON.parse(localStorage.getItem("pedidoTemporal"));
     pedidos.forEach((pedido) => {
       listaPedidos.push(pedido);
     });
     mostrarCarrito(listaPedidos);
     contador();
-  }
+  };
 });
 
 const btnCarrito = document.querySelector('#carritoImg');
@@ -94,7 +96,7 @@ class Cliente{
 };
 
 function resetInterface() {
-  localStorage.removeItem("pedido");
+  localStorage.removeItem("pedidoTemporal");
   const listaPedidos= [];
   mostrarCarrito(listaPedidos);
   contador();
@@ -137,6 +139,7 @@ btnModal.addEventListener('click', () =>{
   }).then((result) => {
       const cliente= result.value;
       listaClientes.push(cliente);
+      console.log(listaClientes);
       Swal.fire(
         {
           icon: 'success',
@@ -154,7 +157,24 @@ btnModal.addEventListener('click', () =>{
 
 const verPedido= document.querySelector('#ultimo-pedido');
 verPedido.addEventListener('click', () => {
-  listaClientes.forEach((c) => {
-    console.log(c);
-  })
+  console.log(listaClientes);
 });
+
+
+function tiempoDemora(array){
+  const numBurgers = array.reduce(
+    (acc, p) => acc + p.cantidad,
+    0
+  );
+  const result= numBurgers*0.25;
+  const hora=DateTime.now();
+  const horaLllegada= hora.plus({hours:result});
+  console.log(horaLllegada.toLocaleString(DateTime.TIME_SIMPLE));
+};
+
+
+const dt=DateTime.now().toLocaleString(DateTime.TIME_SIMPLE);
+
+// console.log(dt.plus({hour: 0.5}).hour);
+
+
