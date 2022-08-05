@@ -44,9 +44,6 @@ export function sumaTotal(array) {
   );
   const totalMonto = document.querySelector("#monto-carrito-total");
   totalMonto.textContent = `$${total}`;
-  tiempoLlegadaPedido(array);
-  // console.log(calculoDemora(listaPedidos));
-  console.log(tiempoLlegadaPedido(listaPedidos));
   return total;
 }
 
@@ -65,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarCarrito(listaPedidos);
     contador();
   }
+  
 });
 
 const btnCarrito = document.querySelector("#carritoImg");
@@ -96,7 +94,6 @@ function resetInterface() {
   window.location.reload();
 }
 
-const listaClientes = [];
 
 const btnModal = document.querySelector("#modal-btn");
 btnModal.addEventListener("click", () => {
@@ -133,7 +130,7 @@ btnModal.addEventListener("click", () => {
     },
   }).then((result) => {
     const cliente = result.value;
-    listaClientes.push(cliente);
+    guardarDatos(listaPedidos, cliente);
     Swal.fire({
       icon: "success",
       text: `Excelente ${result.value.nombre} ${calculoDemora(listaPedidos)} a ${result.value.direccion}. ¡Gracias por comprar en BurgerHouse!`,
@@ -145,7 +142,13 @@ btnModal.addEventListener("click", () => {
 
 const verPedido = document.querySelector("#ultimo-pedido");
 verPedido.addEventListener("click", () => {
-  console.log(listaClientes);
+  if (localStorage.getItem("pedidoCliente")) {
+    const cliente = JSON.parse(localStorage.getItem("pedidoCliente"));
+    cliente.forEach((dato)=>{
+      console.log(dato);
+    })    
+  }
+
 });
 
 function tiempoLlegadaPedido(array) {
@@ -171,4 +174,19 @@ function calculoDemora(array) {
     : (demora = `Tu pedido tardara aprox. ${hora}:${minutos} hs`);
 
   return demora;
+}
+
+
+function guardarDatos(array, objeto){
+  const dato=[];
+  const total ="$" + array.reduce(
+    (acc, p) => acc + p.precio * p.cantidad,
+    0
+  );
+  const nombre= objeto.nombre;
+  const adress= objeto.direccion;
+  const horaLlegada=tiempoLlegadaPedido(array);
+  dato.push(nombre,adress,total,horaLlegada);
+  localStorage.setItem("pedidoCliente", JSON.stringify(dato));
+
 }
