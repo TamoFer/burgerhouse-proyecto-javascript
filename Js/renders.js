@@ -61,8 +61,6 @@ export function renderizarCards(objeto) {
 
 };
 
-
-
 //render de carrito
 export function mostrarCarrito(listaPedidos) {
   carritoBody.textContent = "";
@@ -76,7 +74,7 @@ export function mostrarCarrito(listaPedidos) {
     miTktDescripcion.textContent = `${cantidad}u. ${nombre}`;
 
     const miTktImg= document.createElement("img");
-    miTktImg.classList.add("carritoImg");
+    miTktImg.setAttribute("id","carritoImg");
     miTktImg.setAttribute("src", imagen);
 
     const tktBoton = document.createElement("button");

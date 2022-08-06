@@ -55,14 +55,19 @@ export function pedidoTemporal(listaPedidos) {
 //evento DOMContentLoaded para que al recargar me muestre mi ultimo carrito creado
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("pedidoTemporal")) {
-    const pedidos = JSON.parse(localStorage.getItem("pedidoTemporal"));
-    pedidos.forEach((pedido) => {
+    const pedidoTemporal = JSON.parse(localStorage.getItem("pedidoTemporal"));
+    pedidoTemporal.forEach((pedido) => {
       listaPedidos.push(pedido);
     });
     mostrarCarrito(listaPedidos);
-    contador();
+    statusCarrito();
   }
-  
+
+  if (localStorage.getItem("pedidoCliente")) {
+    const pedidoCliente = JSON.parse(localStorage.getItem("pedidoCliente"));
+    const notificacionPedido= document.querySelector(".statusOrder");
+    notificacionPedido.classList.add("badgeOrder");
+  }
 });
 
 const btnCarrito = document.querySelector("#carritoImg");
@@ -71,8 +76,9 @@ btnCarrito.addEventListener("click", () => {
   sumaTotal(listaPedidos);
 });
 
-export function contador() {
-  const notificacion = document.querySelector(".contador");
+export function statusCarrito() {
+  const notificacion = document.querySelector(".statusCarrito");
+  notificacion.classList.add("badgeCarrito");
   const total = listaPedidos.reduce((acc, pedido) => acc + pedido.cantidad, 0);
   notificacion.textContent = total.toString();
 }
@@ -87,10 +93,9 @@ class Cliente {
 }
 
 function resetInterface() {
-  localStorage.removeItem("pedidoTemporal");
   const listaPedidos = [];
   mostrarCarrito(listaPedidos);
-  contador();
+  statusCarrito();
   window.location.reload();
 }
 
@@ -140,16 +145,16 @@ btnModal.addEventListener("click", () => {
   });
 });
 
-const verPedido = document.querySelector("#ultimo-pedido");
-verPedido.addEventListener("click", () => {
-  if (localStorage.getItem("pedidoCliente")) {
-    const cliente = JSON.parse(localStorage.getItem("pedidoCliente"));
-    cliente.forEach((dato)=>{
-      console.log(dato);
-    })    
-  }
+// const verPedido = document.querySelector("#ultimo-pedido");
+// verPedido.addEventListener("click", () => {
+//   if (localStorage.getItem("pedidoCliente")) {
+//     const cliente = JSON.parse(localStorage.getItem("pedidoCliente"));
+//     cliente.forEach((dato)=>{
+//       console.log(dato);
+//     })    
+//   }
 
-});
+// });
 
 function tiempoLlegadaPedido(array) {
   const numBurgers = array.reduce((acc, p) => acc + p.cantidad, 0);
@@ -188,6 +193,9 @@ function guardarDatos(array, objeto){
   const horaLlegada=tiempoLlegadaPedido(array);
   dato.push(nombre,adress,total,horaLlegada);
   localStorage.setItem("pedidoCliente", JSON.stringify(dato));
-
+  localStorage.removeItem("pedidoTemporal");
 }
 
+function statusOrder() {
+  
+}

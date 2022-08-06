@@ -142,14 +142,15 @@ section{
     flex-direction: row;
 }
 
-.contador{
+.badgeCarrito{
     background-color:coral;
+    border: 1px solid black;
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 50%;
     margin: .5rem 3rem 0rem -3.5rem;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 /* estilo del section */
@@ -215,7 +216,7 @@ section{
     text-align: center;
 }
 
-.carritoImg{
+#carritoImg{
     width: 60px;
     height: 60px;
 }
@@ -235,4 +236,29 @@ section{
 .colored-toast.swal2-icon-warning {
     background-color: #f8bb86 !important;
     font-size: 1.5rem;
+}
+
+.pedido{
+    display: flex;
+    flex-direction: row;
+}
+
+
+#deliveryImg{
+    width: 53px;
+    height: 53px;
+    margin: .3rem 1rem 0rem 1rem;
+}
+
+.badgeOrder{
+    background-color:red;
+    border: 1px solid black;
+    display: block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    margin: 1.3rem 0rem 0rem 5.5rem;
+    text-align: center;
+    font-size: 1.4rem;
 }
