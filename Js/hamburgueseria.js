@@ -133,10 +133,10 @@ btnModal.addEventListener("click", () => {
     guardarDatos(listaPedidos, cliente);
     Swal.fire({
       icon: "success",
-      text: `Excelente ${result.value.nombre} ${calculoDemora(listaPedidos)} a ${result.value.direccion}. ¡Gracias por comprar en BurgerHouse!`,
-      timer: 3000,
+      text: `Excelente ${result.value.nombre}! ${calculoDemora(listaPedidos)} a ${result.value.direccion}. ¡Gracias por comprar en BurgerHouse!`,
+      timer: 4000,
     });
-    setTimeout(resetInterface, 4000);
+    setTimeout(resetInterface, 4500);
   });
 });
 
@@ -190,3 +190,4 @@ function guardarDatos(array, objeto){
   localStorage.setItem("pedidoCliente", JSON.stringify(dato));
 
 }
+

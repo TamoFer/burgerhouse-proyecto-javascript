@@ -27,10 +27,6 @@ section{
     width: 100%;
 }
 
-#pedidosPagos{
-    display: flex;
-    flex-direction: row;
-}
 
 #facturacion{
     font-size: 20px;
@@ -222,4 +218,21 @@ section{
 .carritoImg{
     width: 60px;
     height: 60px;
+}
+
+
+.colored-toast.swal2-icon-success {
+    background-color: #a5dc86 !important;
+    font-size: 1.5rem;
+}
+
+.colored-toast.swal2-icon-error {
+    background-color: #f27474 !important;
+    font-size: 1.5rem;
+
+}
+
+.colored-toast.swal2-icon-warning {
+    background-color: #f8bb86 !important;
+    font-size: 1.5rem;
 }

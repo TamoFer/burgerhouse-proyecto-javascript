@@ -1,6 +1,6 @@
 //importacion de funciones de otros modulos
 import { agregarPedido,eliminarPedido} from "./accionesBtns.js";
-import { menus,carritoBody,sumaTotal, listaPedidos, pedidoTemporal} from "./hamburgueseria.js";
+import { menus,carritoBody, pedidoTemporal} from "./hamburgueseria.js";
 
 //render de cards
 export function renderizarCards(objeto) {
