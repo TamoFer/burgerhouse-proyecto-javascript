@@ -32,6 +32,7 @@ export const BD = objeto();
 
 //definicion de constantes que utilizare en todo el codigo, agrego funcion export para modularizar el codigo
 export const listaPedidos = [];
+const pedidosCompletados = [];
 export const menus = document.querySelector("#menus");
 export const carritoBody = document.querySelector("#carrito-body");
 const montoTotal = document.querySelector("#montoTotal");
@@ -67,7 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const pedidoCliente = JSON.parse(localStorage.getItem("pedidoCliente"));
     const notificacionPedido= document.querySelector(".statusOrder");
     notificacionPedido.classList.add("badgeOrder");
+    pedidosCompletados.push(pedidoCliente);
   }
+  
 });
 
 const btnCarrito = document.querySelector("#carritoImg");
@@ -140,21 +143,11 @@ btnModal.addEventListener("click", () => {
       icon: "success",
       text: `Excelente ${result.value.nombre}! ${calculoDemora(listaPedidos)} a ${result.value.direccion}. ¡Gracias por comprar en BurgerHouse!`,
       timer: 4000,
+      showConfirmButton: false
     });
     setTimeout(resetInterface, 4500);
   });
 });
-
-// const verPedido = document.querySelector("#ultimo-pedido");
-// verPedido.addEventListener("click", () => {
-//   if (localStorage.getItem("pedidoCliente")) {
-//     const cliente = JSON.parse(localStorage.getItem("pedidoCliente"));
-//     cliente.forEach((dato)=>{
-//       console.log(dato);
-//     })    
-//   }
-
-// });
 
 function tiempoLlegadaPedido(array) {
   const numBurgers = array.reduce((acc, p) => acc + p.cantidad, 0);
@@ -183,19 +176,28 @@ function calculoDemora(array) {
 
 
 function guardarDatos(array, objeto){
-  const dato=[];
   const total ="$" + array.reduce(
     (acc, p) => acc + p.precio * p.cantidad,
     0
   );
-  const nombre= objeto.nombre;
-  const adress= objeto.direccion;
-  const horaLlegada=tiempoLlegadaPedido(array);
-  dato.push(nombre,adress,total,horaLlegada);
+
+  const dato={nombre: objeto.nombre, adress: objeto.direccion,total:total, horaLlegada: tiempoLlegadaPedido(array)};
+
   localStorage.setItem("pedidoCliente", JSON.stringify(dato));
   localStorage.removeItem("pedidoTemporal");
 }
 
-function statusOrder() {
-  
-}
+
+const btnStatusOrder = document.querySelector("#deliveryImg");
+btnStatusOrder.addEventListener("click", () => {
+  pedidosCompletados.forEach((p)=>{
+    Swal.fire({
+      text: `Hola ${p.nombre} ya recibimos tu pedido, estaria llegando a tu direccion (${p.adress}) a las ${p.horaLlegada}`,
+      toast: true,
+      position: 'bottom-right',
+      showConfirmButton: false,
+      timer: 5000
+    })
+  })
+    
+});
