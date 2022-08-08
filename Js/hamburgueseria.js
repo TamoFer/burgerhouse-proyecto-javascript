@@ -134,7 +134,7 @@ btnModal.addEventListener("click", () => {
           `¡Completa todos los campos del formulario para el envio!`
         );
       }
-      return cliente;
+      return {nombre, telefono, direccion, fpago};
     },
   }).then((result) => {
     const cliente = result.value;
@@ -154,7 +154,7 @@ function tiempoLlegadaPedido(array) {
   const hora = DateTime.now();
   const horaLlegada = hora
     .plus({ hour: numBurgers * 0.25 })
-    .toLocaleString(DateTime.TIME_24_SIMPLE);
+    // .toLocaleString(DateTime.TIME_24_SIMPLE);
   return horaLlegada;
 }
 
@@ -191,8 +191,10 @@ function guardarDatos(array, objeto){
 const btnStatusOrder = document.querySelector("#deliveryImg");
 btnStatusOrder.addEventListener("click", () => {
   pedidosCompletados.forEach((p)=>{
+    borrarPedido(p.horaLlegada);
     Swal.fire({
-      text: `Hola ${p.nombre} ya recibimos tu pedido, estaria llegando a tu direccion (${p.adress}) a las ${p.horaLlegada}`,
+      text: `Hola ${p.nombre} ya recibimos tu pedido, estaria llegando a tu direccion (${p.adress}) a las ${p.horaLlegada}hs. 
+      ¡Gracias por comprar en BURGERHOUSE!`,
       toast: true,
       position: 'bottom-right',
       showConfirmButton: false,
@@ -201,3 +203,9 @@ btnStatusOrder.addEventListener("click", () => {
   })
     
 });
+
+function borrarPedido(horaLlegada){
+  const horaActual=DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE);
+  console.log(horaActual);
+  horaLlegada>=horaActual?console.log("es igual"):console.log("falta todavia");
+}
