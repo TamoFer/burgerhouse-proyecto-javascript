@@ -32,7 +32,7 @@ export const BD = objeto();
 
 //definicion de constantes que utilizare en todo el codigo, agrego funcion export para modularizar el codigo
 export const listaPedidos = [];
-const pedidosCompletados = [];
+const pedidosCompletados = "";
 export const menus = document.querySelector("#menus");
 export const carritoBody = document.querySelector("#carrito-body");
 const montoTotal = document.querySelector("#montoTotal");
@@ -66,11 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (localStorage.getItem("pedidoCliente")) {
     const pedidoCliente = JSON.parse(localStorage.getItem("pedidoCliente"));
-    const notificacionPedido= document.querySelector(".statusOrder");
+    const notificacionPedido = document.querySelector(".statusOrder");
     notificacionPedido.classList.add("badgeOrder");
-    pedidosCompletados.push(pedidoCliente);
+    const pedidosCompletados=pedidoCliente
+    return pedidosCompletados;
   }
-  
 });
 
 const btnCarrito = document.querySelector("#carritoImg");
@@ -101,7 +101,6 @@ function resetInterface() {
   statusCarrito();
   window.location.reload();
 }
-
 
 const btnModal = document.querySelector("#modal-btn");
 btnModal.addEventListener("click", () => {
@@ -134,27 +133,29 @@ btnModal.addEventListener("click", () => {
           `¡Completa todos los campos del formulario para el envio!`
         );
       }
-      return {nombre, telefono, direccion, fpago};
+      return { nombre, telefono, direccion, fpago };
     },
   }).then((result) => {
     const cliente = result.value;
     guardarDatos(listaPedidos, cliente);
     Swal.fire({
       icon: "success",
-      text: `Excelente ${result.value.nombre}! ${calculoDemora(listaPedidos)} a ${result.value.direccion}. ¡Gracias por comprar en BurgerHouse!`,
+      text: `Excelente ${result.value.nombre}! ${calculoDemora(
+        listaPedidos
+      )} a ${result.value.direccion}. ¡Gracias por comprar en BurgerHouse!`,
       timer: 4000,
-      showConfirmButton: false
+      showConfirmButton: false,
     });
     setTimeout(resetInterface, 4500);
   });
 });
 
-function tiempoLlegadaPedido(array) {
+export function tiempoLlegadaPedido(array) {
   const numBurgers = array.reduce((acc, p) => acc + p.cantidad, 0);
   const hora = DateTime.now();
   const horaLlegada = hora
-    .plus({ hour: numBurgers * 0.25 })
-    // .toLocaleString(DateTime.TIME_24_SIMPLE);
+    .plus({ hour: numBurgers * 0.08 })
+    .toLocaleString(DateTime.TIME_24_SIMPLE);
   return horaLlegada;
 }
 
@@ -174,38 +175,62 @@ function calculoDemora(array) {
   return demora;
 }
 
+function guardarDatos(array, objeto) {
+  const total = "$" + array.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
 
-function guardarDatos(array, objeto){
-  const total ="$" + array.reduce(
-    (acc, p) => acc + p.precio * p.cantidad,
-    0
-  );
-
-  const dato={nombre: objeto.nombre, adress: objeto.direccion,total:total, horaLlegada: tiempoLlegadaPedido(array)};
+  const dato = {
+    nombre: objeto.nombre,
+    adress: objeto.direccion,
+    total: total,
+    horaLlegada: tiempoLlegadaPedido(array),
+  };
 
   localStorage.setItem("pedidoCliente", JSON.stringify(dato));
   localStorage.removeItem("pedidoTemporal");
 }
 
-
 const btnStatusOrder = document.querySelector("#deliveryImg");
 btnStatusOrder.addEventListener("click", () => {
-  pedidosCompletados.forEach((p)=>{
-    borrarPedido(p.horaLlegada);
+  pedidosCompletados.forEach((p) => {
     Swal.fire({
       text: `Hola ${p.nombre} ya recibimos tu pedido, estaria llegando a tu direccion (${p.adress}) a las ${p.horaLlegada}hs. 
       ¡Gracias por comprar en BURGERHOUSE!`,
       toast: true,
-      position: 'bottom-right',
+      position: "bottom-right",
       showConfirmButton: false,
-      timer: 5000
-    })
-  })
-    
+      timer: 5000,
+    });
+  });
 });
 
-function borrarPedido(horaLlegada){
-  const horaActual=DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE);
-  console.log(horaActual);
-  horaLlegada>=horaActual?console.log("es igual"):console.log("falta todavia");
+//objeto
+function convertirInt(string) {
+  let split = string.split("");
+  split.splice(1, 1);
+  let horaInt = parseInt(split.join(""));
+  return horaInt;
 }
+
+function borrarPedidosEntregados(obj) {
+    const horaActual = convertirInt(
+      DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE)
+    );
+    console.log(horaActual);
+    console.log(obj);
+    const horaLlegada = convertirInt(obj.horaLlegada);
+    console.log(horaLlegada);
+    if (horaActual == horaLlegada) {
+      console.log(
+        `valistes verga ${DateTime.now().toLocaleString(
+          DateTime.TIME_24_SIMPLE
+        )}`
+      );
+      localStorage.clear();
+      window.location.reload();
+    } else {
+      console.log(
+        `safas aun ${DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE)}`
+      );
+    }  
+}
+  
