@@ -32,7 +32,7 @@ export const BD = objeto();
 
 //definicion de constantes que utilizare en todo el codigo, agrego funcion export para modularizar el codigo
 export const listaPedidos = [];
-const pedidosCompletados = "";
+const pedidosCompletados = [];
 export const menus = document.querySelector("#menus");
 export const carritoBody = document.querySelector("#carrito-body");
 const montoTotal = document.querySelector("#montoTotal");
@@ -68,8 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pedidoCliente = JSON.parse(localStorage.getItem("pedidoCliente"));
     const notificacionPedido = document.querySelector(".statusOrder");
     notificacionPedido.classList.add("badgeOrder");
-    const pedidosCompletados=pedidoCliente
-    return pedidosCompletados;
+    pedidosCompletados.push(pedidoCliente);
   }
 });
 
@@ -215,8 +214,6 @@ function borrarPedidosEntregados(obj) {
     const horaActual = convertirInt(
       DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE)
     );
-    console.log(horaActual);
-    console.log(obj);
     const horaLlegada = convertirInt(obj.horaLlegada);
     console.log(horaLlegada);
     if (horaActual == horaLlegada) {
@@ -234,3 +231,9 @@ function borrarPedidosEntregados(obj) {
     }  
 }
   
+
+setInterval(()=>{
+  if (localStorage.getItem('pedidoCliente') ) {
+    const imprimir=JSON.parse(localStorage.getItem('pedidoCliente'));
+    borrarPedidosEntregados(imprimir);}
+},30000);
