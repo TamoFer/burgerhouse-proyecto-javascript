@@ -202,38 +202,26 @@ btnStatusOrder.addEventListener("click", () => {
   });
 });
 
-//objeto
-function convertirInt(string) {
-  let split = string.split("");
-  split.splice(1, 1);
-  let horaInt = parseInt(split.join(""));
-  return horaInt;
-}
-
 function borrarPedidosEntregados(obj) {
-    const horaActual = convertirInt(
-      DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE)
-    );
-    const horaLlegada = convertirInt(obj.horaLlegada);
-    console.log(horaLlegada);
-    if (horaActual == horaLlegada) {
-      console.log(
-        `valistes verga ${DateTime.now().toLocaleString(
-          DateTime.TIME_24_SIMPLE
-        )}`
-      );
-      localStorage.clear();
-      window.location.reload();
-    } else {
-      console.log(
-        `safas aun ${DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE)}`
-      );
-    }  
+  const horaActual = DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE);
+  horaActual >= obj.horaLlegada 
+    ? (Swal.fire({
+        title: "Status del pedido",
+        text: `El delivery ya hizo entrega de tu pedido ${obj.nombre} que lo disfrutes! `,
+        timer: 2000,
+        icon: "success",
+      }),
+      setTimeout(() => {
+        localStorage.clear(), window.location.reload();
+      }, 2500))
+    : null;
 }
-  
 
-setInterval(()=>{
-  if (localStorage.getItem('pedidoCliente') ) {
-    const imprimir=JSON.parse(localStorage.getItem('pedidoCliente'));
-    borrarPedidosEntregados(imprimir);}
-},30000);
+setInterval(() => {
+  if (localStorage.getItem("pedidoCliente")) {
+    const imprimir = JSON.parse(localStorage.getItem("pedidoCliente"));
+    borrarPedidosEntregados(imprimir);
+  }
+}, 15000);
+
+
