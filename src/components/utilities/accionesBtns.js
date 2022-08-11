@@ -1,9 +1,11 @@
 //importacion de funciones de otros modulos
-import { BD, listaPedidos, statusCarrito, sumaTotal } from "./hamburgueseria.js";
+import { getBD } from "./getData.js";
+import {listaPedidos, statusCarrito, sumaTotal } from "./hamburgueseria.js";
 import { mostrarCarrito } from "./renders.js";
 
 //agrego desde button de card la burger
-export function agregarPedido(event) {
+export async function agregarPedido(event) {
+  const BD= await getBD();
   let serial = event.target.getAttribute("serial");
   let burger = BD.find((burger) => burger.serial == serial);
   let burgerAgregada = listaPedidos.find((burger) => burger.serial == serial);

@@ -4,11 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- linkeo de mi css -->
     <link rel="stylesheet" href="css/style.css" />
-    <!-- linkeo de libreria Toast -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <!-- linkeo bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     
     <title>Desafio complementario</title>
@@ -40,19 +37,15 @@
     </header>
     
     <section>
-      <!--- article con opciones menu---->
       <article id="opciones">
         <div class="banner">
           <p>Bienvenido a BURGERHOUSE , aca tenes los menus que ofrecemos:</p>
         </div>
         
-        <!--- div que alojara cards creadas por DOM---->
         <div id="menus"></div>
         
       </article>
-      <!--- article con ticket simulador de carrito---->
       <article id="ticket">
-        <!--- div que alojara los pedidos creados por DOM---->
         <div class="offcanvas offcanvas-start " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Carrito de compras</h5>
@@ -65,24 +58,20 @@
           </div>
           <button type="button" id="modal-btn" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="offcanvas" >PAGAR TODO</button>
           
-        <!--- div que mostrara suma total del carrito---->
       </article>
       
       
     </section>
 
     <footer></footer>
-    <!-- linkeo de Toast libreria -->
+    <script src="/Js/getData.js" type="module" ></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <!-- linkeo de SweetAlert libreria -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- linkeo de Bootstrap libreria -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <!-- linkeo mi archivo main JS -->
     <script type="module" src="/Js/hamburgueseria.js"></script>
   </body>
 </html>

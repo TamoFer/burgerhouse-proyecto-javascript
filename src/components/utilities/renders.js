@@ -1,51 +1,53 @@
 //importacion de funciones de otros modulos
 import { agregarPedido,eliminarPedido} from "./accionesBtns.js";
-import { menus,carritoBody, pedidoTemporal} from "./hamburgueseria.js";
+import { getBD } from "./getData.js";
+import { menus,carritoBody} from "./hamburgueseria.js";
 
 //render de cards
-export function renderizarCards(objeto) {
+export async function renderizarCards() {
+  const objeto = await getBD();
   objeto.forEach((menu) => {
-    let {serial,nombre,descripcion,precio,imagen}=menu;
-    
+    let { serial, nombre, descripcion, precio, imagen } = menu;
+
     const miCard = document.createElement("div");
     miCard.classList.add("card");
 
     const miCardInfo = document.createElement("div");
-    miCardInfo.classList.add("card-info")
-    
+    miCardInfo.classList.add("card-info");
+
     const miCardTextTitle = document.createElement("p");
     miCardTextTitle.classList.add("text-title");
     miCardTextTitle.innerText = nombre;
 
-    const miCardImg= document.createElement("img");
+    const miCardImg = document.createElement("img");
     miCardImg.setAttribute("src", imagen);
 
-    const miCardDescripcion= document.createElement("p");
+    const miCardDescripcion = document.createElement("p");
     miCardDescripcion.classList.add("text-body");
-    miCardDescripcion.innerText =descripcion ;
+    miCardDescripcion.innerText = descripcion;
 
-    const miCardFooter= document.createElement("div");
+    const miCardFooter = document.createElement("div");
     miCardFooter.classList.add("card-footer");
 
-    const miCardPrecio= document.createElement("span");
+    const miCardPrecio = document.createElement("span");
     miCardPrecio.classList.add("text-title--precio");
-    miCardPrecio.innerText =`precio $${precio}`;
+    miCardPrecio.innerText = `precio $${precio}`;
 
-    const miCardIcons= document.createElement("div");
+    const miCardIcons = document.createElement("div");
 
     const miCardIconAgregar = document.createElement("img");
-    miCardIconAgregar.setAttribute("src","../iconos/agregar.png");
-    miCardIconAgregar.setAttribute("serial",serial);
-    miCardIconAgregar.setAttribute("type","button");
-    miCardIconAgregar.addEventListener("click",agregarPedido);
+    miCardIconAgregar.setAttribute("src", "../iconos/agregar.png");
+    miCardIconAgregar.setAttribute("serial", serial);
+    miCardIconAgregar.setAttribute("type", "button");
+    miCardIconAgregar.addEventListener("click", agregarPedido);
 
     const miCardIconEliminar = document.createElement("img");
-    miCardIconEliminar.setAttribute("src","../iconos/eliminar.png");
-    miCardIconEliminar.setAttribute("serialDelete",serial);
-    miCardIconEliminar.setAttribute("type","button");
-    miCardIconEliminar.addEventListener("click",eliminarPedido);
+    miCardIconEliminar.setAttribute("src", "../iconos/eliminar.png");
+    miCardIconEliminar.setAttribute("serialDelete", serial);
+    miCardIconEliminar.setAttribute("type", "button");
+    miCardIconEliminar.addEventListener("click", eliminarPedido);
 
-    
+
     miCardInfo.appendChild(miCardTextTitle);
     miCardInfo.appendChild(miCardImg);
     miCardInfo.appendChild(miCardDescripcion);
@@ -59,7 +61,7 @@ export function renderizarCards(objeto) {
 
   });
 
-};
+}
 
 //render de carrito
 export function mostrarCarrito(listaPedidos) {
@@ -90,5 +92,5 @@ export function mostrarCarrito(listaPedidos) {
     miTkt.appendChild(tktBoton);
     carritoBody.appendChild(miTkt);
   });
-  pedidoTemporal(listaPedidos);
+  localStorage.setItem("pedidoTemporal", JSON.stringify(listaPedidos));
 }

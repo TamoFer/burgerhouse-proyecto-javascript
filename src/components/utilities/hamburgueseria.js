@@ -1,34 +1,6 @@
 //importacion de funciones de otros modulos
 import { mostrarCarrito, renderizarCards } from "./renders.js";
-import { DateTime } from "./luxon.js";
-
-//traigo mi BD local y retorno una lista de objetos
-const objeto = () => {
-  const datos = [];
-  fetch("bd_local/bd.json")
-    .then((res) => res.json())
-    .then((data) => {
-      data.forEach((burgers) => {
-        datos.push(burgers);
-      });
-    });
-  return datos;
-};
-
-//traigo mi BD local y renderizo las cards
-const objetoRender = () => {
-  fetch("bd_local/bd.json")
-    .then((res) => res.json())
-    .then((data) => {
-      renderizarCards(data);
-    });
-};
-
-//llamo a la funcion
-objetoRender();
-
-//instancio una constante con la lista de burgers de mi BD
-export const BD = objeto();
+import { DateTime } from "./lib/luxon.js";
 
 //definicion de constantes que utilizare en todo el codigo, agrego funcion export para modularizar el codigo
 export const listaPedidos = [];
@@ -37,6 +9,7 @@ export const menus = document.querySelector("#menus");
 export const carritoBody = document.querySelector("#carrito-body");
 const montoTotal = document.querySelector("#montoTotal");
 
+renderizarCards();
 //devuelve la suma total de todos los pedidos de mi lista de pedidos utilizando reduce
 export function sumaTotal(array) {
   const total = array.reduce(
@@ -47,30 +20,6 @@ export function sumaTotal(array) {
   totalMonto.textContent = `$${total}`;
   return total;
 }
-
-// funcion de guardado en LocalStorage de mi lista de pedidos
-export function pedidoTemporal(listaPedidos) {
-  localStorage.setItem("pedidoTemporal", JSON.stringify(listaPedidos));
-}
-
-//evento DOMContentLoaded para que al recargar me muestre mi ultimo carrito creado
-document.addEventListener("DOMContentLoaded", () => {
-  if (localStorage.getItem("pedidoTemporal")) {
-    const pedidoTemporal = JSON.parse(localStorage.getItem("pedidoTemporal"));
-    pedidoTemporal.forEach((pedido) => {
-      listaPedidos.push(pedido);
-    });
-    mostrarCarrito(listaPedidos);
-    statusCarrito();
-  }
-
-  if (localStorage.getItem("pedidoCliente")) {
-    const pedidoCliente = JSON.parse(localStorage.getItem("pedidoCliente"));
-    const notificacionPedido = document.querySelector(".statusOrder");
-    notificacionPedido.classList.add("badgeOrder");
-    pedidosCompletados.push(pedidoCliente);
-  }
-});
 
 const btnCarrito = document.querySelector("#carritoImg");
 btnCarrito.addEventListener("click", () => {
@@ -217,6 +166,7 @@ function borrarPedidosEntregados(obj) {
     : null;
 }
 
+//chequea si hay pedidos ya pagos 
 setInterval(() => {
   if (localStorage.getItem("pedidoCliente")) {
     const imprimir = JSON.parse(localStorage.getItem("pedidoCliente"));
