@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- import mi CSS -->
     <link rel="stylesheet" href="../public/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- import CDN Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     
-    <title>Desafio complementario</title>
+    <title>BURGERGHOUSE</title>
   </head>
   <body >
     <header class="header">
@@ -17,34 +18,35 @@
         <nav>
           <ul>
               <li >
+                <!-- div delivery   -->
                 <div class="pedido">
                   <img id="deliveryImg" src="/public/icons/delivery.png" type="button">
                   <div class="statusOrder" ></div>
                 </div> 
               </li>
               <li>
+                <!-- div carro compras -->
                 <div class="carro">
                   <img id="carritoImg" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" src="/public/icons/carrito.png" type="button">
                   <div class="statusCarrito"></div>
                 </div>
               </li>
-              
           </ul>
-          
         </nav>
       </div>
     </header>
     
     <section>
+      <!-- article contiene banner y cards burgas -->
       <article id="opciones">
         <div class="banner">
           <p>Bienvenido acá tenés los menús que ofrecemos:</p>
         </div>
-        
+        <!-- div que contiene cards render por DOM  -->
         <div id="menus"></div>
-        
       </article>
-      <article id="ticket">
+      <!-- article carrito diseñado en un offcanvas de BS -->
+      <article id="carrito">
         <div class="offcanvas offcanvas-start " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Carrito de compras</h5>
@@ -56,21 +58,19 @@
             <div id="monto-carrito-total"></div>
           </div>
           <button type="button" id="modal-btn" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="offcanvas" >PAGAR TODO</button>
-          
       </article>
-      
-      
     </section>
 
     <footer></footer>
-    <script src="../src/components/utilities/getData.js" type="module" ></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- linkeo lib SweetAlert2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- linkeo BS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <!-- linkeo mi JS principal -->
     <script type="module" src="../src/index.js"></script>
   </body>
 </html>
