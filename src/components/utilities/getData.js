@@ -1,6 +1,7 @@
-const API= "/bd_local/bd.json";
+const API= "../src/data/bd.json";
 
 export const getBD=async()=>{
+
     try {
 
         const response=await fetch(API);

@@ -5,7 +5,7 @@
     "descripcion": "Hamburguesa doble de carne, que tiene queso cheddar, bacon crujiente y una deliciosa salsa barbacoa. Acompañada de papas fritas",
     "precio": 1200,
     "cantidad": 1,
-    "imagen": "../imagenes/burger-americana.png"
+    "imagen": "../../../public/images/burger-americana.png"
     },
 
     {
@@ -14,7 +14,7 @@
     "descripcion": "Hamburguesa simple de carne, que tiene tomate, lechuga y de aderezo mayonesa. Acompañada de papas fritas",
     "precio": 950,
     "cantidad": 1,
-    "imagen": "../imagenes/burger-clasica.png"
+    "imagen": "../../../public/images/burger-clasica.png"
     },
 
     {
@@ -23,7 +23,7 @@
     "descripcion": "Hamburguesa simple de pollo crispy, que trae tomate, lechuga y mayo alioli. Acompañada de unos ricos aros de cebolla",
     "precio": 1000,
     "cantidad": 1,
-    "imagen": "../imagenes/burger-crispy.png"
+    "imagen": "../../../public/images/burger-crispy.png"
     },
 
     {
@@ -32,7 +32,7 @@
     "descripcion": "Hamburguesa simple de pollo crispy, que trae aros de cebolla como ingrediente junto a bacon, queso cheddar, mayonesa y ketchup.Y de guarnicion, bastones de mozzarella",
     "precio": 1050,
     "cantidad": 1,
-    "imagen": "../imagenes/burger-powerOnion.png"
+    "imagen": "../../../public/images/burger-powerOnion.png"
     },
 
     {
@@ -41,6 +41,6 @@
     "descripcion": "Hamburguesa veggie, compuesta por un medallon de soja empanado de la mano de tomate, lechuga, cebolla, pepinillos y una salsa de ketchup ",
     "precio": 1100,
     "cantidad": 1,
-    "imagen": "../imagenes/burger-veggie.png"
+    "imagen": "../../../public/images/burger-veggie.png"
     }
 ]

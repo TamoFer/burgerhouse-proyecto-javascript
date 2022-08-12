@@ -1,7 +1,8 @@
 //importacion de funciones de otros modulos
-import { agregarPedido,eliminarPedido} from "./accionesBtns.js";
+import { agregarPedido,eliminarPedido} from "../btn-actions/accionesBtns.js";
 import { getBD } from "./getData.js";
-import { menus,carritoBody} from "./hamburgueseria.js";
+import { menus,carritoBody} from "../.././App.js";
+
 
 //render de cards
 export async function renderizarCards() {
@@ -36,13 +37,13 @@ export async function renderizarCards() {
     const miCardIcons = document.createElement("div");
 
     const miCardIconAgregar = document.createElement("img");
-    miCardIconAgregar.setAttribute("src", "../iconos/agregar.png");
+    miCardIconAgregar.setAttribute("src", "../../../public/icons/agregar.png");
     miCardIconAgregar.setAttribute("serial", serial);
     miCardIconAgregar.setAttribute("type", "button");
     miCardIconAgregar.addEventListener("click", agregarPedido);
 
     const miCardIconEliminar = document.createElement("img");
-    miCardIconEliminar.setAttribute("src", "../iconos/eliminar.png");
+    miCardIconEliminar.setAttribute("src", "../../../public/icons/eliminar.png");
     miCardIconEliminar.setAttribute("serialDelete", serial);
     miCardIconEliminar.setAttribute("type", "button");
     miCardIconEliminar.addEventListener("click", eliminarPedido);

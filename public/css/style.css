@@ -8,7 +8,7 @@ html{
 }
 
 body{
-    background-image: url(../imagenes/fondo-body.jpg);
+    background-image: url(../images/fondo-body.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -48,12 +48,6 @@ section{
     width: 500px;
 }
 
-
-#montoTotal{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
 
 #carritoImg{
     margin-right: 2rem;

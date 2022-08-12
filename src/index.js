@@ -1,5 +1,6 @@
-import { listaPedidos } from "./Js/hamburgueseria";
-import { mostrarCarrito, renderizarCards } from "./Js/renders";
+import { listaPedidos,pedidosCompletados,statusCarrito } from "./App.js";
+import { borrarPedidosEntregados } from "./components/notifications/notifications.js";
+import { mostrarCarrito, renderizarCards } from "./components/utilities/renders.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   renderizarCards();
@@ -19,3 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
     pedidosCompletados.push(pedidoCliente);
   }
 });
+
+//chequea si hay pedidos ya entregados
+setInterval(() => {
+  if (localStorage.getItem("pedidoCliente")) {
+    const imprimir = JSON.parse(localStorage.getItem("pedidoCliente"));
+    borrarPedidosEntregados(imprimir);
+  }
+}, 15000);
