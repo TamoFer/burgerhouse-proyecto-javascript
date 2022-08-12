@@ -1,7 +1,10 @@
-import { listaPedidos,pedidosCompletados,statusCarrito } from "./App.js";
+// importacion de funciones y variables de otros archivos JS
+import { listaPedidos,pedidosCompletados} from "./App.js";
 import { borrarPedidosEntregados } from "./components/notifications/notifications.js";
 import { mostrarCarrito, renderizarCards } from "./components/utilities/renders.js";
 
+
+// al cargar la pagina, realiza comprobaciones y renders
 document.addEventListener("DOMContentLoaded", () => {
   renderizarCards();
   if (localStorage.getItem("pedidoTemporal")) {
@@ -10,21 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
       listaPedidos.push(pedido);
     });
     mostrarCarrito(listaPedidos);
-    statusCarrito();
   }
 
-  if (localStorage.getItem("pedidoCliente")) {
-    const pedidoCliente = JSON.parse(localStorage.getItem("pedidoCliente"));
+  if (localStorage.getItem("pedidoCompleto")) {
+    const pedidoCompleto = JSON.parse(localStorage.getItem("pedidoCompleto"));
     const notificacionPedido = document.querySelector(".statusOrder");
     notificacionPedido.classList.add("badgeOrder");
-    pedidosCompletados.push(pedidoCliente);
+    pedidosCompletados.push(pedidoCompleto);
   }
 });
 
 //chequea si hay pedidos ya entregados
 setInterval(() => {
-  if (localStorage.getItem("pedidoCliente")) {
-    const imprimir = JSON.parse(localStorage.getItem("pedidoCliente"));
+  if (localStorage.getItem("pedidoCompleto")) {
+    const imprimir = JSON.parse(localStorage.getItem("pedidoCompleto"));
     borrarPedidosEntregados(imprimir);
   }
 }, 15000);

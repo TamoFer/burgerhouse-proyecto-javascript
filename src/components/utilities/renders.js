@@ -64,7 +64,7 @@ export async function renderizarCards() {
 
 }
 
-//render de carrito
+//render de productos en carrito modal offcanvas
 export function mostrarCarrito(listaPedidos) {
   carritoBody.textContent = "";
   listaPedidos.forEach((pedido) => {
@@ -95,5 +95,4 @@ export function mostrarCarrito(listaPedidos) {
   });
   localStorage.setItem("pedidoTemporal", JSON.stringify(listaPedidos));
   sumaTotal(listaPedidos);
-  statusCarrito();
 }

@@ -1,16 +1,14 @@
-// funciones principales mostrarCarrito
-
 //importacion de funciones de otros modulos
 import { mostrarCarrito} from "../src/components/utilities/renders.js";
 import { DateTime } from "../src/components/lib/luxon.js";
 
-//definicion de constantes que utilizare en todo el codigo, agrego funcion export para modularizar el codigo
+//definicion de constantes utilizadas en todo el proyecto
 export const listaPedidos = [];
 export const pedidosCompletados = [];
 export const menus = document.querySelector("#menus");
 export const carritoBody = document.querySelector("#carrito-body");
 
-//devuelve la suma total de todos los pedidos de mi lista de pedidos utilizando reduce
+//suma del precio de todo el carrito
 export function sumaTotal(array) {
   const total = array.reduce(
     (acc, pedido) => acc + pedido.precio * pedido.cantidad,
@@ -22,7 +20,7 @@ export function sumaTotal(array) {
 }
 
 
-
+// contador del carrito de compra
 export function statusCarrito() {
   const notificacion = document.querySelector(".statusCarrito");
   notificacion.classList.add("badgeCarrito");
@@ -30,15 +28,14 @@ export function statusCarrito() {
   notificacion.textContent = total.toString();
 }
 
-
+// reseteo carrito de compra 
 export function resetInterface() {
   const listaPedidos = [];
   mostrarCarrito(listaPedidos);
-  statusCarrito();
   window.location.reload();
 }
 
-
+// calculo con modulo luxon el horario de llegada de un pedido pago
 export function tiempoLlegadaPedido(array) {
   const numBurgers = array.reduce((acc, p) => acc + p.cantidad, 0);
   const hora = DateTime.now();
@@ -48,6 +45,7 @@ export function tiempoLlegadaPedido(array) {
   return horaLlegada;
 }
 
+//calculo tiempo demora por cada burger del pedido (15min/u)
 export function calculoDemora(array) {
   const numBurgers = array.reduce((acc, p) => acc + p.cantidad, 0);
   const segundos = numBurgers * 900;
@@ -64,6 +62,7 @@ export function calculoDemora(array) {
   return demora;
 }
 
+// creo objeto con datos necesarios del pedido y cliente
 export function guardarDatos(array, objeto) {
   const total = "$" + array.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
 
@@ -74,7 +73,7 @@ export function guardarDatos(array, objeto) {
     horaLlegada: tiempoLlegadaPedido(array),
   };
 
-  localStorage.setItem("pedidoCliente", JSON.stringify(dato));
+  localStorage.setItem("pedidoCompleto", JSON.stringify(dato));
   localStorage.removeItem("pedidoTemporal");
 }
 

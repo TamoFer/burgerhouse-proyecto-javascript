@@ -1,6 +1,7 @@
+// importacion de funcion
 import { DateTime } from "../lib/luxon.js";
 
-
+// creacion popup segun evento que reciba 
 export function popUp(event, burga) {
     event.target.getAttribute("serial")
       ? Swal.fire({
@@ -29,8 +30,9 @@ export function popUp(event, burga) {
           icon: "error",
           title: `Sacaste una ${burga.nombre}`,
         });
-  }
+}
   
+// popup de alerta sobre mal uso 
 export function popUpErrors() {
   Swal.fire({
     toast: true,
@@ -47,6 +49,7 @@ export function popUpErrors() {
   });
 }
 
+// eliminacion del pedido luego de que se cumple su horario de llegada
 export function borrarPedidosEntregados(obj) {
   const horaActual = DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE);
   horaActual >= obj.horaLlegada

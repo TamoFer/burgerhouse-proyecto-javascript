@@ -4,7 +4,7 @@ import {guardarDatos, listaPedidos, pedidosCompletados, resetInterface, sumaTota
 import { mostrarCarrito } from "../utilities/renders.js";
 import { popUp, popUpErrors } from "../notifications/notifications.js";
 
-//agrego desde button de card la burger
+//funcionalidad de agregado de burgers
 export async function agregarPedido(event) {
   const BD= await getBD();
   let serial = event.target.getAttribute("serial");
@@ -19,7 +19,7 @@ export async function agregarPedido(event) {
   mostrarCarrito(listaPedidos);
 }
 
-//elimino del carrito burgers atraves de button
+//funcionalidad de eliminacion de burgers 
 export function eliminarPedido(event) {
   let serial = event.target.getAttribute("serialDelete");
   let burgerAgregada = listaPedidos.find((burger) => burger.serial == serial);
@@ -41,6 +41,7 @@ btnCarrito.addEventListener("click", () => {
   mostrarCarrito(listaPedidos);
 });
 
+// creacion de alerta donde el usuario ingresa datos personales y de envio, junto a la forma de abono del mismo
 const btnModal = document.querySelector("#modal-btn");
 btnModal.addEventListener("click", () => {
   Swal.fire({
@@ -68,7 +69,7 @@ btnModal.addEventListener("click", () => {
       const fpago = Swal.getPopup().querySelector("#fpago").value;
       if (!nombre || !telefono || !direccion || !fpago) {
         Swal.showValidationMessage(
-          `¡Completa todos los campos del formulario para el envio!`
+          `¡Completa todos los campos del formulario para el envió!`
         );
       }
       return { nombre, telefono, direccion, fpago };
@@ -96,11 +97,12 @@ btnModal.addEventListener("click", () => {
   });
 });
 
+// ver horario de llegada del pedido en la img del delivery 
 const btnStatusOrder = document.querySelector("#deliveryImg");
 btnStatusOrder.addEventListener("click", () => {
   pedidosCompletados.forEach((p) => {
     Swal.fire({
-      text: `Hola ${p.nombre} ya recibimos tu pedido, estaria llegando a tu direccion (${p.adress}) a las ${p.horaLlegada}hs. 
+      text: ` Hola! ${p.nombre} ya recibimos tu pedido, estaría llegando a tu dirección (${p.adress}) a las ${p.horaLlegada} hs. 
       ¡Gracias por comprar en BURGERHOUSE!`,
       toast: true,
       position: "bottom-right",
