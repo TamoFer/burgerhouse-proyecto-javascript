@@ -1,3 +1,4 @@
+/* Seteo HTML */
 *{
     margin: 0px;
     padding: 0px;
@@ -6,6 +7,8 @@
 html{
     font-size: 62.5%;
 }
+
+/* estilos estructuras HTML */
 
 body{
     background-image: url(../images/fondo-body.jpg);
@@ -34,15 +37,6 @@ header h1{
 }
 
 
-#facturacion{
-    font-size: 20px;
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-
 #menus{
     display: flex;
     flex-direction: row;
@@ -55,10 +49,6 @@ header h1{
 }
 
 
-#carritoImg{
-    margin-right: 2rem;
-}
-
 #carrito-total{
     display: flex;
     flex-direction: row;
@@ -68,6 +58,7 @@ header h1{
 #carritoImg{
     width: 60px;
     height: 60px;
+    margin-right: 2rem;
 }
 
 #deliveryImg{
@@ -76,7 +67,7 @@ header h1{
     margin: .3rem 1rem 0rem 1rem;
 }
 
-/*  estilo de cards creadas por DOM */
+/*  estilo de las cards creadas por DOM */
 .card{
     width: 300px;
     height: 275px;
@@ -84,8 +75,6 @@ header h1{
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     margin: 0px 5px 20px 5px;
 }
-
-
 
 .card-info {
     display: flex;
@@ -105,11 +94,11 @@ header h1{
 }
 
 
-/*Text*/
+/*estilo txt de las cards*/
 .text-title {
     font-weight: 900;
     font-size: 2rem;
-    line-height: 1.5;
+    line-height: 1.4;
     text-decoration: underline;
     text-transform: uppercase;
 
@@ -118,13 +107,13 @@ header h1{
 .text-title--precio {
     font-weight: 900;
     font-size: 2rem;
-    line-height: 1.5;
+    line-height: 1.4;
     text-transform: uppercase;
 }
 
 
 .text-body {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     padding-bottom: 10px;
     
 }
@@ -148,6 +137,7 @@ header h1{
     flex-direction: row;
 }
 
+/* estilo icono carrito */
 .carro{
     display: flex;
     flex-direction: row;
@@ -161,29 +151,27 @@ header h1{
     border-radius: 50%;
     margin: .5rem 3rem 0rem -3.5rem;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
-/* estilo del section */
-
+.carrito-detalle{
+    width: 20rem;
+    height: auto;
+    font-size: 1.4rem;
+    margin-top: 1.7rem;
+    text-align:start;
+}
 
 /* estilo de botones html */
-.btn-info{
-    width: 50%;
-    height: 35px;
-    margin:10px 0px 5px 25%;
-    padding: 0px;
-    
-}
-
 .btn-danger{
     width:auto ;
     height:35px ;
     margin-top: 1rem;
 }
 
-.btn-pp{
-    margin: 10px;
+.btn-success{
+    width: 100px;
+    margin: 0rem 0rem 1rem 35%;
 }
 
 /* estilos de div */
@@ -192,76 +180,6 @@ header h1{
     flex-direction: row;
     justify-content: space-between;
     margin: 10px 10px 10px 10px;
-}
-
-.carrito-detalle{
-    width: 20rem;
-    height: auto;
-    font-size: 1.5rem;
-    margin-top: 1.7rem;
-    text-align:start;
-}
-
-
-.descripcionPedido{
-    display: flex;
-    flex-direction: column;
-    font-size: 10px;
-}
-
-.cardPedido{
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-    padding: 10px;
-}
-
-/* estilo de texto sweetalert */
-.swal-text {
-    padding: 17px;
-    display: block;
-    margin: 22px;
-    text-align: center;
-}
-
-
-
-.colored-toast.swal2-icon-success {
-    background-color: #a5dc86 !important;
-    font-size: 1.5rem;
-}
-
-.colored-toast.swal2-icon-error {
-    background-color: #f27474 !important;
-    font-size: 1.5rem;
-
-}
-
-.colored-toast.swal2-icon-warning {
-    background-color: #f8bb86 !important;
-    font-size: 1.5rem;
-}
-
-.pedido{
-    display: flex;
-    flex-direction: row;
-}
-
-
-.badgeOrder{
-    background-color:red;
-    border: 1px solid black;
-    display: block;
-    position: absolute;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    margin: 1.3rem 0rem 0rem 5.5rem;
-    text-align: center;
-    font-size: 1.4rem;
 }
 
 .banner p{
@@ -274,6 +192,50 @@ header h1{
     
 }
 
-.swal2-font-size{
-    font-size: 2rem !important; 
+.descripcionPedido{
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
 }
+
+
+
+/* estilo de texto sweetalert */
+.colored-toast.swal2-icon-success {
+    background-color: #a5dc86 !important;
+    font-size: 1.4rem;
+}
+
+.colored-toast.swal2-icon-error {
+    background-color: #f27474 !important;
+    font-size: 1.4rem;
+}
+
+.colored-toast.swal2-icon-warning {
+    background-color: #f8bb86 !important;
+    font-size: 1.4rem;
+}
+
+
+/* estilo div img delivery  */
+.pedido{
+    display: flex;
+    flex-direction: row;
+}
+
+/* notificacion delivery */
+.badgeOrder{
+    background-color:red;
+    border: 1px solid black;
+    display: block;
+    position: absolute;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    margin: 1.4rem 0rem 0rem 5.5rem;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+
+
