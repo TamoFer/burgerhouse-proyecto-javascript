@@ -1,7 +1,7 @@
 //importacion de funciones de otros modulos
 import { agregarPedido,eliminarPedido} from "../btn-actions/accionesBtns.js";
 import { getBD } from "./getData.js";
-import { menus,carritoBody} from "../.././App.js";
+import { menus,carritoBody, sumaTotal, statusCarrito} from "../.././App.js";
 
 
 //render de cards
@@ -94,4 +94,6 @@ export function mostrarCarrito(listaPedidos) {
     carritoBody.appendChild(miTkt);
   });
   localStorage.setItem("pedidoTemporal", JSON.stringify(listaPedidos));
+  sumaTotal(listaPedidos);
+  statusCarrito();
 }

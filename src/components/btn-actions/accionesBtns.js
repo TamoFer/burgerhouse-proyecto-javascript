@@ -1,6 +1,6 @@
 //importacion de funciones de otros modulos
 import { getBD } from "../utilities/getData.js";
-import {calculoDemora, guardarDatos, listaPedidos, pedidosCompletados, statusCarrito, sumaTotal } from "../../App.js";
+import {guardarDatos, listaPedidos, pedidosCompletados, resetInterface, sumaTotal } from "../../App.js";
 import { mostrarCarrito } from "../utilities/renders.js";
 import { popUp, popUpErrors } from "../notifications/notifications.js";
 
@@ -16,9 +16,7 @@ export async function agregarPedido(event) {
     : ((burger.cantidad = 1), listaPedidos.push(burger));
 
   popUp(event, burger);
-  statusCarrito();
   mostrarCarrito(listaPedidos);
-  sumaTotal(listaPedidos);
 }
 
 //elimino del carrito burgers atraves de button
@@ -32,9 +30,7 @@ export function eliminarPedido(event) {
   burgerAgregada.cantidad === 0 && listaPedidos.splice(indice, 1);
 
   popUp(event, burgerAgregada);
-  statusCarrito();
   mostrarCarrito(listaPedidos);
-  sumaTotal(listaPedidos);
 }
 
 
@@ -43,7 +39,6 @@ export function eliminarPedido(event) {
 const btnCarrito = document.querySelector("#carritoImg");
 btnCarrito.addEventListener("click", () => {
   mostrarCarrito(listaPedidos);
-  sumaTotal(listaPedidos);
 });
 
 const btnModal = document.querySelector("#modal-btn");
@@ -81,15 +76,23 @@ btnModal.addEventListener("click", () => {
   }).then((result) => {
     const cliente = result.value;
     guardarDatos(listaPedidos, cliente);
-    Swal.fire({
-      icon: "success",
-      text: `Excelente ${result.value.nombre}! ${calculoDemora(
-        listaPedidos
-      )} a ${result.value.direccion}. ¡Gracias por comprar en BurgerHouse!`,
-      timer: 4000,
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top',
       showConfirmButton: false,
-    });
-    setTimeout(resetInterface, 4500);
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    Toast.fire({
+      icon: 'success',
+      title: `Pago recibido ${cliente.nombre}`
+    })
+    setTimeout(resetInterface, 3100);
+    
   });
 });
 

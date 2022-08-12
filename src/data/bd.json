@@ -29,7 +29,7 @@
     {
     "serial": 4,
     "nombre": "Burga Power Onion",
-    "descripcion": "Hamburguesa simple de pollo crispy, que trae aros de cebolla como ingrediente junto a bacon, queso cheddar, mayonesa y ketchup.Y de guarnicion, bastones de mozzarella",
+    "descripcion": "Hamburguesa simple de pollo crispy, que trae aros de cebolla como ingrediente junto a bacon, queso cheddar, mayonesa y ketchup. Y de guarnición, bastones de mozzarella",
     "precio": 1050,
     "cantidad": 1,
     "imagen": "../../../public/images/burger-powerOnion.png"
@@ -38,7 +38,7 @@
     {
     "serial": 5,
     "nombre": "NotBurger",
-    "descripcion": "Hamburguesa veggie, compuesta por un medallon de soja empanado de la mano de tomate, lechuga, cebolla, pepinillos y una salsa de ketchup ",
+    "descripcion": "Hamburguesa veggie, compuesta por un medallón de soja empanado de la mano de tomate, lechuga, cebolla, pepinillos y una salsa de ketchup",
     "precio": 1100,
     "cantidad": 1,
     "imagen": "../../../public/images/burger-veggie.png"

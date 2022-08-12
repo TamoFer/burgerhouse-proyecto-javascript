@@ -19,6 +19,12 @@ section{
     justify-content: space-around;
 }
 
+header h1{
+    color: white;
+    font-size: 5rem;
+    margin-left: 1rem;
+}
+
 
 /* estilos de etiquetas ID  */
 #opciones{ 
@@ -57,6 +63,17 @@ section{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+#carritoImg{
+    width: 60px;
+    height: 60px;
+}
+
+#deliveryImg{
+    width: 53px;
+    height: 53px;
+    margin: .3rem 1rem 0rem 1rem;
 }
 
 /*  estilo de cards creadas por DOM */
@@ -210,10 +227,6 @@ section{
     text-align: center;
 }
 
-#carritoImg{
-    width: 60px;
-    height: 60px;
-}
 
 
 .colored-toast.swal2-icon-success {
@@ -238,12 +251,6 @@ section{
 }
 
 
-#deliveryImg{
-    width: 53px;
-    height: 53px;
-    margin: .3rem 1rem 0rem 1rem;
-}
-
 .badgeOrder{
     background-color:red;
     border: 1px solid black;
@@ -257,3 +264,16 @@ section{
     font-size: 1.4rem;
 }
 
+.banner p{
+    font-size: 2.5rem;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: solid;
+    text-decoration: underline;
+    margin: 1rem 0rem 1rem 1rem;
+    
+}
+
+.swal2-font-size{
+    font-size: 2rem !important; 
+}
