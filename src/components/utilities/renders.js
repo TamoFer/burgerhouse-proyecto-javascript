@@ -95,4 +95,5 @@ export function mostrarCarrito(listaPedidos) {
   });
   localStorage.setItem("pedidoTemporal", JSON.stringify(listaPedidos));
   sumaTotal(listaPedidos);
+  statusCarrito();
 }
