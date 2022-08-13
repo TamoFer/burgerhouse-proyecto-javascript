@@ -1,6 +1,6 @@
-# **BurgerHouse** 
+# **BurgerHouse** ![Esta es una imagen](https://myoctocat.com/assets/images/base-octocat.svg)
 
-Venta de hamburguesas online. Simulacion de un ecommerce de codiga rapida
+Venta de hamburguesas online. Simulacion de un "ecommerce" de codiga rapida. 
 
 ## Proyecto 📁
 
