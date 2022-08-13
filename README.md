@@ -1,4 +1,4 @@
-# **BurgerHouse** ![Esta es una imagen](https://myoctocat.com/assets/images/base-octocat.svg)
+# **BurgerHouse** ![Esta es una imagen](https://github.com/FerTamone/JScript-proyects/blob/proyecto-final/public/images/burger-house.jpg)
 
 Venta de hamburguesas online. Simulacion de un "ecommerce" de codiga rapida. 
 
