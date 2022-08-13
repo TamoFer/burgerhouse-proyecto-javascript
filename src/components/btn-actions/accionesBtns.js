@@ -4,7 +4,7 @@ import {guardarDatos, listaPedidos, pedidosCompletados, resetInterface, sumaTota
 import { mostrarCarrito } from "../utilities/renders.js";
 import { popUp, popUpErrors } from "../notifications/notifications.js";
 
-//funcionalidad de agregado de burgers
+//agrega las burgers al carrito
 export async function agregarPedido(event) {
   const BD= await getBD();
   let serial = event.target.getAttribute("serial");
@@ -19,7 +19,7 @@ export async function agregarPedido(event) {
   mostrarCarrito(listaPedidos);
 }
 
-//funcionalidad de eliminacion de burgers 
+//elimina burgers del carrito de compra
 export function eliminarPedido(event) {
   let serial = event.target.getAttribute("serialDelete");
   let burgerAgregada = listaPedidos.find((burger) => burger.serial == serial);
@@ -35,13 +35,13 @@ export function eliminarPedido(event) {
 
 
 
-//actualizar carrito al clickear img de este
+//actualizar carrito al clickear sobre este
 const btnCarrito = document.querySelector("#carritoImg");
 btnCarrito.addEventListener("click", () => {
   mostrarCarrito(listaPedidos);
 });
 
-// creacion de alerta donde el usuario ingresa datos personales y de envio, junto a la forma de abono del mismo
+// alerta donde el usuario ingresa datos personales, de envio y formas de pago
 const btnModal = document.querySelector("#modal-btn");
 btnModal.addEventListener("click", () => {
   Swal.fire({
@@ -100,7 +100,7 @@ btnModal.addEventListener("click", () => {
   });
 });
 
-// ver horario de llegada del pedido en la img del delivery 
+// ver estado del pedido abonado 
 const btnStatusOrder = document.querySelector("#deliveryImg");
 btnStatusOrder.addEventListener("click", () => {
   pedidosCompletados.forEach((p) => {
