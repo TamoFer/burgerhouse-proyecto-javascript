@@ -45,23 +45,6 @@ export function tiempoLlegadaPedido(array) {
   return horaLlegada;
 }
 
-//calculo tiempo demora por cada burger del pedido (15min/u)
-export function calculoDemora(array) {
-  const numBurgers = array.reduce((acc, p) => acc + p.cantidad, 0);
-  const segundos = numBurgers * 900;
-  let hora = Math.floor(segundos / 3600);
-  hora = hora < 10 ? "0" + hora : hora;
-  let minutos = Math.floor((segundos / 60) % 60);
-  minutos = minutos < 10 ? "0" + minutos : minutos;
-  let demora = "";
-
-  hora < 1
-    ? (demora = `Tu pedido tardara aprox. ${minutos} min`)
-    : (demora = `Tu pedido tardara aprox. ${hora}:${minutos} hs`);
-
-  return demora;
-}
-
 // creo objeto con datos necesarios del pedido y cliente
 export function guardarDatos(array, objeto) {
   const total = "$" + array.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
