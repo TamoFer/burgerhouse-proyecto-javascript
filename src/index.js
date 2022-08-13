@@ -30,3 +30,4 @@ setInterval(() => {
     borrarPedidosEntregados(imprimir);
   }
 }, 15000);
+

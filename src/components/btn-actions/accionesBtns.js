@@ -62,6 +62,9 @@ btnModal.addEventListener("click", () => {
     showConfirmButton: true,
     confirmButtonText: "Finalizar pedido",
     focusConfirm: false,
+    customClass: {
+      popupe: 'probandoStyle'
+    },
     preConfirm: () => {
       const nombre = Swal.getPopup().querySelector("#name").value;
       const telefono = Swal.getPopup().querySelector("#tel").value;
@@ -90,9 +93,9 @@ btnModal.addEventListener("click", () => {
     })
     Toast.fire({
       icon: 'success',
-      title: `Pago recibido ${cliente.nombre}`
+      title: `Recibimos tu pago ${cliente.nombre}`
     })
-    setTimeout(resetInterface, 3100);
+    // setTimeout(resetInterface, 3100);
     
   });
 });

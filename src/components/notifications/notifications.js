@@ -65,3 +65,32 @@ export function borrarPedidosEntregados(obj) {
     : null;
 }
 
+//tooltips iconos tecnologias usadas en proyecto
+tippy('#html5', {
+  content: 'HTML5',
+});
+
+tippy('#css3', {
+  content: 'CSS3',
+});
+
+tippy('#javascript', {
+  content: 'JavaScript',
+});
+
+tippy('#bootstrap', {
+  content: 'BootStrap',
+});
+
+tippy('#sweetalert2', {
+  content: 'SweetAlert2',
+});
+
+//tooltips iconos ecommmerce
+tippy('#deliveryImg', {
+  content: 'Pedido delivery',
+});
+
+tippy('#carritoImg', {
+  content: 'Carrito de compra',
+});
