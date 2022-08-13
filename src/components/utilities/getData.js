@@ -1,5 +1,5 @@
 // defino ruta de mi BD local
-const API= "src/data/bd.json";
+const API= "../src/data/bd.json";
 
 //exporto funcion que me devuelve los datos de mi BD
 export const getBD=async()=>{
