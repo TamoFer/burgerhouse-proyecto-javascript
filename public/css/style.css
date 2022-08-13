@@ -279,4 +279,15 @@ section {
   margin-bottom: 1rem;
 }
 
+.nameAndfavicon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
 
+.iconPage{
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+}
