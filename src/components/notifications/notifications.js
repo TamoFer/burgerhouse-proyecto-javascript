@@ -86,9 +86,13 @@ tippy('#sweetalert2', {
   content: 'SweetAlert2',
 });
 
+tippy('#tippy', {
+  content: 'Tippy . Js',
+});
+
 //tooltips iconos ecommmerce
 tippy('#deliveryImg', {
-  content: 'Pedido delivery',
+  content: 'Estado del pedido',
 });
 
 tippy('#carritoImg', {

@@ -95,7 +95,7 @@ btnModal.addEventListener("click", () => {
       icon: 'success',
       title: `Recibimos tu pago ${cliente.nombre}`
     })
-    // setTimeout(resetInterface, 3100);
+    setTimeout(resetInterface, 3100);
     
   });
 });
