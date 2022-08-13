@@ -1,4 +1,5 @@
-# **BurgerHouse** ![Esta es una imagen](https://github.com/FerTamone/JScript-proyects/blob/proyecto-final/public/images/burger-house.jpg)
+# **BurgerHouse** 
+![burger-img](https://github.com/FerTamone/JScript-proyects/blob/proyecto-final/public/images/rsz_burger-house.png)
 
 Venta de hamburguesas online. Simulacion de un "ecommerce" de codiga rapida. 
 
@@ -8,12 +9,14 @@ Para conocer este hace click en el  [link](https://infocryptos2022.000webhostapp
 
 
 
-## Lenguajes utilizados 🧰
+## Tecnologías utilizadas 🧰
 
 * HTML 5
 * CSS 3
 * Bootstrap
-* SASS
+* Javascript
+* SweetAlert2
+* Tippy.js
 
 
 
