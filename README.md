@@ -1,7 +1,7 @@
 # **BurgerHouse** 
 ![burger-img](https://github.com/FerTamone/JScript-proyects/blob/proyecto-final/public/images/rsz_burger-house.png)
 
-Venta de hamburguesas online. Simulacion de un "ecommerce" de codiga rapida. 
+Venta de hamburguesas online. Simulador de un "ecommerce" de codiga rapida. 
 
 ## Proyecto 📁
 
