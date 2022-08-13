@@ -8,7 +8,7 @@
 
 ## **Proyecto** 📁
 
-Para conocer este hace click en el  [link](https://infocryptos2022.000webhostapp.com/index.html). :globe_with_meridians:
+Para conocer este hace click en el  [link](https://burgerhouse2022.000webhostapp.com/). :globe_with_meridians:
 
 
 ## Tecnologías utilizadas 🧰💻🖥️
