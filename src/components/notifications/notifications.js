@@ -61,7 +61,7 @@ export function borrarPedidosEntregados(obj) {
       }),
       setTimeout(() => {
         localStorage.clear(), window.location.reload();
-      }, 2500))
+      }, 2100))
     : null;
 }
 
