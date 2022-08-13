@@ -9,7 +9,7 @@ Para conocer este hace click en el  [link](https://infocryptos2022.000webhostapp
 
 
 
-🧑‍💻 ## Tecnologías utilizadas 🧰💻🖥️
+## Tecnologías utilizadas 🧰💻🖥️
 
 * HTML 5
 * CSS 3
@@ -20,6 +20,6 @@ Para conocer este hace click en el  [link](https://infocryptos2022.000webhostapp
 
 
 
-🖋️ ## Autor 🖋️
+## Autor 🖋️
 **Fernando Tamone**
 
