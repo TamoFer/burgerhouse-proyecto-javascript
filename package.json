@@ -1,0 +1,23 @@
+{
+  "name": "burgerhouse",
+  "version": "1.0.0",
+  "description": "hamburgueseria online",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FerTamone/JScript-proyects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FerTamone/JScript-proyects/issues"
+  },
+  "homepage": "https://github.com/FerTamone/JScript-proyects#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  }
+}
