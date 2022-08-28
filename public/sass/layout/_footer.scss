@@ -4,3 +4,22 @@ footer {
   justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.7);
 }
+
+.autor {
+  p {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+  }
+}
+
+.herramientas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  p{
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+  }
+}

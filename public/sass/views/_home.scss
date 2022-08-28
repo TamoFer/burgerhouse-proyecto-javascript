@@ -32,3 +32,97 @@
   height: 53px;
   margin: 0.3rem 1rem 0rem 1rem;
 }
+
+.card {
+  width: 300px;
+  height: 275px;
+  padding: 0.8em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin: 0px 5px 20px 5px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  height: 100%;
+}
+
+.card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+/*estilo txt de las cards*/
+.text-title {
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.text-title--precio {
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.text-body {
+  font-size: 1.4rem;
+  padding-bottom: 10px;
+}
+
+/* estilo icono carrito */
+.carro {
+  display: flex;
+  flex-direction: row;
+}
+
+.badgeCarrito {
+  background-color: coral;
+  border: 1px solid black;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  margin: 0.5rem 3rem 0rem -3.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.carrito-detalle {
+  width: 20rem;
+  height: auto;
+  font-size: 1.4rem;
+  margin-top: 1.7rem;
+  text-align: start;
+}
+
+.descripcionTkt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 10px 10px 10px;
+}
+
+.banner p {
+  font-size: 2.5rem;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: solid;
+  text-decoration: underline;
+  margin: 0rem 0rem 2rem 1rem;
+}
+
+.descripcionPedido {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+}
+
