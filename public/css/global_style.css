@@ -16,15 +16,15 @@ section {
   height: 100vh;
   justify-content: space-around; }
 
-.flex-row, .iconsTecnologys, .nameAndfavicon, footer, header, header div nav ul, #menus, #carrito-total, .card-footer, .carro, .pedido, .descripcionTkt {
+.flex-row, .iconsTecnologys, .nameAndfavicon, footer, header, header div nav ul, #menus, .carrito-monto, .card-footer, .carro, .pedido, .descripcionTkt {
   display: flex;
   flex-direction: row; }
 
-.flex-column, section, .herramientas, #opciones, .card-info, .descripcionPedido {
+.flex-column, section, .herramientas, #opciones, #carrito-total, .card-info, .descripcionPedido {
   display: flex;
   flex-direction: column; }
 
-.font-size14, .colored-toast.swal2-icon-success, .colored-toast.swal2-icon-error, .colored-toast.swal2-icon-warning, .badge-order, .badge-carrito, .swal2-popup.swal2-toast, .text-body, .carrito-detalle {
+.font-size14, .colored-toast.swal2-icon-success, .colored-toast.swal2-icon-error, .colored-toast.swal2-icon-warning, .badge-order, .badge-carrito, .swal2-popup.swal2-toast, .carrito-monto, .carrito-detalle, .text-body {
   font-size: 1.4rem; }
 
 .pFooter, .autor p, .herramientas p {
@@ -34,12 +34,12 @@ section {
 
 .btn-danger {
   width: auto;
-  height: 35px;
+  height: 3.5rem;
   margin-top: 1rem; }
 
 .btn-success {
-  width: 100px;
-  margin: 0rem, 0rem, 1rem, 35%; }
+  width: 10rem;
+  height: auto; }
 
 /* estilo de texto sweetalert */
 .colored-toast.swal2-icon-success {
@@ -122,7 +122,19 @@ header {
   width: 50rem; }
 
 #carrito-total {
-  justify-content: space-between; }
+  align-items: center;
+  justify-content: space-around; }
+
+.carrito-monto {
+  width: 100%;
+  height: auto;
+  justify-content: space-around; }
+
+.carrito-detalle {
+  width: 20rem;
+  height: auto;
+  margin-top: 1.7rem;
+  text-align: start; }
 
 #carritoImg {
   width: 6rem;
@@ -165,12 +177,6 @@ header {
 
 .text-body {
   padding-bottom: 1rem; }
-
-.carrito-detalle {
-  width: 20rem;
-  height: auto;
-  margin-top: 1.7rem;
-  text-align: start; }
 
 .descripcionTkt {
   margin: 10px, 10px, 10px, 10px;

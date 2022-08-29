@@ -14,8 +14,24 @@
 }
 
 #carrito-total {
-  @extend .flex-row;
-  justify-content: map-get($alineaciones-flex, between);
+  @extend .flex-column;
+  align-items: map-get($texto-estilos , centrado );
+  justify-content: map-get($alineaciones-flex, around);
+}
+
+.carrito{
+  &-monto{
+    @extend .flex-row, .font-size14;
+    @include sizes(100%,auto);
+    justify-content: map-get($alineaciones-flex , around )
+  }
+  &-detalle {
+    @include sizes(20rem, auto);
+    @extend .font-size14;
+    margin-top: 1.7rem;
+    text-align: start;
+  }
+  
 }
 
 #carritoImg {
@@ -73,13 +89,6 @@
   @extend .flex-row;
 }
 
-.carrito-detalle {
-  @include sizes(20rem, auto);
-  @extend .font-size14;
-  margin-top: 1.7rem;
-  text-align: start;
-}
-
 .descripcionTkt {
   @extend .flex-row;
   @include margenes(10px, 10px, 10px, 10px);
@@ -100,8 +109,6 @@
   @extend .flex-column;
   font-size: 1rem;
 }
-
-
 
 .menu-fpago {
   p {

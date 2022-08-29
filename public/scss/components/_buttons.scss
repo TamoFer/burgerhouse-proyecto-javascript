@@ -1,12 +1,11 @@
 .btn {
   &-danger {
-    @include sizes(auto,35px);
+    @include sizes(auto,3.5rem);
     margin-top: 1rem;
   }
   
   &-success {
-    width: 100px;
-    @include margenes(0rem, 0rem, 1rem,35%);
+    @include sizes(10rem,auto);
   }
 }
   
