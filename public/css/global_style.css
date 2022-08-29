@@ -1,0 +1,191 @@
+/* Seteo HTML */
+* {
+  margin: 0px;
+  padding: 0px; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background-image: url(../../images/fondo-body.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+section {
+  width: 100%;
+  height: 100vh;
+  justify-content: space-around; }
+
+.flex-row, .iconsTecnologys, .nameAndfavicon, footer, header, header nav ul, #menus, #carrito-total, .card-footer, .carro, .pedido, .descripcionTkt {
+  display: flex;
+  flex-direction: row; }
+
+.flex-column, section, .herramienatas, #opciones, .card-info, .descripcionPedido {
+  display: flex;
+  flex-direction: column; }
+
+.font-size14, .colored-toast.swal2-icon-success, .colored-toast.swal2-icon-error, .colored-toast.swal2-icon-warning, .badge-order, .badge-carrito, .swal2-popup.swal2-toast, .text-body, .carrito-detalle {
+  font-size: 1.4rem; }
+
+.pFooter, .autor p, .herramienatas p {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center; }
+
+.btn-danger {
+  width: auto;
+  height: 35px;
+  margin-top: 1rem; }
+
+.btn-success {
+  width: 100px;
+  margin: 0rem, 0rem, 1rem, 35%; }
+
+/* estilo de texto sweetalert */
+.colored-toast.swal2-icon-success {
+  background-color: #a5dc86 !important; }
+
+.colored-toast.swal2-icon-error {
+  background-color: #f27474 !important; }
+
+.colored-toast.swal2-icon-warning {
+  background-color: #f8bb86 !important; }
+
+/* notificacion iconos */
+.badge-order {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin: 1.4rem, 0rem, 0rem, 5.5rem;
+  background-color: red;
+  border: 1px solid black;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  text-align: center; }
+
+.badge-carrito {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin: 0.5rem, 3rem, 0rem, 5rem;
+  background-color: coral;
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center; }
+
+.swal2-popup {
+  font-size: 1.3rem; }
+
+.icon {
+  width: 4.8rem;
+  height: 4.8rem; }
+
+.iconsTecnologys {
+  gap: 2rem;
+  margin-bottom: 1rem; }
+
+.nameAndfavicon {
+  align-items: center;
+  gap: 1rem; }
+
+.iconPage {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%; }
+
+footer {
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.7); }
+
+.herramienatas {
+  justify-content: space-around; }
+
+header {
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.7); }
+  header h1 {
+    color: white;
+    font-size: 5rem;
+    margin-left: 1rem; }
+  header nav ul li {
+    list-style: none; }
+
+#opciones {
+  width: 100%; }
+
+#menus {
+  justify-content: space-around;
+  flex-wrap: wrap; }
+
+#carrito {
+  width: 50rem; }
+
+#carrito-total {
+  justify-content: space-between; }
+
+#carritoImg {
+  width: 6rem;
+  height: 6rem;
+  margin-right: 2rem; }
+
+#deliveryImg {
+  width: 5.3rem;
+  height: 5.3rem;
+  margin: 0.3rem, 1rem, 0rem, 1rem; }
+
+.card {
+  width: 30rem;
+  height: 27.5rem;
+  margin: 0rem, 0.5rem, 2rem, 0.5rem;
+  padding: 0.8rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .card-info {
+    justify-content: space-between;
+    text-align: center;
+    height: 100%; }
+  .card-footer {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd; }
+
+/*estilo txt de las cards*/
+.text-title {
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-transform: uppercase; }
+  .text-title--precio {
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1.4;
+    text-transform: uppercase; }
+
+.text-body {
+  padding-bottom: 1rem; }
+
+.carrito-detalle {
+  width: 20rem;
+  height: auto;
+  margin-top: 1.7rem;
+  text-align: start; }
+
+.descripcionTkt {
+  margin: 10px, 10px, 10px, 10px;
+  justify-content: space-between; }
+
+.banner p {
+  margin: 0rem, 0rem, 2rem, 1rem;
+  font-size: 2.5rem;
+  color: black;
+  text-decoration: underline;
+  text-transform: uppercase; }
+
+.descripcionPedido {
+  font-size: 1rem; }
+
+.menu-fpago p {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  font-weight: bold; }

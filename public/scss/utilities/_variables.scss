@@ -1,3 +1,14 @@
+$alineaciones-flex: (
+  between: space-between,
+  around: space-around
+);
+
+$texto-estilos:(
+  mayusculas: uppercase,
+  subrayado: underline,
+  centrado: center
+);
+
 body {
   background-image: url(../../images/fondo-body.jpg);
   background-size: cover;
@@ -23,18 +34,6 @@ section {
 .font-size14{
   font-size: 1.4rem;
 }
-
-
-$alineaciones-flex: (
-  between: space-between,
-  around: space-around
-);
-
-$texto-estilos:(
-  mayusculas: uppercase,
-  subrayado: underline,
-  centrado: center
-);
 
 .pFooter{
   font-size: 1.5rem;
