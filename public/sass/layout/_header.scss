@@ -1,6 +1,5 @@
 header {
-  display: flex;
-  flex-direction: row;
+  @extend .flex-row;
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.7);
   h1{
@@ -8,11 +7,12 @@ header {
     font-size: 5rem;
     margin-left: 1rem;
   }
-  div nav ul {
-    display: flex;
-    flex-direction: row;
-    li{
+  nav{ 
+    ul {
+      @extend .flex-row;
+      li{
         list-style: none;
+      }
     }
 
   }

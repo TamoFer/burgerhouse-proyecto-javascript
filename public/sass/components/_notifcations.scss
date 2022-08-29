@@ -1,0 +1,68 @@
+/* estilo de texto sweetalert */
+.colored-toast {
+  &.swal2-icon-success {
+    background-color: #a5dc86 !important;
+    font-size: 1.4rem;
+  }
+
+  &.swal2-icon-error {
+    background-color: #f27474 !important;
+    font-size: 1.4rem;
+  }
+
+  &.swal2-icon-warning {
+    background-color: #f8bb86 !important;
+    font-size: 1.4rem;
+  }
+}
+
+/* notificacion delivery */
+.badgeOrder {
+  background-color: red;
+  border: 1px solid black;
+  display: block;
+  position: absolute;
+  @include sizes(1.4rem,1.4rem);
+  border-radius: 50%;
+  margin: 1.4rem 0rem 0rem 5.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.swal2-popup {
+  font-size: 1.3rem;
+  &.swal2-toast {
+    font-size: 1.4rem;
+  }
+}
+
+.badgeCarrito {
+  background-color: coral;
+  border: 1px solid black;
+  @include sizes(2.2rem,2.2rem);
+  border-radius: 50%;
+  margin: 0.5rem 3rem 0rem -3.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.icon {
+  @include sizes(4.8rem,4.8rem);
+}
+
+.iconsTecnologys {
+  @extend .flex-row;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.nameAndfavicon{
+  @extend .flex-row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconPage{
+  @include sizes(7rem,7rem);
+  border-radius: 50%;
+}

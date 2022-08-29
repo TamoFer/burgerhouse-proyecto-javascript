@@ -11,3 +11,14 @@ section {
   width: 100%;
   height: 100vh;
 }
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
