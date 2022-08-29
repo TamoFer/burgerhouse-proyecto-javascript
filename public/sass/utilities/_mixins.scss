@@ -2,3 +2,16 @@
     width: $ancho;
     height: $alto;
 }
+
+@mixin margenes($top, $right, $bottom, $left){
+    margin: $top, $right, $bottom, $left;
+}
+
+@mixin seteoLetra($estilo,$size,$txtalign,$decoracion,$transform,$color){
+    font-family: $estilo;
+    font-size: $size;
+    text-align: $txtalign;
+    text-decoration: $decoracion;
+    text-transform: $transform;
+    color: $color;
+}

@@ -19,67 +19,67 @@
 }
 
 #carritoImg {
-  @include sizes(60px,60px);
+  @include sizes(60px, 60px);
   margin-right: 2rem;
 }
 
 #deliveryImg {
-  @include sizes(53px,53px);
-  margin: 0.3rem 1rem 0rem 1rem;
+  @include sizes(53px, 53px);
+  @include margenes(0.3rem, 1rem, 0rem, 1rem);
 }
 
 .card {
-  @include sizes(300px,275px);
+  @include sizes(300px, 275px);
+  @include margenes(0px, 5px, 20px, 5px);
   padding: 0.8em;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  margin: 0px 5px 20px 5px;
-}
-
-.card-info {
-  @extend .flex-column;
-  justify-content: space-between;
-  text-align: center;
-  height: 100%;
-}
-
-.card-footer {
-  width: 100%;
-  @extend .flex-row;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-  border-top: 1px solid #ddd;
+  &-info {
+    @extend .flex-column;
+    justify-content: space-between;
+    text-align: center;
+    height: 100%;
+  }
+  &-footer {
+    @extend .flex-row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+  }
 }
 
 /*estilo txt de las cards*/
-.text-title {
-  font-weight: 900;
-  font-size: 2rem;
-  line-height: 1.4;
-  text-decoration: underline;
-  text-transform: uppercase;
+.text {
+  &-title {
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1.4;
+    text-decoration: underline;
+    text-transform: uppercase;
+    &--precio {
+      font-weight: 900;
+      font-size: 2rem;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+  }
+  &-body {
+    font-size: 1.4rem;
+    padding-bottom: 10px;
+  }
 }
 
-.text-title--precio {
-  font-weight: 900;
-  font-size: 2rem;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
-.text-body {
-  font-size: 1.4rem;
-  padding-bottom: 10px;
-}
-
-/* estilo icono carrito */
 .carro {
   @extend .flex-row;
 }
 
+.pedido {
+  @extend .flex-row;
+}
 
 .carrito-detalle {
-  @include sizes(20rem,auto);
+  @include sizes(20rem, auto);
   font-size: 1.4rem;
   margin-top: 1.7rem;
   text-align: start;
@@ -87,20 +87,18 @@
 
 .descripcionTkt {
   @extend .flex-row;
+  @include margenes(10px, 10px, 10px, 10px);
   justify-content: space-between;
-  margin: 10px 10px 10px 10px;
 }
 
 .banner {
   p {
+    @include margenes(0rem, 0rem, 2rem, 1rem);
     font-size: 2.5rem;
     color: black;
     text-transform: uppercase;
-    text-decoration: solid;
     text-decoration: underline;
-    margin: 0rem 0rem 2rem 1rem;
   }
-  
 }
 
 .descripcionPedido {
@@ -108,15 +106,12 @@
   font-size: 10px;
 }
 
-.pedido {
-  @extend .flex-row;
-}
 
-.menu-fpago{
+
+.menu-fpago {
   p {
     font-size: 1.5rem;
     margin-top: 2rem;
     font-weight: bold;
   }
-  
 }
