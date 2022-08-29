@@ -80,17 +80,29 @@ export function mostrarCarrito(listaPedidos) {
     miTktImg.setAttribute("id","carritoImg");
     miTktImg.setAttribute("src", imagen);
 
-    const tktBoton = document.createElement("button");
-    tktBoton.classList.add("btn");
-    tktBoton.classList.add("btn-danger");
-    tktBoton.textContent = "Eliminar";
-    tktBoton.setAttribute("serialDelete",serial);
-    tktBoton.addEventListener("click", eliminarPedido);
+    const iconosTkt= document.createElement("div");
+    iconosTkt.classList.add("tkt-iconos");
+
+
+    const miTktIconAgregar = document.createElement("img");
+    miTktIconAgregar.setAttribute("src", "../../../public/icons/agregar.png");
+    miTktIconAgregar.setAttribute("serial", serial);
+    miTktIconAgregar.setAttribute("type", "button");
+    miTktIconAgregar.addEventListener("click", agregarPedido);
+
+    const miTktIconEliminar = document.createElement("img");
+    miTktIconEliminar.setAttribute("src", "../../../public/icons/eliminar.png");
+    miTktIconEliminar.setAttribute("serialDelete", serial);
+    miTktIconEliminar.setAttribute("type", "button");
+    miTktIconEliminar.addEventListener("click", eliminarPedido);
+
 
     
     miTkt.appendChild(miTktImg);
     miTkt.appendChild(miTktDescripcion);
-    miTkt.appendChild(tktBoton);
+    iconosTkt.appendChild(miTktIconEliminar);
+    iconosTkt.appendChild(miTktIconAgregar);
+    miTkt.appendChild(iconosTkt);
     carritoBody.appendChild(miTkt);
   });
   localStorage.setItem("pedidoTemporal", JSON.stringify(listaPedidos));

@@ -16,7 +16,11 @@
 #carrito-total {
   @extend .flex-column;
   align-items: map-get($texto-estilos , centrado );
-  justify-content: map-get($alineaciones-flex, around);
+  gap:1rem;
+  .botones{
+    @extend .flex-row;
+    gap: 3.8rem;
+  }
 }
 
 .carrito{
@@ -91,8 +95,11 @@
 
 .descripcionTkt {
   @extend .flex-row;
-  @include margenes(10px, 10px, 10px, 10px);
+  @include margenes(1rem,1rem,1rem,1rem);
   justify-content: map-get($alineaciones-flex , between ); 
+  .tkt-iconos{
+    margin-top: 2rem;
+  }
 }
 
 .banner {

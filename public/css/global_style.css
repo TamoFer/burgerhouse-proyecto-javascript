@@ -16,7 +16,7 @@ section {
   height: 100vh;
   justify-content: space-around; }
 
-.flex-row, .iconsTecnologys, .nameAndfavicon, footer, header, header div nav ul, #menus, .carrito-monto, .card-footer, .carro, .pedido, .descripcionTkt {
+.flex-row, .iconsTecnologys, .nameAndfavicon, footer, header, header div nav ul, #menus, #carrito-total .botones, .carrito-monto, .card-footer, .carro, .pedido, .descripcionTkt {
   display: flex;
   flex-direction: row; }
 
@@ -123,7 +123,9 @@ header {
 
 #carrito-total {
   align-items: center;
-  justify-content: space-around; }
+  gap: 1rem; }
+  #carrito-total .botones {
+    gap: 3.8rem; }
 
 .carrito-monto {
   width: 100%;
@@ -179,8 +181,10 @@ header {
   padding-bottom: 1rem; }
 
 .descripcionTkt {
-  margin: 10px, 10px, 10px, 10px;
+  margin: 1rem, 1rem, 1rem, 1rem;
   justify-content: space-between; }
+  .descripcionTkt .tkt-iconos {
+    margin-top: 2rem; }
 
 .banner p {
   margin: 0rem, 0rem, 2rem, 1rem;
