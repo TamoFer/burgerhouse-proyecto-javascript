@@ -7,7 +7,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  background-image: url(../../images/fondo-body.jpg);
+  background-image: url(../images/fondo-body.jpg);
   background-size: cover;
   background-repeat: no-repeat; }
 
@@ -16,18 +16,18 @@ section {
   height: 100vh;
   justify-content: space-around; }
 
-.flex-row, .iconsTecnologys, .nameAndfavicon, footer, header, header nav ul, #menus, #carrito-total, .card-footer, .carro, .pedido, .descripcionTkt {
+.flex-row, .iconsTecnologys, .nameAndfavicon, footer, header, header div nav ul, #menus, #carrito-total, .card-footer, .carro, .pedido, .descripcionTkt {
   display: flex;
   flex-direction: row; }
 
-.flex-column, section, .herramienatas, #opciones, .card-info, .descripcionPedido {
+.flex-column, section, .herramientas, #opciones, .card-info, .descripcionPedido {
   display: flex;
   flex-direction: column; }
 
 .font-size14, .colored-toast.swal2-icon-success, .colored-toast.swal2-icon-error, .colored-toast.swal2-icon-warning, .badge-order, .badge-carrito, .swal2-popup.swal2-toast, .text-body, .carrito-detalle {
   font-size: 1.4rem; }
 
-.pFooter, .autor p, .herramienatas p {
+.pFooter, .autor p, .herramientas p {
   font-size: 1.5rem;
   color: white;
   text-align: center; }
@@ -55,18 +55,14 @@ section {
 .badge-order {
   width: 1.4rem;
   height: 1.4rem;
-  margin: 1.4rem, 0rem, 0rem, 5.5rem;
   background-color: red;
   border: 1px solid black;
-  display: block;
-  position: absolute;
   border-radius: 50%;
   text-align: center; }
 
 .badge-carrito {
   width: 2.2rem;
   height: 2.2rem;
-  margin: 0.5rem, 3rem, 0rem, 5rem;
   background-color: coral;
   border: 1px solid black;
   border-radius: 50%;
@@ -96,7 +92,7 @@ footer {
   justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.7); }
 
-.herramienatas {
+.herramientas {
   justify-content: space-around; }
 
 header {
@@ -106,8 +102,14 @@ header {
     color: white;
     font-size: 5rem;
     margin-left: 1rem; }
-  header nav ul li {
-    list-style: none; }
+  header div nav {
+    margin-top: 1rem; }
+    header div nav ul {
+      width: 20rem;
+      height: auto;
+      justify-content: space-around; }
+      header div nav ul li {
+        list-style: none; }
 
 #opciones {
   width: 100%; }
@@ -124,8 +126,7 @@ header {
 
 #carritoImg {
   width: 6rem;
-  height: 6rem;
-  margin-right: 2rem; }
+  height: 6rem; }
 
 #deliveryImg {
   width: 5.3rem;

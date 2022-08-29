@@ -10,7 +10,7 @@ footer {
   }
 }
 
-.herramienatas {
+.herramientas {
   @extend .flex-column;
   justify-content: map-get($alineaciones-flex, around);
   p{

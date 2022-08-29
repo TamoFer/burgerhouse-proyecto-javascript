@@ -20,18 +20,14 @@
 .badge{
   &-order {
     @include sizes(1.4rem,1.4rem);
-    @include margenes(1.4rem, 0rem, 0rem, 5.5rem);
     @extend .font-size14;
     background-color: red;
     border: 1px solid black;
-    display: block;
-    position: absolute;
     border-radius: 50%;
     text-align:map-get($texto-estilos , centrado );
   }
   &-carrito {
     @include sizes(2.2rem,2.2rem);
-    @include margenes(0.5rem, 3rem, 0rem, 5rem);
     @extend .font-size14;
     background-color: coral;
     border: 1px solid black;

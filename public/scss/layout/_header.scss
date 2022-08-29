@@ -7,13 +7,17 @@ header {
     font-size: 5rem;
     margin-left: 1rem;
   }
-  nav{ 
-    ul {
-      @extend .flex-row;
-      li{
-        list-style: none;
+  div{
+    nav{ 
+      margin-top: 1rem;
+      ul {
+        @extend .flex-row;
+        @include sizes(20rem,auto);
+        justify-content: map-get($alineaciones-flex, around);
+        li{
+          list-style: none;
+        }
       }
     }
-
   }
 }
