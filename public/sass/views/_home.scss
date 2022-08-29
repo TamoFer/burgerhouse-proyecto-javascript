@@ -5,46 +5,46 @@
 
 #menus {
   @extend .flex-row;
-  justify-content: space-around;
+  justify-content: map-get($alineaciones-flex, around);
   flex-wrap: wrap;
 }
 
 #carrito {
-  width: 500px;
+  width: 50rem;
 }
 
 #carrito-total {
   @extend .flex-row;
-  justify-content: space-between;
+  justify-content: map-get($alineaciones-flex, between);
 }
 
 #carritoImg {
-  @include sizes(60px, 60px);
+  @include sizes(6rem, 6rem);
   margin-right: 2rem;
 }
 
 #deliveryImg {
-  @include sizes(53px, 53px);
+  @include sizes(5.3rem, 5.3rem);
   @include margenes(0.3rem, 1rem, 0rem, 1rem);
 }
 
 .card {
-  @include sizes(300px, 275px);
-  @include margenes(0px, 5px, 20px, 5px);
-  padding: 0.8em;
+  @include sizes(30rem, 27.5rem);
+  @include margenes(0rem, 0.5rem, 2rem, 0.5rem);
+  padding: 0.8rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   &-info {
     @extend .flex-column;
-    justify-content: space-between;
-    text-align: center;
+    justify-content:map-get($alineaciones-flex , between );
+    text-align: map-get($texto-estilos , centrado );
     height: 100%;
   }
   &-footer {
     @extend .flex-row;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 10px;
+    justify-content: map-get($alineaciones-flex , between );
+    align-items:map-get($texto-estilos , centrado );
+    padding-top: 1rem;
     border-top: 1px solid #ddd;
   }
 }
@@ -52,21 +52,17 @@
 /*estilo txt de las cards*/
 .text {
   &-title {
-    font-weight: 900;
-    font-size: 2rem;
-    line-height: 1.4;
-    text-decoration: underline;
-    text-transform: uppercase;
+    @include txtCard(900,2rem,1.4);
+    text-decoration:map-get($texto-estilos , subrayado );
+    text-transform: map-get($texto-estilos , mayusculas );
     &--precio {
-      font-weight: 900;
-      font-size: 2rem;
-      line-height: 1.4;
-      text-transform: uppercase;
+      @include txtCard(900,2rem,1.4);
+      text-transform: map-get($texto-estilos , mayusculas );
     }
   }
   &-body {
-    font-size: 1.4rem;
-    padding-bottom: 10px;
+    @extend .font-size14;
+    padding-bottom: 1rem;
   }
 }
 
@@ -80,7 +76,7 @@
 
 .carrito-detalle {
   @include sizes(20rem, auto);
-  font-size: 1.4rem;
+  @extend .font-size14;
   margin-top: 1.7rem;
   text-align: start;
 }
@@ -88,7 +84,7 @@
 .descripcionTkt {
   @extend .flex-row;
   @include margenes(10px, 10px, 10px, 10px);
-  justify-content: space-between;
+  justify-content: map-get($alineaciones-flex , between ); 
 }
 
 .banner {
@@ -96,14 +92,14 @@
     @include margenes(0rem, 0rem, 2rem, 1rem);
     font-size: 2.5rem;
     color: black;
-    text-transform: uppercase;
-    text-decoration: underline;
+    text-decoration:map-get($texto-estilos , subrayado );
+    text-transform: map-get($texto-estilos , mayusculas );
   }
 }
 
 .descripcionPedido {
   @extend .flex-column;
-  font-size: 10px;
+  font-size: 1rem;
 }
 
 

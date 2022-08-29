@@ -23,7 +23,7 @@ export function sumaTotal(array) {
 // contador del carrito de compra
 export function statusCarrito() {
   const notificacion = document.querySelector(".statusCarrito");
-  notificacion.classList.add("badgeCarrito");
+  notificacion.classList.add("badge-carrito");
   const total = listaPedidos.reduce((acc, pedido) => acc + pedido.cantidad, 0);
   notificacion.textContent = total.toString();
 }

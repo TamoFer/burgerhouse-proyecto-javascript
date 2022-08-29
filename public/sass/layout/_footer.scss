@@ -1,23 +1,19 @@
 footer {
   @extend .flex-row;
-  justify-content: space-around;
+  justify-content: map-get($alineaciones-flex, around);
   background-color: rgba(0, 0, 0, 0.7);
 }
 
 .autor {
   p {
-    font-size: 1.5rem;
-    color: white;
-    text-align: center;
+    @extend .pFooter;
   }
 }
 
 .herramienatas {
   @extend .flex-column;
-  justify-content: space-around;
+  justify-content: map-get($alineaciones-flex, around);
   p{
-    font-size: 1.5rem;
-    color: white;
-    text-align: center;
+    @extend .pFooter;
   }
 }

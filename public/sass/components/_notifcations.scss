@@ -1,49 +1,50 @@
 /* estilo de texto sweetalert */
 .colored-toast {
-  &.swal2-icon-success {
-    background-color: #a5dc86 !important;
-    font-size: 1.4rem;
-  }
-
-  &.swal2-icon-error {
-    background-color: #f27474 !important;
-    font-size: 1.4rem;
-  }
-
-  &.swal2-icon-warning {
-    background-color: #f8bb86 !important;
-    font-size: 1.4rem;
+  &.swal2-icon{
+    &-success {
+      background-color: #a5dc86 !important;
+      @extend .font-size14;
+    }
+    &-error {
+      background-color: #f27474 !important;
+      @extend .font-size14;
+    }
+    &-warning {
+      background-color: #f8bb86 !important;
+      @extend .font-size14;
+    }
   }
 }
 
-/* notificacion delivery */
-.badgeOrder {
-  @include sizes(1.4rem,1.4rem);
-  @include margenes(1.4rem, 0rem, 0rem, 5.5rem);
-  background-color: red;
-  border: 1px solid black;
-  display: block;
-  position: absolute;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 1.4rem;
+/* notificacion iconos */
+.badge{
+  &-order {
+    @include sizes(1.4rem,1.4rem);
+    @include margenes(1.4rem, 0rem, 0rem, 5.5rem);
+    @extend .font-size14;
+    background-color: red;
+    border: 1px solid black;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    text-align:map-get($texto-estilos , centrado );
+  }
+  &-carrito {
+    @include sizes(2.2rem,2.2rem);
+    @include margenes(0.5rem, 3rem, 0rem, 5rem);
+    @extend .font-size14;
+    background-color: coral;
+    border: 1px solid black;
+    border-radius: 50%;
+    text-align: map-get($texto-estilos , centrado );
+  }
 }
 
 .swal2-popup {
   font-size: 1.3rem;
   &.swal2-toast {
-    font-size: 1.4rem;
+    @extend .font-size14;
   }
-}
-
-.badgeCarrito {
-  @include sizes(2.2rem,2.2rem);
-  @include margenes(0.5rem, 3rem, 0rem, 5rem);
-  background-color: coral;
-  border: 1px solid black;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 1.4rem;
 }
 
 .icon {
@@ -58,7 +59,7 @@
 
 .nameAndfavicon{
   @extend .flex-row;
-  align-items: center;
+  align-items: map-get($texto-estilos , centrado );
   gap: 1rem;
 }
 

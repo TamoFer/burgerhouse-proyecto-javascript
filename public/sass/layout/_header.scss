@@ -1,6 +1,6 @@
 header {
   @extend .flex-row;
-  justify-content: space-between;
+  justify-content: map-get($alineaciones-flex, between);
   background-color: rgba(0, 0, 0, 0.7);
   h1{
     color: white;

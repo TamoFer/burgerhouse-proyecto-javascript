@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("pedidoCompleto")) {
     const pedidoCompleto = JSON.parse(localStorage.getItem("pedidoCompleto"));
     const notificacionPedido = document.querySelector(".statusOrder");
-    notificacionPedido.classList.add("badgeOrder");
+    notificacionPedido.classList.add("badge-order");
     pedidosCompletados.push(pedidoCompleto);
   }
 });

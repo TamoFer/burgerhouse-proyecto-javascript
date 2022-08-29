@@ -7,11 +7,11 @@
     margin: $top, $right, $bottom, $left;
 }
 
-@mixin seteoLetra($estilo,$size,$txtalign,$decoracion,$transform,$color){
-    font-family: $estilo;
-    font-size: $size;
-    text-align: $txtalign;
-    text-decoration: $decoracion;
-    text-transform: $transform;
-    color: $color;
+@mixin txtCard($weight,$size,$lheight,) {
+    font-weight:$weight ;    
+    font-size:$size ;
+    line-height:$lheight ;
 }
+
+
+

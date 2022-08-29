@@ -7,7 +7,7 @@ body {
 section {
   @extend .flex-column;
   @include sizes(100%,100vh);
-  justify-content: space-around;
+  justify-content: map-get($alineaciones-flex, around);
 }
 
 .flex-row{
@@ -20,6 +20,11 @@ section {
   flex-direction: column;
 }
 
+.font-size14{
+  font-size: 1.4rem;
+}
+
+
 $alineaciones-flex: (
   between: space-between,
   around: space-around
@@ -30,3 +35,9 @@ $texto-estilos:(
   subrayado: underline,
   centrado: center
 );
+
+.pFooter{
+  font-size: 1.5rem;
+  color: white;
+  text-align: map-get($texto-estilos , centrado );
+}
