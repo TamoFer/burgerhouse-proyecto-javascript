@@ -42,7 +42,7 @@ btnCarrito.addEventListener("click", () => {
 });
 
 // alerta donde el usuario ingresa datos personales, de envio y formas de pago
-const btnModal = document.querySelector("#modal-btn");
+const btnModal = document.querySelector("#modal-btnPagar");
 btnModal.addEventListener("click", () => {
   Swal.fire({
     title: "Datos de envio",

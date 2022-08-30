@@ -98,3 +98,11 @@ tippy('#deliveryImg', {
 tippy('#carritoImg', {
   content: 'Carrito de compra',
 });
+
+tippy('#modal-btnPagar', {
+  content: 'Abonar pedido',
+});
+
+tippy('#modal-btnVaciar', {
+  content: 'Vaciar carrito de compra',
+});

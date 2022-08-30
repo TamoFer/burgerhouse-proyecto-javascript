@@ -16,11 +16,11 @@ section {
   height: 100vh;
   justify-content: space-around; }
 
-.flex-row, .iconsTecnologys, .nameAndfavicon, footer, header, header div nav ul, #menus, #carrito-total .botones, .carrito-monto, .card-footer, .carro, .pedido, .descripcionTkt {
+.flex-row, .iconsTecnologys, .nameAndfavicon, footer, header, header div nav ul, #menus, #carrito-total, #carrito-total .botones, .carrito-monto, .card-footer, .carro, .pedido, .descripcionTkt {
   display: flex;
   flex-direction: row; }
 
-.flex-column, section, .herramientas, #opciones, #carrito-total, .card-info, .descripcionPedido {
+.flex-column, section, .herramientas, #opciones, .card-info, .descripcionPedido {
   display: flex;
   flex-direction: column; }
 
@@ -122,15 +122,23 @@ header {
   width: 50rem; }
 
 #carrito-total {
+  flex-grow: 0.5;
   align-items: center;
   gap: 1rem; }
   #carrito-total .botones {
-    gap: 3.8rem; }
+    gap: 2rem; }
+    #carrito-total .botones #modal-btnPagar {
+      width: 5rem;
+      height: 5rem; }
+    #carrito-total .botones #modal-btnVaciar {
+      width: 5rem;
+      height: 5rem; }
 
 .carrito-monto {
   width: 100%;
   height: auto;
-  justify-content: space-around; }
+  justify-content: start;
+  gap: 1.5rem; }
 
 .carrito-detalle {
   width: 20rem;

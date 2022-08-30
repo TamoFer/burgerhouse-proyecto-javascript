@@ -14,12 +14,20 @@
 }
 
 #carrito-total {
-  @extend .flex-column;
+  @extend .flex-row;
+  flex-grow: 0.5;
+  // flex-flow: row;
   align-items: map-get($texto-estilos , centrado );
   gap:1rem;
   .botones{
     @extend .flex-row;
-    gap: 3.8rem;
+    gap: 2rem;
+    #modal-btnPagar{
+      @include sizes(5rem,5rem);
+    }
+    #modal-btnVaciar{
+      @include sizes(5rem,5rem);
+    }
   }
 }
 
@@ -27,7 +35,8 @@
   &-monto{
     @extend .flex-row, .font-size14;
     @include sizes(100%,auto);
-    justify-content: map-get($alineaciones-flex , around )
+    justify-content: start;
+    gap: 1.5rem;
   }
   &-detalle {
     @include sizes(20rem, auto);
