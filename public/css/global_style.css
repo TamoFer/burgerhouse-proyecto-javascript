@@ -188,6 +188,9 @@ header {
 .text-body {
   padding-bottom: 1rem; }
 
+.offcanvas-title {
+  font-size: 2rem; }
+
 .descripcionTkt {
   margin: 1rem, 1rem, 1rem, 1rem;
   justify-content: space-between; }

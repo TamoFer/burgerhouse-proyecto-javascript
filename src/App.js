@@ -3,7 +3,7 @@ import { mostrarCarrito} from "../src/components/utilities/renders.js";
 import { DateTime } from "../src/components/lib/luxon.js";
 
 //definicion de constantes utilizadas en todo el proyecto
-export const listaPedidos = [];
+export let listaPedidos = [];
 export const pedidosCompletados = [];
 export const menus = document.querySelector("#menus");
 export const carritoBody = document.querySelector("#carrito-body");
@@ -30,7 +30,7 @@ export function statusCarrito() {
 
 // reseteo carrito de compra 
 export function resetInterface() {
-  const listaPedidos = [];
+  listaPedidos = [];
   mostrarCarrito(listaPedidos);
   window.location.reload();
 }
@@ -60,6 +60,13 @@ export function guardarDatos(array, objeto) {
   localStorage.removeItem("pedidoTemporal");
 }
 
+export function borrarPedidos(listaPedidos){
+  listaPedidos.forEach(e => {
+    listaPedidos.pop()
+  })
+  localStorage.clear();
+  return listaPedidos;
+}
 
 
 

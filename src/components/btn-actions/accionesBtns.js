@@ -1,6 +1,6 @@
 //importacion de funciones de otros modulos
 import { getBD } from "../utilities/getData.js";
-import {guardarDatos, listaPedidos, pedidosCompletados, resetInterface, sumaTotal } from "../../App.js";
+import {borrarPedidos, guardarDatos, listaPedidos, pedidosCompletados, resetInterface, sumaTotal } from "../../App.js";
 import { mostrarCarrito } from "../utilities/renders.js";
 import { popUp, popUpErrors } from "../notifications/notifications.js";
 
@@ -114,3 +114,30 @@ btnStatusOrder.addEventListener("click", () => {
     });
   });
 });
+
+const vaciarCarrrito = document.querySelector('#modal-btnVaciar');
+vaciarCarrrito.addEventListener('click', () =>{
+  listaPedidos.length >0
+  ? (Swal.fire({
+      title: '¿Estas seguro de borrar el carrito?',
+      text: "Se borrara todo lo que elegistes",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, borrar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          text: `Eliministas todo del carrito`,
+          icon: 'success',
+          timer:1000
+        })
+      }
+    }),mostrarCarrito(borrarPedidos(listaPedidos)))
+    :Swal.fire({
+      icon: 'error',
+      text: '¡No tenes nada en el carrito aun!',
+    })
+  });
