@@ -1,4 +1,5 @@
 // importacion de funcion
+import { borrarCarrito } from "../../App.js";
 import { DateTime } from "../lib/luxon.js";
 
 // creacion popup segun evento que reciba 
@@ -60,7 +61,7 @@ export function borrarPedidosEntregados(obj) {
         icon: "success",
       }),
       setTimeout(() => {
-        localStorage.clear(), window.location.reload();
+        borrarCarrito(listaPedidos);
       }, 2100))
     : null;
 }

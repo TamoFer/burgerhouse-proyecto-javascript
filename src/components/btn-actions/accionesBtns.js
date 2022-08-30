@@ -1,6 +1,6 @@
 //importacion de funciones de otros modulos
 import { getBD } from "../utilities/getData.js";
-import {borrarPedidos, guardarDatos, listaPedidos, pedidosCompletados, resetInterface, sumaTotal } from "../../App.js";
+import {borrarCarrito, guardarDatos, listaPedidos, pedidosCompletados,sumaTotal } from "../../App.js";
 import { mostrarCarrito } from "../utilities/renders.js";
 import { popUp, popUpErrors } from "../notifications/notifications.js";
 
@@ -95,7 +95,7 @@ btnModal.addEventListener("click", () => {
       icon: 'success',
       title: `Recibimos tu pago ${cliente.nombre}`
     })
-    setTimeout(resetInterface, 3100);
+    setTimeout(borrarCarrito(listaPedidos), 3100);
     
   });
 });
@@ -135,7 +135,7 @@ vaciarCarrrito.addEventListener('click', () =>{
           timer:1000
         })
       }
-    }),mostrarCarrito(borrarPedidos(listaPedidos)))
+    }),mostrarCarrito(borrarCarrito(listaPedidos)))
     :Swal.fire({
       icon: 'error',
       text: '¡No tenes nada en el carrito aun!',

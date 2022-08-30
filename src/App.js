@@ -28,13 +28,6 @@ export function statusCarrito() {
   notificacion.textContent = total.toString();
 }
 
-// reseteo carrito de compra 
-export function resetInterface() {
-  listaPedidos = [];
-  mostrarCarrito(listaPedidos);
-  window.location.reload();
-}
-
 // calculo con modulo luxon el horario de llegada de un pedido pago
 export function tiempoLlegadaPedido(array) {
   const numBurgers = array.reduce((acc, p) => acc + p.cantidad, 0);
@@ -60,7 +53,7 @@ export function guardarDatos(array, objeto) {
   localStorage.removeItem("pedidoTemporal");
 }
 
-export function borrarPedidos(listaPedidos){
+export function borrarCarrito(listaPedidos){
   listaPedidos.forEach(e => {
     listaPedidos.pop()
   })
@@ -68,5 +61,22 @@ export function borrarPedidos(listaPedidos){
   return listaPedidos;
 }
 
+export function comprobarPedidoCompleto(){
+  if (localStorage.getItem("pedidoCompleto")){
+    const pedidoCompleto = JSON.parse(localStorage.getItem("pedidoCompleto"));
+    const notificacionPedido = document.querySelector(".statusOrder");
+    notificacionPedido.classList.add("badge-order");
+    pedidosCompletados.push(pedidoCompleto);
+    return pedidoCompleto;
+  }
+}
 
-
+export function comprobarPedidoTemporal(){
+  if (localStorage.getItem("pedidoTemporal")) {
+    const pedidoTemporal = JSON.parse(localStorage.getItem("pedidoTemporal"));
+    pedidoTemporal.forEach((pedido) => {
+      listaPedidos.push(pedido);
+    });
+    mostrarCarrito(listaPedidos);
+  }
+}
