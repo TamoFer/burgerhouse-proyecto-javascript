@@ -51,6 +51,10 @@ section {
 .colored-toast.swal2-icon-warning {
   background-color: #f8bb86 !important; }
 
+.statusCarrito {
+  width: 2.2rem;
+  height: 2.2rem; }
+
 /* notificacion iconos */
 .badge-order {
   width: 1.4rem;

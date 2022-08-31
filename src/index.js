@@ -11,10 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   comprobarPedidoCompleto();
 });
 
-//chequea si hay pedidos ya entregados
-// setInterval(() => {
-//   console.log(comprobarPedidoCompleto());
-//   borrarPedidosEntregados(comprobarPedidoCompleto());
-// }, 1000);
+
+setInterval(() => {
+  borrarPedidosEntregados(comprobarPedidoCompleto());
+}, 3000);
 
 

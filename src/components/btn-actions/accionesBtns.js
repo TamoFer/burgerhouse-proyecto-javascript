@@ -1,6 +1,6 @@
 //importacion de funciones de otros modulos
 import { getBD } from "../utilities/getData.js";
-import {borrarCarrito, guardarDatos, listaPedidos, pedidosCompletados,sumaTotal } from "../../App.js";
+import {borrarCarrito, guardarDatos, listaPedidos, notificacionPedido, pedidosCompletados,sumaTotal } from "../../App.js";
 import { mostrarCarrito } from "../utilities/renders.js";
 import { popUp, popUpErrors } from "../notifications/notifications.js";
 
@@ -95,7 +95,7 @@ btnModal.addEventListener("click", () => {
       icon: 'success',
       title: `Recibimos tu pago ${cliente.nombre}`
     })
-    setTimeout(borrarCarrito(listaPedidos), 3100);
+    setTimeout(mostrarCarrito(borrarCarrito(listaPedidos)), 3100);
     
   });
 });
@@ -103,7 +103,8 @@ btnModal.addEventListener("click", () => {
 // ver estado del pedido abonado 
 const btnStatusOrder = document.querySelector("#deliveryImg");
 btnStatusOrder.addEventListener("click", () => {
-  pedidosCompletados.forEach((p) => {
+  pedidosCompletados.length>0
+  ?pedidosCompletados.forEach((p) => {
     Swal.fire({
       text: ` Hola! ${p.nombre} ya recibimos tu pedido, estaría llegando a tu dirección (${p.adress}) a las ${p.horaLlegada} hs. 
       ¡Gracias por comprar en BURGERHOUSE!`,
@@ -112,7 +113,10 @@ btnStatusOrder.addEventListener("click", () => {
       showConfirmButton: false,
       timer: 5000,
     });
-  });
+  }):(Swal.fire(
+    '¡No hay ningun pedido realizado!'
+    )),
+    notificacionPedido.classList.remove("badge-order");
 });
 
 const vaciarCarrrito = document.querySelector('#modal-btnVaciar');

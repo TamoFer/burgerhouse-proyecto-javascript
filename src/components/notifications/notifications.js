@@ -1,5 +1,5 @@
 // importacion de funcion
-import { borrarCarrito } from "../../App.js";
+import { borrarCarrito, pedidosCompletados } from "../../App.js";
 import { DateTime } from "../lib/luxon.js";
 
 // creacion popup segun evento que reciba 
@@ -52,8 +52,9 @@ export function popUpErrors() {
 
 // eliminacion del pedido luego de que se cumple su horario de llegada
 export function borrarPedidosEntregados(obj) {
-  const horaActual = DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE);
-  horaActual >= obj.horaLlegada
+  if (obj!=false){
+    const horaActual = DateTime.now().toLocaleString(DateTime.TIME_24_SIMPLE);
+    horaActual >= obj.horaLlegada
     ? (Swal.fire({
         title: "Estado del pedido",
         text: `El delivery ya hizo entrega de tu pedido ${obj.nombre} que lo disfrutes! `,
@@ -61,9 +62,12 @@ export function borrarPedidosEntregados(obj) {
         icon: "success",
       }),
       setTimeout(() => {
-        borrarCarrito(listaPedidos);
+        pedidosCompletados=[];
+        localStorage.clear();
       }, 2100))
-    : null;
+    : false
+  } else{false}
+  
 }
 
 //tooltips iconos tecnologias usadas en proyecto

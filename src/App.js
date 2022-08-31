@@ -4,9 +4,11 @@ import { DateTime } from "../src/components/lib/luxon.js";
 
 //definicion de constantes utilizadas en todo el proyecto
 export let listaPedidos = [];
-export const pedidosCompletados = [];
+export let pedidosCompletados = [];
 export const menus = document.querySelector("#menus");
 export const carritoBody = document.querySelector("#carrito-body");
+export const notificacionPedido = document.querySelector(".statusOrder");
+
 
 //suma del precio de todo el carrito
 export function sumaTotal(array) {
@@ -22,10 +24,14 @@ export function sumaTotal(array) {
 
 // contador del carrito de compra
 export function statusCarrito() {
+  const total = listaPedidos.reduce((acc, pedido) => acc + pedido.cantidad, 
+  0);
   const notificacion = document.querySelector(".statusCarrito");
-  notificacion.classList.add("badge-carrito");
-  const total = listaPedidos.reduce((acc, pedido) => acc + pedido.cantidad, 0);
-  notificacion.textContent = total.toString();
+  total>0
+  ?(notificacion.classList.add("badge-carrito"), 
+  notificacion.textContent = total.toString())
+  :(notificacion.classList.remove("badge-carrito"),
+  notificacion.textContent ="");
 }
 
 // calculo con modulo luxon el horario de llegada de un pedido pago
@@ -57,17 +63,18 @@ export function borrarCarrito(listaPedidos){
   listaPedidos.forEach(e => {
     listaPedidos.pop()
   })
-  localStorage.clear();
+  localStorage.removeItem("pedidoTemporal");
   return listaPedidos;
 }
 
 export function comprobarPedidoCompleto(){
   if (localStorage.getItem("pedidoCompleto")){
     const pedidoCompleto = JSON.parse(localStorage.getItem("pedidoCompleto"));
-    const notificacionPedido = document.querySelector(".statusOrder");
     notificacionPedido.classList.add("badge-order");
     pedidosCompletados.push(pedidoCompleto);
     return pedidoCompleto;
+  }else{
+    return false;
   }
 }
 

@@ -16,6 +16,10 @@
   }
 }
 
+.statusCarrito{
+  @include sizes(2.2rem,2.2rem);
+}
+
 /* notificacion iconos */
 .badge{
   &-order {
