@@ -39,7 +39,7 @@ export function tiempoLlegadaPedido(array) {
   const numBurgers = array.reduce((acc, p) => acc + p.cantidad, 0);
   const hora = DateTime.now();
   const horaLlegada = hora
-    .plus({ hour: numBurgers * 0.08 })
+    .plus({ hour: numBurgers * 0.016 })
     .toLocaleString(DateTime.TIME_24_SIMPLE);
   return horaLlegada;
 }
@@ -71,7 +71,8 @@ export function comprobarPedidoCompleto(){
   if (localStorage.getItem("pedidoCompleto")){
     const pedidoCompleto = JSON.parse(localStorage.getItem("pedidoCompleto"));
     notificacionPedido.classList.add("badge-order");
-    pedidosCompletados.push(pedidoCompleto);
+    pedidosCompletados.length===0
+    ?pedidosCompletados.push(pedidoCompleto):false;
     return pedidoCompleto;
   }else{
     return false;

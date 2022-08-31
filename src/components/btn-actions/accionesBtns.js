@@ -1,6 +1,6 @@
 //importacion de funciones de otros modulos
 import { getBD } from "../utilities/getData.js";
-import {borrarCarrito, guardarDatos, listaPedidos, notificacionPedido, pedidosCompletados,sumaTotal } from "../../App.js";
+import {borrarCarrito, guardarDatos, listaPedidos,pedidosCompletados,sumaTotal } from "../../App.js";
 import { mostrarCarrito } from "../utilities/renders.js";
 import { popUp, popUpErrors } from "../notifications/notifications.js";
 
@@ -103,6 +103,7 @@ btnModal.addEventListener("click", () => {
 // ver estado del pedido abonado 
 const btnStatusOrder = document.querySelector("#deliveryImg");
 btnStatusOrder.addEventListener("click", () => {
+  console.log(pedidosCompletados);
   pedidosCompletados.length>0
   ?pedidosCompletados.forEach((p) => {
     Swal.fire({
@@ -111,12 +112,12 @@ btnStatusOrder.addEventListener("click", () => {
       toast: true,
       position: "bottom-right",
       showConfirmButton: false,
-      timer: 5000,
+      timer: 3000,
     });
   }):(Swal.fire(
     '¡No hay ningun pedido realizado!'
-    )),
-    notificacionPedido.classList.remove("badge-order");
+    ))
+    
 });
 
 const vaciarCarrrito = document.querySelector('#modal-btnVaciar');
@@ -137,9 +138,10 @@ vaciarCarrrito.addEventListener('click', () =>{
           text: `Eliministas todo del carrito`,
           icon: 'success',
           timer:1000
-        })
+        }),
+        mostrarCarrito(borrarCarrito(listaPedidos))
       }
-    }),mostrarCarrito(borrarCarrito(listaPedidos)))
+    }))
     :Swal.fire({
       icon: 'error',
       text: '¡No tenes nada en el carrito aun!',
