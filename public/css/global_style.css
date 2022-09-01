@@ -13,7 +13,7 @@ body {
 
 section {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: space-around; }
 
 .flex-row, .iconsTecnologys, .nameAndfavicon, footer, header, header div nav ul, #menus, #carrito-total, #carrito-total .botones, .carrito-monto, .card-footer, .carro, .pedido, .descripcionTkt {
@@ -24,7 +24,7 @@ section {
   display: flex;
   flex-direction: column; }
 
-.font-size14, .colored-toast.swal2-icon-success, .colored-toast.swal2-icon-error, .colored-toast.swal2-icon-warning, .badge-order, .badge-carrito, .swal2-popup.swal2-toast, .carrito-monto, .carrito-detalle, .text-body {
+.font-size14, .colored-toast.swal2-icon-success, .colored-toast.swal2-icon-error, .colored-toast.swal2-icon-warning, .badge-order, .badge-carrito, .swal2-popup.swal2-toast, .carrito-monto, .carrito-detalle {
   font-size: 1.4rem; }
 
 .pFooter, .autor p, .herramientas p {
@@ -163,6 +163,8 @@ header {
   width: 30rem;
   height: 27.5rem;
   margin: 0rem, 0.5rem, 2rem, 0.5rem;
+  background-image: url(../images/fondo-card2.jpg) !important;
+  background-position: center;
   padding: 0.8rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .card-info {
@@ -179,8 +181,10 @@ header {
 /*estilo txt de las cards*/
 .text-title {
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 2.5rem;
   line-height: 1.4;
+  color: white;
+  margin: 0rem;
   text-decoration: underline;
   text-transform: uppercase; }
   .text-title--precio {
@@ -190,6 +194,9 @@ header {
     text-transform: uppercase; }
 
 .text-body {
+  font-family: 'Alumni Sans Pinstripe', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
   padding-bottom: 1rem; }
 
 .offcanvas-title {
