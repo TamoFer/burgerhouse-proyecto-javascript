@@ -1,11 +1,51 @@
 @keyframes flotar {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
 
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
+  50% {
+    transform: translateY(-23px);
+  }
+}
 
-    50% {
-        transform: translateY(-23px);
-    }
+@keyframes neon {
+  0% {
+    text-shadow: -1px -1px 1px white,
+      -1px 1px 1px white,
+      1px -1px 1px white,
+      1px 1px 1px white, 0 0 3px white,
+  }
+  25%{
+    text-shadow: -1px -1px 1px white,
+      -1px 1px 1px white,
+      1px -1px 1px white,
+      1px 1px 1px white, 0 0 3px white,
+      0 0 10px white, 0 0 20px white,
+  }
+  50% {
+    text-shadow: -1px -1px 1px white,
+      -1px 1px 1px white,
+      1px -1px 1px white,
+      1px 1px 1px white, 0 0 5px white,
+      0 0 15px white, 0 0 25px white,
+  }
+  100% {
+    text-shadow: -1px -1px 1px white,
+      -1px 1px 1px white,
+      1px -1px 1px white,
+      1px 1px 1px white, 0 0 3px white,
+  }
+}
+
+@keyframes efectoFavicon{
+  0%{
+		transform: rotate(-200deg);
+	}
+  25%, 75%{
+		transform:scale(0.9);
+	}
+	50%{
+		transform:scale(1.3);
+	}
 }

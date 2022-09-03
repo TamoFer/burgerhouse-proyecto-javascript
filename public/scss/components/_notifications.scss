@@ -75,13 +75,3 @@
   }
 }
 
-.nameAndfavicon{
-  @extend .flex-row;
-  align-items: map-get($texto-estilos , centrado );
-  gap: 1rem;
-}
-
-.iconPage{
-  @include sizes(7rem,7rem);
-  border-radius: 50%;
-}
