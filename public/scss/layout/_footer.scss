@@ -8,6 +8,10 @@ footer {
   p {
     @extend .pFooter;
   }
+  h6{
+    @extend .pFooter;
+    text-decoration: none;
+  }
 }
 
 .herramientas {

@@ -40,5 +40,6 @@ section {
   font-family: 'Seaweed Script', cursive;
   font-size: 3rem;
   color: white;
+  text-decoration: map-get($texto-estilos , subrayado );
   text-align: map-get($texto-estilos , centrado );
 }

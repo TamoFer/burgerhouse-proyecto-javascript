@@ -15,9 +15,6 @@
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
-    </style>
-    <style>
       @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
     </style>
     <style>
@@ -35,25 +32,15 @@
         <h1>BURGERHOUSE</h1>
         <img class="iconPage" src="./public/images/burger-house.jpg" alt="burger-house">
       </div>
-      <div>
-        <nav>
-          <ul>
-              <li >
-                <!-- div delivery   -->
-                <div class="pedido">
-                  <img id="deliveryImg" src="./public/icons/delivery.png" type="button">
-                  <div class="statusOrder" ></div>
-                </div> 
-              </li>
-              <li>
-                <!-- div carro compras -->
-                <div class="carro">
-                  <img id="carritoImg" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" src="./public/icons/carrito.png" type="button">
-                  <div class="statusCarrito"></div>
-                </div>
-              </li>
-          </ul>
-        </nav>
+      <div class="iconos">
+        <div class="pedido">
+          <img id="deliveryImg" src="./public/icons/delivery.png" type="button">
+          <div class="statusOrder" ></div>
+        </div>
+        <div class="carro">
+          <img id="carritoImg" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" src="./public/icons/carrito.png" type="button">
+          <div class="statusCarrito"></div>
+        </div>
       </div>
     </header>
     
@@ -61,7 +48,7 @@
       <!-- article contiene banner y cards burgas -->
       <article id="opciones">
         <div class="banner">
-          <p>Bienvenido  acá tenés los menús que ofrecemos:</p>
+          <h3>Bienvenido  acá tenés los menús que ofrecemos:</h3>
         </div>
         <!-- div que contiene cards render por DOM  -->
         <div id="menus"></div>
@@ -95,7 +82,7 @@
     <footer>
         <div class="autor">
           <p>Autor</p>
-          <p>Fernando Tamone</p>
+          <h6>Fernando Tamone</h6>
         </div>
         <div class="herramientas">
           <p>Tecnologías utilizadas:</p>

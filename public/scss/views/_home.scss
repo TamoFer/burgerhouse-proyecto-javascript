@@ -50,11 +50,11 @@
 
 #carritoImg {
   @include sizes(6rem, 6rem);
+  margin-top: 0.5rem;
 }
 
 #deliveryImg {
-  @include sizes(5.3rem, 5.3rem);
-  @include margenes(0.3rem, 1rem, 0rem, 1rem);
+  @include sizes(6rem, 6rem);
 }
 
 .card {
@@ -131,13 +131,12 @@
 }
 
 .banner {
-  p {
-    @include margenes(0rem, 0rem, 2rem, 1rem);
-    font-size: 3.5rem;
+  h3 {
+    font-size: 4.5rem;
     color: white;
     -webkit-text-stroke: 1px black;
     font-family: 'Bangers', cursive;
-    margin-top: 3rem;
+    margin: 3rem 0rem 0rem 1rem;
     text-transform: map-get($texto-estilos , mayusculas );
   }
 }
