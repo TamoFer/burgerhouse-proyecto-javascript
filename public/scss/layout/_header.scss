@@ -1,11 +1,18 @@
 header {
   @extend .flex-row;
-  justify-content: map-get($alineaciones-flex, between);
-  background-color: rgba(0, 0, 0, 0.7);
+  @include sizes(100%,auto);
+  justify-content: end;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  // background-image: url(../images/fondo-navbar.jpg);
+  background-repeat: repeat-x;
+  background-size: 50rem;
   h1{
     color: white;
-    font-size: 5rem;
-    margin-left: 1rem;
+    -webkit-text-stroke: 3px black;
+    font-family: 'Bangers', cursive;
+    font-size: 8rem;
+    margin: 0rem;
   }
   div{
     nav{ 

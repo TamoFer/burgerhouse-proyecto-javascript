@@ -2,7 +2,7 @@
     {
     "serial": 1,
     "nombre": "Burga Americana",
-    "descripcion": "Hamburguesa doble de carne, que tiene queso cheddar, bacon crujiente y una deliciosa salsa barbacoa. Acompañada de papas fritas",
+    "descripcion": "Doble carne, doble cheddar, doble baccon crujiente, salsa barbacoa y acompañada de unas ricas papas fritas... ¡Que más queres!.",
     "precio": 1200,
     "cantidad": 1,
     "imagen": "../../../public/images/burger-americana.png"
@@ -11,7 +11,7 @@
     {
     "serial": 2,
     "nombre": "Burga Clásica",
-    "descripcion": "Hamburguesa simple de carne, que tiene tomate, lechuga y de aderezo mayonesa. Acompañada de papas fritas",
+    "descripcion": "La de siempre, con su infaltable cebolla, lechuga y tomate, junto al cheddar y una ketchup para cerrar este clásico... y su compañera de vida... las papas fritas!.",
     "precio": 950,
     "cantidad": 1,
     "imagen": "../../../public/images/burger-clasica.png"
@@ -20,7 +20,7 @@
     {
     "serial": 3,
     "nombre": "Burga Crispy",
-    "descripcion": "Hamburguesa simple de pollo crispy, que trae tomate, lechuga y mayo alioli. Acompañada de unos ricos aros de cebolla",
+    "descripcion": "Delicioso pollo crispy junto a lo mas fresco, lechuga, tomate y una salsa alioli descomunal! servida junto con unos aros de cebolla.",
     "precio": 1000,
     "cantidad": 1,
     "imagen": "../../../public/images/burger-crispy.png"
@@ -29,7 +29,7 @@
     {
     "serial": 4,
     "nombre": "Burga Power Onion",
-    "descripcion": "Hamburguesa simple de pollo crispy, que trae aros de cebolla como ingrediente junto a bacon, queso cheddar, mayonesa y ketchup. Y de guarnición, bastones de mozzarella",
+    "descripcion": "De la familia del pollo, pero con un POWER UP aros de cebolla, baccon y cheddar. Junto con bastones de mozzarella (solo para valientes).",
     "precio": 1050,
     "cantidad": 1,
     "imagen": "../../../public/images/burger-powerOnion.png"
@@ -38,7 +38,7 @@
     {
     "serial": 5,
     "nombre": "NotBurger",
-    "descripcion": "Hamburguesa veggie, compuesta por un medallón de soja empanado de la mano de tomate, lechuga, cebolla, pepinillos y una salsa de ketchup",
+    "descripcion": "Opcion veggie, de milanesa de soja acompañada de tomate, lechuga, cabolla morada, unos frescos pepinillos y para aderezar todo, ketchup. Esta vez, te la servimos con falafels.",
     "precio": 1100,
     "cantidad": 1,
     "imagen": "../../../public/images/burger-veggie.png"

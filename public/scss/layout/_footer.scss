@@ -1,7 +1,7 @@
 footer {
   @extend .flex-row;
   justify-content: map-get($alineaciones-flex, around);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .autor {
