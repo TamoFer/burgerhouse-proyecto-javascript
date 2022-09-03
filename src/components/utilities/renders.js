@@ -74,7 +74,7 @@ export function mostrarCarrito(listaPedidos) {
     
     const miTktDescripcion = document.createElement("p");
     miTktDescripcion.classList.add("carrito-detalle");
-    miTktDescripcion.textContent = `${cantidad}u. ${nombre}`;
+    miTktDescripcion.textContent = `${cantidad}x ${nombre}`;
 
     const miTktImg= document.createElement("img");
     miTktImg.setAttribute("id","carritoImg");

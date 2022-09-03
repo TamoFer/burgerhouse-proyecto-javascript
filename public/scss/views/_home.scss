@@ -17,7 +17,6 @@
 #carrito-total {
   @extend .flex-row;
   flex-grow: 0.5;
-  // flex-flow: row;
   align-items: map-get($texto-estilos , centrado );
   gap:1rem;
   .botones{
@@ -38,10 +37,17 @@
     @include sizes(100%,auto);
     justify-content: start;
     gap: 1.5rem;
+    color: white;
+    font-size: 4rem;
+    font-family: 'Bangers', cursive;
+    -webkit-text-stroke: 1px black;
+    
   }
   &-detalle {
     @include sizes(20rem, auto);
-    @extend .font-size14;
+    color: white;
+    font-size: 2.4rem;
+    font-family: 'Bangers', cursive;
     margin-top: 1.7rem;
     text-align: start;
   }
@@ -49,8 +55,8 @@
 }
 
 #carritoImg {
-  @include sizes(6rem, 6rem);
-  margin-top: 0.5rem;
+  @include sizes(8rem, 6.7rem);
+  // margin-top: 0.5rem;
 }
 
 #deliveryImg {
@@ -82,6 +88,14 @@
     align-items:map-get($texto-estilos , centrado );
     padding-top: 1rem;
     border-top: 1px solid #ddd;
+    img{
+      &:hover{
+        transform: scale(1.2);
+      }
+      &:active{
+        transform: scale(1.1);
+      }
+    }
   }
 }
 
@@ -108,10 +122,19 @@
   }
 }
 
-.offcanvas-title{
-  font-size: 2rem;
-  
-}
+.offcanvas{
+  background-image: url(../images/fondo-carrito.png)!important;
+  background-position:center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  &-title{
+    font-size: 2rem;
+    color: white;
+    font-size: 4.5rem;
+    font-family: 'Bangers', cursive;
+    margin-left: 1rem;
+  }
+}  
 
 .carro {
   @extend .flex-row;
@@ -123,10 +146,20 @@
 
 .descripcionTkt {
   @extend .flex-row;
-  @include margenes(1rem,1rem,1rem,1rem);
-  justify-content: map-get($alineaciones-flex , between ); 
+  margin: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  justify-content: map-get($alineaciones-flex , around ); 
+  border-radius: 1rem;
   .tkt-iconos{
     margin-top: 2rem;
+    img{
+      &:hover{
+        transform: scale(1.2);
+      }
+      &:active{
+        transform: scale(1.1);
+      }
+    }
   }
 }
 

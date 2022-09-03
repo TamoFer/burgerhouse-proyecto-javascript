@@ -23,7 +23,7 @@ header {
   .nameAndfavicon{
     @extend .flex-row;
     align-items: map-get($texto-estilos , centrado );
-    gap: 1rem;
+    gap: 2rem;
   }
   
   .iconPage{
