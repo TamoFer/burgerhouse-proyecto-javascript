@@ -18,7 +18,7 @@ Para conocer este hace click en el  [link](https://burgerhouse2022.000webhostapp
 * BootStrap
 * JavaScript
 * SweetAlert2
-* Tippy.js
+
 
 
 
