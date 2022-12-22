@@ -1,5 +1,5 @@
 # **BurgerHouse** 🍔
-![burger-img](https://github.com/FerTamone/JScript-proyects/blob/proyecto-final/public/images/rsz_burger-house.png)
+![burger-img](https://raw.githubusercontent.com/TamoFer/JScript-proyects/BurgerHouse/public/images/rsz_burger-house.png)
 
 
 🛒 Venta online de hamburguesas. Simulador de un "ecommerce" de codiga rapida. 🛒
